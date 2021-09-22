@@ -8,9 +8,9 @@ def seed_comments():
     comments = []
 
     comments.append(Comment(
-      content="mammal",
-      user_id="felidae",
-      animal_id="leopard",
+      content=faker.text(200),
+      user_id=1,
+      animal_id=1,
     ))
 
     db.session.add(comments)
