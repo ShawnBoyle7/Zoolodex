@@ -14,6 +14,10 @@ class User(db.Model, UserMixin):
     img_url = db.Column(db.String(255), nullable=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    comments = db.relationship("Comment", back_populates = "user", cascade="all, delete-orphan")
+    suggestions = db.relationship("Suggestion", back_populates = "user", cascade="all, delete-orphan")
+    sightings = db.relationship("Sighting", back_populates = "user", cascade="all, delete-orphan")
+
     @property
     def password(self):
         return self.hashed_password
