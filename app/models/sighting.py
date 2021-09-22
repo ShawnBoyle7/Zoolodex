@@ -28,6 +28,7 @@ class Sighting(db.Model):
         "description": self.description,
         "sightingLatitude": self.sighting_latitude,
         "sightingLongitude": self.sighting_longitude,
+        "sightingDate": self.sighting_date,
         "imgUrl1": self.img_url_1,
         "imgUrl2": self.img_url_2,
         "imgUrl3": self.img_url_3,

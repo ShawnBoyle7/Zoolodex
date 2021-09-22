@@ -16,6 +16,7 @@ class Suggestion(db.Model):
         return {
         "id": self.id,
         "type": self.type,
+        "title": self.title,
         "description": self.description,
         "imgUrl": self.img_url,
         "userId": self.user_id,

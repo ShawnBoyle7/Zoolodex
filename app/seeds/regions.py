@@ -1,29 +1,28 @@
-from app.models import db, Animal
+from app.models import db, Region
 from faker import Faker
 
 faker = Faker()
 
-def seed_animals():
-    article_template = '{{"origins": "{0}",  "traits": "{1}", "ecosystemInfluence": "{2}" }}'
+def seed_regions():
 
-    origins = faker.text(500)
-    traits = faker.text(500)
-    ecosystem_influence = faker.text(500)
+    regions = []
 
-    amur_leopard = Animal(
-      group="mammal",
-      family="felidae",
-      species="leopard",
-      sub_species="amur_leopard",
-      img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg",
-      article= article_template.format(origins, traits, ecosystem_influence)
-    )
-
-    db.session.add(amur_leopard)
+    regions.append(Region(
+      name="Mole National Park",
+      climate="Savanna",
+      continent="Africa",
+      img_url_1="https://mocah.org/thumbs/576778-jungle-wallpaper.jpg"
+      img_url_2="https://wallpapercave.com/wp/wp2459809.jpg"
+      img_url_3="https://wallpapercave.com/wp/wp4565477.jpg"
+      img_url_4="https://images2.alphacoders.com/294/thumbbig-29492.webp"
+      img_url_5="https://images.pexels.com/photos/109391/pexels-photo-109391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ))
+    
+    db.session.add(regions)
 
     db.session.commit()
 
 
-def undo_animals():
-    db.session.execute('TRUNCATE animals RESTART IDENTITY CASCADE;')
+def undo_regions():
+    db.session.execute('TRUNCATE regions RESTART IDENTITY CASCADE;')
     db.session.commit()
