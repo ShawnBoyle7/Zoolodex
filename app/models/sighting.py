@@ -7,12 +7,12 @@ class Sighting(db.Model):
     description = db.Column(db.String, nullable=False)
     sighting_latitude = db.Column(db.Float, nullable=False)
     sighting_longitude = db.Column(db.Float, nullable=False)
-    sighting_date = db.Column(db.DateTime, nullable=False)
-    img_url_1 = db.Column(db.String, nullable=False)
-    img_url_2 = db.Column(db.String, nullable=False)
-    img_url_3 = db.Column(db.String, nullable=False)
-    img_url_4 = db.Column(db.String, nullable=False)
-    img_url_5 = db.Column(db.String, nullable=False)
+    sighting_date = db.Column(db.DateTime)
+    img_url_1 = db.Column(db.String)
+    img_url_2 = db.Column(db.String)
+    img_url_3 = db.Column(db.String)
+    img_url_4 = db.Column(db.String)
+    img_url_5 = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     animal_id = db.Column(db.Integer, db.ForeignKey("animals.id"))
 
@@ -28,6 +28,7 @@ class Sighting(db.Model):
         "description": self.description,
         "sightingLatitude": self.sighting_latitude,
         "sightingLongitude": self.sighting_longitude,
+        "sightingDate": self.sighting_date,
         "imgUrl1": self.img_url_1,
         "imgUrl2": self.img_url_2,
         "imgUrl3": self.img_url_3,

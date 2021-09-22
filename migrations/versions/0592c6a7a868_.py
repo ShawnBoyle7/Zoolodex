@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: b675a63e4861
+Revision ID: 0592c6a7a868
 Revises: 
-Create Date: 2021-09-21 23:46:18.533526
+Create Date: 2021-09-22 17:35:54.484148
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'b675a63e4861'
+revision = '0592c6a7a868'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,7 +29,8 @@ def upgrade():
     sa.Column('family', sa.String(), nullable=False),
     sa.Column('species', sa.String(), nullable=False),
     sa.Column('sub_species', sa.String(), nullable=False),
-    sa.Column('article', sa.String(), nullable=True),
+    sa.Column('img_url', sa.String(), nullable=False),
+    sa.Column('article', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('regions',
@@ -77,12 +78,12 @@ def upgrade():
     sa.Column('description', sa.String(), nullable=False),
     sa.Column('sighting_latitude', sa.Float(), nullable=False),
     sa.Column('sighting_longitude', sa.Float(), nullable=False),
-    sa.Column('sighting_date', sa.DateTime(), nullable=False),
-    sa.Column('img_url_1', sa.String(), nullable=False),
-    sa.Column('img_url_2', sa.String(), nullable=False),
-    sa.Column('img_url_3', sa.String(), nullable=False),
-    sa.Column('img_url_4', sa.String(), nullable=False),
-    sa.Column('img_url_5', sa.String(), nullable=False),
+    sa.Column('sighting_date', sa.DateTime(), nullable=True),
+    sa.Column('img_url_1', sa.String(), nullable=True),
+    sa.Column('img_url_2', sa.String(), nullable=True),
+    sa.Column('img_url_3', sa.String(), nullable=True),
+    sa.Column('img_url_4', sa.String(), nullable=True),
+    sa.Column('img_url_5', sa.String(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('animal_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
@@ -103,8 +104,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('content', sa.String(length=1000), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('sighting_id', sa.Integer(), nullable=True),
     sa.Column('animal_id', sa.Integer(), nullable=True),
+    sa.Column('sighting_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
     sa.ForeignKeyConstraint(['sighting_id'], ['sightings.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
