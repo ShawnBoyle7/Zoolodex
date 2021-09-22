@@ -5,9 +5,9 @@ class Sighting(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String, nullable=False)
-    sighting_latitude = db.Column(db.Decimal, nullable=False)
-    sighting_longitude = db.Column(db.Decimal, nullable=False)
-    sighting_date = db.Column(db.Timestamp, nullable=False)
+    sighting_latitude = db.Column(db.Float, nullable=False)
+    sighting_longitude = db.Column(db.Float, nullable=False)
+    sighting_date = db.Column(db.DateTime, nullable=False)
     img_url_1 = db.Column(db.String, nullable=False)
     img_url_2 = db.Column(db.String, nullable=False)
     img_url_3 = db.Column(db.String, nullable=False)

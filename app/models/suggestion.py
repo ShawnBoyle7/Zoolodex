@@ -10,7 +10,7 @@ class Suggestion(db.Model):
     img_url = db.Column(db.String, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
-    user = db.Column("User", back_populates = "suggestions", cascade="all, delete-orphan")
+    user = db.relationship("User", back_populates = "suggestions", cascade="all, delete-orphan")
 
     def to_dict(self):
         return {
