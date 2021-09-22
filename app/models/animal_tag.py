@@ -1,3 +1,4 @@
+from re import M
 from .db import db
 
 class AnimalTag(db.Model):
@@ -6,7 +7,16 @@ class AnimalTag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
 
-    # animal = db.relationship("Animal", back_populates = "tags", cascade="all, delete-orphan")
+    # Joins to animals, joins table defined below.
+    animals = db.relationship("Animal", secondary="animals_tags_joins", back_populates = "animal_tags")
+
+    animals_tags_joins = db.Table(
+        "animals_tags_joins",
+
+        db.Column("id", db.Integer, primary_key=True),
+        db.Column("animal_id", db.Integer, db.ForeignKey("animals.id")),
+        db.Column("animal_tag_id", db.Integer, db.ForeignKey("animal_tags.id"))
+    )
 
     def to_dict(self):
         return {

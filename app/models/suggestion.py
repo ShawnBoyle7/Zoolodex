@@ -1,4 +1,4 @@
-from db import db
+from .db import db
 
 class Suggestion(db.Model):
     __tablename__ = "suggestions"

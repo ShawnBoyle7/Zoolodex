@@ -9,9 +9,14 @@ class Animal(db.Model):
     species = db.Column(db.String, nullable=False)
     sub_species = db.Column(db.String, nullable=False)
 
-    # regions = db.relationship("Region", back_populates = "animals", cascade="all, delete-orphan")
-    # tags = db.relationship("Tag", back_populates = "animals", cascade="all, delete-orphan")
     sightings = db.relationship("Sighting", back_populates = "animal", cascade="all, delete-orphan")
+
+    # Joins to animal_tags, table is on the other model.
+    animal_tags = db.relationship("Animal", secondary = "animals_tags_joins", back_populates = "animals", cascade="all, delete-orphan")
+
+    # Joins to regions, table is on the other model.
+
+    regions = db.relationship("Region", secondary = "animals_regions_joins", back_populates = "animals", cascade="all, delete-orphan")
 
     def to_dict(self):
         return {
