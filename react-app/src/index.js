@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { ModalProvider } from './context/Modal';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
@@ -9,8 +11,12 @@ const store = configureStore();
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-        <App />
-      </Provider>
+      <ModalProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ModalProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
