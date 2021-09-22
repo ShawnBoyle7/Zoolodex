@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
-const LoginForm = () => {
+const LoginForm = ({ setShowModal }) => {
   const dispatch = useDispatch();
 
   const user = useSelector(state => state.session.user);
@@ -15,8 +15,11 @@ const LoginForm = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
+    // Clarify why we need an else if we should always have data?
     if (data) {
       setErrors(data);
+    } else {
+      setShowModal(false)
     }
   };
 
@@ -28,6 +31,7 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  // What is this for
   if (user) {
     return <Redirect to='/' />;
   }
