@@ -1,5 +1,5 @@
 from app.models import db
-from app.models.user import animals_regions_joins
+from app.models.region import animals_regions_joins
 from faker import Faker
 
 faker = Faker()
