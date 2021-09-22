@@ -13,11 +13,13 @@ def seed():
     seed_users()
     seed_animal_tags()
     seed_animals()
+    seed_animals_tags_joins()
 
 
 @seed_commands.command('undo')
 def undo():
     undo_users()
     undo_animal_tags()
-    undo_animals
+    undo_animals()
+    undo_animals_tags_joins()
 

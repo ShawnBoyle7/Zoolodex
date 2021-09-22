@@ -9,9 +9,9 @@ class Animal(db.Model):
     species = db.Column(db.String, nullable=False)
     sub_species = db.Column(db.String, nullable=False)
     article = db.Column(db.String)
-    origins = db.Column(db.String)
-    traits = db.Column(db.String)
-    ecosystem_influence = db.Column(db.String)
+    # origins = db.Column(db.String)
+    # traits = db.Column(db.String)
+    # ecosystem_influence = db.Column(db.String)
 
     sightings = db.relationship("Sighting", back_populates = "animal", cascade="all, delete-orphan")
     comments = db.relationship("Comment", back_populates = "animal", cascade="all, delete-orphan")
