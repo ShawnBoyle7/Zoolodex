@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../context/Modal";
 import LoginForm from "./auth/LoginForm";
 
-function LoginFormModal() {
+function LoginFormModal() { 
     // State variable for conditional rendering of modal
     const [showModal, setShowModal] = useState(false)
 

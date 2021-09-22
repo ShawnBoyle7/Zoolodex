@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import LoginFormModal from './LoginFormModal';
-import SignupFormModal from './SignupFormModal';
+import SignUpFormModal from './SignUpFormModal';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -19,7 +19,7 @@ const NavBar = () => {
         {!authenticated &&
           <div>
             <LoginFormModal/>
-            <SignupFormModal/>
+            <SignUpFormModal/>
           </div>
         }
         {/* <div>

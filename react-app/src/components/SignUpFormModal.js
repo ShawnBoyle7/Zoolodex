@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Modal } from "../context/Modal";
+import SignUpForm from "./auth/SignUpForm";
 
-const SignupFormModal = () => {
+const SignUpFormModal = () => {
   const [showModal, setShowModal] = useState(false)
 
   return (
@@ -9,11 +10,11 @@ const SignupFormModal = () => {
       <button onClick={() => setShowModal(true)}>Sign Up</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)} className="signup-modal">
-          <SignupFormModal setShowModal={setShowModal}/>
+          <SignUpForm setShowModal={setShowModal}/>
         </Modal>
       )}
     </>
   )
 }
 
-export default SignupFormModal;
+export default SignUpFormModal;
