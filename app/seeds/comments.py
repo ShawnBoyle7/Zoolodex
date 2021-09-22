@@ -13,7 +13,8 @@ def seed_comments():
       animal_id=1,
     ))
 
-    db.session.add(comments)
+    for comment in comments:
+        db.session.add(comment)
 
     db.session.commit()
 
