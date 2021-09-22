@@ -1,29 +1,25 @@
-from app.models import db, Animal
+from app.models import db, Suggestion
 from faker import Faker
 
 faker = Faker()
 
-def seed_animals():
-    article_template = '{{"origins": "{0}",  "traits": "{1}", "ecosystemInfluence": "{2}" }}'
+def seed_suggestions():
 
-    origins = faker.text(500)
-    traits = faker.text(500)
-    ecosystem_influence = faker.text(500)
+    suggestions = []
 
-    amur_leopard = Animal(
-      group="mammal",
-      family="felidae",
-      species="leopard",
-      sub_species="amur_leopard",
-      img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg",
-      article= article_template.format(origins, traits, ecosystem_influence)
-    )
+    suggestions.append(Suggestion(
+      type="animal",
+      title="Red Panda",
+      description=faker.text(300),
+      img_url="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YW5pbWFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+      user_id=1
+    ))
 
-    db.session.add(amur_leopard)
+    db.session.add(suggestions)
 
     db.session.commit()
 
 
-def undo_animals():
-    db.session.execute('TRUNCATE animals RESTART IDENTITY CASCADE;')
+def undo_suggestions():
+    db.session.execute('TRUNCATE suggestions RESTART IDENTITY CASCADE;')
     db.session.commit()
