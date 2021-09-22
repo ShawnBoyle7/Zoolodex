@@ -1,5 +1,6 @@
 from .db import db
 
+
 class Animal(db.Model):
     __tablename__ = "animals"
 
@@ -8,10 +9,8 @@ class Animal(db.Model):
     family = db.Column(db.String, nullable=False)
     species = db.Column(db.String, nullable=False)
     sub_species = db.Column(db.String, nullable=False)
-    article = db.Column(db.String)
-    # origins = db.Column(db.String)
-    # traits = db.Column(db.String)
-    # ecosystem_influence = db.Column(db.String)
+    img_url = db.Column(db.String, nullable=False)
+    article = db.Column(db.String, nullable=False)
 
     sightings = db.relationship("Sighting", back_populates = "animal", cascade="all, delete-orphan")
     comments = db.relationship("Comment", back_populates = "animal", cascade="all, delete-orphan")
@@ -34,9 +33,10 @@ class Animal(db.Model):
         "family": self.family,
         "species": self.species,
         "subSpecies": self.sub_species,
+        "imgUrl": self.img_url,
         "article": self.article,
         "sightings": sightings,
         "regions": regions,
         "animalTags": animal_tags,
-        "comments": comments
+        "comments": comments,
         }
