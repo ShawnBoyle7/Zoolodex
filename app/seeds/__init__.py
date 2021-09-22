@@ -9,7 +9,6 @@ from .animals_tags_joins import seed_animals_tags_joins, undo_animals_tags_joins
 from .animals_regions_joins import seed_animals_regions_joins, undo_animals_regions_joins
 
 
-
 seed_commands = AppGroup('seed')
 
 

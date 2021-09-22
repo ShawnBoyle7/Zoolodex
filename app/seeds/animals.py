@@ -13,14 +13,7 @@ def seed_animals():
     traits = faker.text(500)
     ecosystem_influence = faker.text(500)
 
-      animals.append(Animal(
-      group="mammal",
-      family="felidae",
-      species="leopard",
-      sub_species="amur_leopard",
-      img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg",
-      article= article_template.format(origins, traits, ecosystem_influence)
-    ))
+    animals.append(Animal(group="mammal", family="felidae", species="leopard", sub_species="amur_leopard", img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg", article=article_template.format(origins, traits,ecosystem_influence)))
 
     db.session.add(animals)
 
