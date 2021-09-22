@@ -16,11 +16,13 @@ class Sighting(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     animal_id = db.Column(db.Integer, db.ForeignKey("animals.id"))
 
-    user = db.relationship("User", back_populates = "sightings", cascade="all, delete-orphan")
-    animal = db.relationship("Animal", back_populates = "sightings", cascade="all, delete-orphan")
+    user = db.relationship("User", back_populates = "sightings")
+    animal = db.relationship("Animal", back_populates = "sightings")
     comments = db.relationship("Comment", back_populates = "sighting", cascade="all, delete-orphan")
 
     def to_dict(self):
+        comments = [comment.id for comment in self.comments]
+
         return {
         "id": self.id,
         "description": self.description,
@@ -32,5 +34,6 @@ class Sighting(db.Model):
         "imgUrl4": self.img_url_4,
         "imgUrl5": self.img_url_5,
         "userId": self.user_id,
-        "animalId": self.animal_id
+        "animalId": self.animal_id,
+        "comments": comments
         }

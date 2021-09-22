@@ -32,9 +32,20 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'username': self.username,
+            'imgUrl': self.img_url,
+        }
+
+    def session_to_dict(self):
+        sightings = [sighting.id for sighting in self.sightings]
+        suggestions = [suggestion.id for suggestion in self.suggestions]
+        return {
+            'id': self.id,
             'email': self.email,
             'username': self.username,
             'firstName': self.first_name,
             'lastName': self.last_name,
             'imgUrl': self.img_url,
+            "suggestions": suggestions,
+            "sightings": sightings
         }

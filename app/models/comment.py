@@ -9,9 +9,9 @@ class Comment(db.Model):
     sighting_id = db.Column(db.Integer, db.ForeignKey("sightings.id"))
     animal_id = db.Column(db.Integer, db.ForeignKey("animals.id"))
 
-    user = db.relationship("User", back_populates = "comments", cascade="all, delete-orphan")
-    sighting = db.relationship("Sighting", back_populates = "comments", cascade="all, delete-orphan")
-    animal = db.relationship("Animal", back_populates = "comments", cascade="all, delete-orphan")
+    user = db.relationship("User", back_populates = "comments")
+    sighting = db.relationship("Sighting", back_populates = "comments")
+    animal = db.relationship("Animal", back_populates = "comments")
 
     def to_dict(self):
         return {

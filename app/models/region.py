@@ -25,6 +25,8 @@ class Region(db.Model):
     )
 
     def to_dict(self):
+        animals = [animal.id for animal in self.animals]
+
         return {
         "id": self.id,
         "name": self.name,
@@ -34,5 +36,6 @@ class Region(db.Model):
         "imgUrl2": self.img_url_2,
         "imgUrl3": self.img_url_3,
         "imgUrl4": self.img_url_4,
-        "imgUrl5": self.img_url_5
+        "imgUrl5": self.img_url_5,
+        "animals": animals
         }
