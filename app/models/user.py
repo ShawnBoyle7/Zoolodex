@@ -14,6 +14,10 @@ class User(db.Model, UserMixin):
     img_url = db.Column(db.String(255), nullable=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
+    comments = db.relationship("Comment", back_populates = "user", cascade="all, delete-orphan")
+    suggestions = db.relationship("Suggestion", back_populates = "user", cascade="all, delete-orphan")
+    sightings = db.relationship("Sighting", back_populates = "user", cascade="all, delete-orphan")
+
     @property
     def password(self):
         return self.hashed_password
@@ -28,9 +32,20 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'username': self.username,
+            'imgUrl': self.img_url,
+        }
+
+    def session_to_dict(self):
+        sightings = [sighting.id for sighting in self.sightings]
+        suggestions = [suggestion.id for suggestion in self.suggestions]
+        return {
+            'id': self.id,
             'email': self.email,
             'username': self.username,
             'firstName': self.first_name,
             'lastName': self.last_name,
             'imgUrl': self.img_url,
+            "suggestions": suggestions,
+            "sightings": sightings
         }
