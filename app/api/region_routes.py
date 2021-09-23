@@ -1,9 +1,9 @@
 from flask import Blueprint
 from app.models import Region
 
-region_routes = Blueprint("regions", __name__)
+region_routes = Blueprint('regions', __name__)
 
-@region_routes.route("/")
+@region_routes.route('/')
 def regions():
     regions = Region.query.all()
 

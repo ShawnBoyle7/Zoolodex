@@ -7,6 +7,7 @@ import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
 import { getAnimalTags } from './store/animal_tags';
+import { getRegions } from './store/regions';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       await dispatch(getAnimals());
       await dispatch(getUsers());
       await dispatch(getAnimalTags());
+      await dispatch(getRegions());
       // What is this?
       setLoaded(true);
     })();
