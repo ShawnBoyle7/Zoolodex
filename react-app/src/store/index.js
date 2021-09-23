@@ -6,6 +6,7 @@ import animals from './animals'
 import animal_tags from './animal_tags'
 import regions from './regions'
 import comments from './comments'
+import suggestions from './suggestions'
 
 const rootReducer = combineReducers({
   session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   users,
   animal_tags,
   regions,
-  comments
+  comments,
+  suggestions
 });
 
 
