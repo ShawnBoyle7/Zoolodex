@@ -16,30 +16,19 @@ const NavBar = () => {
             Home
           </NavLink>
         </div>
+        
         {!authenticated &&
           <div>
             <LoginFormModal/>
             <SignUpFormModal/>
           </div>
+
         }
-        {/* <div>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </div> */}
-        {/* <div>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </div> */}
-        <div>
-          {/* <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink> */}
-        </div>
-        <div>
-          <LogoutButton />
-        </div>
+        {authenticated &&
+          <div>
+            <LogoutButton/>
+          </div>
+        }
     </nav>
   );
 }
