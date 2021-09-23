@@ -8,9 +8,9 @@ def seed_comments():
     comments = []
 
     comments.append(Comment(
-      content=faker.text(200),
-      user_id=1,
-      animal_id=1,
+        content=faker.text(200),
+        user_id=1,
+        animal_id=1,
     ))
 
     for comment in comments:
