@@ -1,9 +1,9 @@
 from flask import Blueprint
 from app.models import Animal
 
-animals_routes = Blueprint('animals', __name__)
+animal_routes = Blueprint('animals', __name__)
 
-@animals_routes.route('/')
+@animal_routes.route('/')
 def animals():
     animals = Animal.query.all()
     # Why
