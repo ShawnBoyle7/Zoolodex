@@ -1,3 +1,6 @@
+import rfdc from "rfdc";
+const clone = rfdc()
+
 // Action type string literal
 const LOAD_ANIMALS = "animals/LOAD_ANIMALS";
 
@@ -31,7 +34,7 @@ const initialState = {}
 // Reducer takes in a default object as the state, and an action which it retrieves from any returned action creator
 export default function reducer(state = initialState, action) {
     // Don't copy the original state because you want to be able to rewind the state for debugging
-    const stateCopy = {...state};
+    const stateCopy = clone(state)
     // Switching between each action's type in the reducer to decide which case to handle
     switch (action.type) {
         case LOAD_ANIMALS:
