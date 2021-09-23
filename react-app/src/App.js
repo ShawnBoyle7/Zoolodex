@@ -10,6 +10,7 @@ import { getAnimalTags } from './store/animal_tags';
 import { getRegions } from './store/regions';
 import { getComments } from './store/comments';
 import { getSuggestions } from './store/suggestions';
+import { getSightings } from './store/sightings';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -24,7 +25,8 @@ function App() {
       await dispatch(getAnimalTags());
       await dispatch(getRegions());
       await dispatch(getComments());
-      await dispatch(getSuggestions())
+      await dispatch(getSuggestions());
+      await dispatch(getSightings());
       // What is this?
       setLoaded(true);
     })();
