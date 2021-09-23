@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
-import LoginFormModal from './LoginFormModal';
+import LoginFormModal from "./LoginFormModal"
 import SignUpFormModal from './SignUpFormModal';
 
 const NavBar = () => {
