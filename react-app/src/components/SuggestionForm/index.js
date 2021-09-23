@@ -14,11 +14,23 @@ const SuggestionForm = () => {
     const [errors, setErrors] = useState([])
 
     const handleSubmit = () => {
-        dispatch(newSuggestion(type, title, description, imgUrl, userId))
+        e.preventDefault()
+        const data = await dispatch(newSuggestion(type, title, description, imgUrl, userId))
+        if (data) {
+            setErrors(data)
+        }
     };
 
     const updateType = (e) => {
         setType(e.target.value)
+    }
+
+    const updateTitle = (e) => {
+        setTitle(e.target.value)
+    }
+
+    const updateDescription = (e) => {
+        setDescription(e.target.value)
     }
 
     return(
@@ -29,7 +41,7 @@ const SuggestionForm = () => {
                     {error}
                 </div>)}
             </div>
-            
+            {/* I want to add a required here later */}
             <div className="form-radio">
                 <label>
                     <input 
@@ -38,8 +50,7 @@ const SuggestionForm = () => {
                         name="type"
                         value="option1"
                         onChange={updateType}
-                        checked={type === "option1"}
-                    />
+                        checked={type === "option1"}/>
                 </label>
             </div>
 
@@ -51,9 +62,27 @@ const SuggestionForm = () => {
                         name="type"
                         value="option2"
                         onChange={updateType}
-                        checked={type === "option2"}
-                    />
+                        checked={type === "option2"}/>
                 </label>
+            </div>
+
+            <div className="form-suggestion-title">
+                <input 
+                    type="text"
+                    name="title"
+                    onChange={updateTitle}
+                    // I forgot how value is used here
+                    value={title}
+                    required={true}/>
+            </div>
+
+            <div className="form-suggestion-description">
+                <input
+                    type="text"
+                    name="description"
+                    onChange={updateDescription}
+                    value={description}
+                    required={true}/>
             </div>
         </form>
     )
