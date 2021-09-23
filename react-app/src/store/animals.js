@@ -16,7 +16,7 @@ const loadAnimals = (data) => ({
 // Thunk
 export const getAnimals = () => async (dispatch) => {
     // Send data to API route and receive it back in the response variable
-    const response = await fetch("/api/animals");
+    const response = await fetch("/api/animals/");
 
     // If the response returned correctly
     if (response.ok) {
