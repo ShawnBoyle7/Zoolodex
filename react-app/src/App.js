@@ -8,6 +8,7 @@ import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
 import { getAnimalTags } from './store/animal_tags';
 import { getRegions } from './store/regions';
+import { getComments } from './store/comments';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,6 +22,7 @@ function App() {
       await dispatch(getUsers());
       await dispatch(getAnimalTags());
       await dispatch(getRegions());
+      await dispatch(getComments());
       // What is this?
       setLoaded(true);
     })();
