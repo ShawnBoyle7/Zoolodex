@@ -8,3 +8,9 @@ def suggestions():
     suggestions = Suggestion.query.all()
 
     return {"suggestions": [suggestion.to_dict() for suggestion in suggestions]}
+
+@suggestion_routes.route('/', methods=["POST"])
+def post_suggestion():
+    
+
+    return "Bad Data"
