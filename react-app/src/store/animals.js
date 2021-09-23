@@ -5,6 +5,7 @@ const clone = rfdc()
 const LOAD_ANIMALS = "animals/LOAD_ANIMALS";
 
 // Action creator returns an action and sends the type & payload to our reducer
+// Why do we wrap this in parentheses
 const loadAnimals = (data) => ({
     // Action type
     type: LOAD_ANIMALS,

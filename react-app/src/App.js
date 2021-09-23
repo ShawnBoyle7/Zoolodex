@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
+import { getUsers } from './store/users';
 import Animals from './components/Animals';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     (async() => {
       await dispatch(authenticate());
       await dispatch(getAnimals());
+      await dispatch(getUsers());
       // What is this?
       setLoaded(true);
     })();
