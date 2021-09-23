@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Animal = () => {
+    // const article = JSON.parse(animal?.article)
+
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
-    const article = JSON.parse(animal?.article)
     
     const [showOrigins, setShowOrigins] = useState(false)
     const [showTraits, setShowTraits] = useState(false)
@@ -48,19 +49,19 @@ const Animal = () => {
 
             {showOrigins && 
                 <div>
-                    {article.origins}
+                    {animal.origins}
                 </div>
             }
 
             {showTraits && 
                 <div>
-                    {article.traits}
+                    {animal.traits}
                 </div>
             }
 
             {showEcosystemInfluence && 
                 <div>
-                    {article.ecosystemInfluence}
+                    {animal.ecosystemInfluence}
                 </div>
             }
         </>
