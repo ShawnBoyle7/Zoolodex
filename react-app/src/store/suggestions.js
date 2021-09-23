@@ -25,8 +25,8 @@ export default function reducer(state = initialState, action) {
 
     switch (action.type) {
         case LOAD_SUGGESTIONS:
-            action.data.suggestions.forEach(comment => {
-                stateCopy[comment.id] = comment
+            action.data.suggestions.forEach(suggestion => {
+                stateCopy[suggestion.id] = suggestion
             });
             return stateCopy;
         default:

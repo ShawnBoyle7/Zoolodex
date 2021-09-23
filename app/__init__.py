@@ -14,6 +14,7 @@ from .api.animal_tag_routes import animal_tag_routes
 from .api.region_routes import region_routes
 from .api.comment_routes import comment_routes
 from .api.suggestion_routes import suggestion_routes
+from .api.sighting_routes import sighting_routes
 
 from .seeds import seed_commands
 
@@ -41,6 +42,7 @@ app.register_blueprint(animal_tag_routes, url_prefix='/api/animal_tags')
 app.register_blueprint(region_routes, url_prefix='/api/regions')
 app.register_blueprint(comment_routes, url_prefix='/api/comments')
 app.register_blueprint(suggestion_routes, url_prefix='/api/suggestions')
+app.register_blueprint(sighting_routes, url_prefix='/api/sightings')
 db.init_app(app)
 Migrate(app, db)
 
