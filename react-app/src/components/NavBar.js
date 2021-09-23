@@ -16,6 +16,11 @@ const NavBar = () => {
             Home
           </NavLink>
         </div>
+        <div>
+          <NavLink to='/animals' exact={true} activeClassName='active'>
+            Animals
+          </NavLink>
+        </div>
         
         {!authenticated &&
           <div>

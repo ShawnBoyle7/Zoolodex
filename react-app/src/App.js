@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import NavBar from './components/NavBar';
 import Animals from './components/Animals';
+import Home from './components/Home';
+import Splash from './components/Splash';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
@@ -15,6 +17,9 @@ import { getSightings } from './store/sightings';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  
+  const sessionUser = useSelector(state => state.session.user);
+  const authenticated = sessionUser !== null;
 
   // What is all this? Any time one of these dispatches is called it will listen to that and run them?
   useEffect(() => {
@@ -41,9 +46,16 @@ function App() {
     <>
       <NavBar />
       <Switch>
+        {authenticated && 
         <Route path="/" exact={true}>
-          <h1>My Home Page</h1>
+          <Home/>
         </Route>
+        }
+        {!authenticated && 
+        <Route path="/" exact={true}>
+          <Splash/>
+        </Route>
+        }
         <Route path="/animals">
           <Animals/>
         </Route>
