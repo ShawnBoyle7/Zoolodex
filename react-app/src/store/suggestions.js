@@ -43,7 +43,7 @@ export const newSuggestion = (type, title, description, imgUrl, userId) => async
     });
 
     if (response.ok) {
-        data = await response.json();
+        const data = await response.json();
         console.log("DATA LOG", data)
         dispatch(addSuggestion(data))
         return null;
