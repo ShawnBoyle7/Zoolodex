@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Modal } from "../context/Modal";
-import LoginForm from "./auth/LoginForm";
+import { Modal } from "../../context/Modal";
+import LoginForm from "../auth/LoginForm";
 
 function LoginFormModal() { 
     // State variable for conditional rendering of modal
