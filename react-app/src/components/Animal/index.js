@@ -39,7 +39,7 @@ const Animal = () => {
             </div>
 
             <div className="animal-image">
-                <img src="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg"/>
+                <img src="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg" alt="animal"/>
             </div>
 
             <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
