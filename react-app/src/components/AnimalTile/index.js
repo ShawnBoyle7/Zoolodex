@@ -8,7 +8,7 @@ const Animals = () => {
     return (
         <>  
             <Route exact path="/animals">
-                <div>
+                <div className="animals-div">
                     {animals.map(animal => 
                         <AnimalTile animal={animal} key={animal.id}/>
                     )}
