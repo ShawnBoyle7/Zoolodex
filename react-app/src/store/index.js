@@ -4,12 +4,14 @@ import session from './session'
 import users from './users'
 import animals from './animals'
 import animal_tags from './animal_tags'
+import regions from './regions'
 
 const rootReducer = combineReducers({
   session,
   animals,
   users,
-  animal_tags
+  animal_tags,
+  regions
 });
 
 
