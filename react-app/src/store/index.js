@@ -1,13 +1,15 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
-import animals from './animals'
 import users from './users'
+import animals from './animals'
+import animal_tags from './animal_tags'
 
 const rootReducer = combineReducers({
   session,
   animals,
-  users
+  users,
+  animal_tags
 });
 
 

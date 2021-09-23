@@ -1,4 +1,3 @@
-from re import M
 from .db import db
 
 animals_tags_joins = db.Table(
