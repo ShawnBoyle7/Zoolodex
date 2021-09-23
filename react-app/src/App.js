@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
+import Animals from './components/Animals';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -28,8 +29,11 @@ function App() {
     <>
       <NavBar />
       <Switch>
-        <Route path='/' exact={true}>
+        <Route path="/" exact={true}>
           <h1>My Home Page</h1>
+        </Route>
+        <Route path="/animals">
+          <Animals/>
         </Route>
       </Switch>
     </>

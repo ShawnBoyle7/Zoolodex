@@ -9,11 +9,11 @@ def seed_animals():
 
     article_template = '{{"origins": "{0}",  "traits": "{1}", "ecosystemInfluence": "{2}" }}'
 
-    origins = faker.text(500)
-    traits = faker.text(500)
-    ecosystem_influence = faker.text(500)
+    origins = faker.text(99)
+    traits = faker.text(99)
+    ecosystem_influence = faker.text(99)
 
-    animals.append(Animal(group="mammal", family="felidae", species="leopard", sub_species="amur_leopard", img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg", article=article_template.format(origins, traits,ecosystem_influence)))
+    animals.append(Animal(group="Mammal", family="Felidae", species="Leopard", sub_species="Amur Leopard", img_url="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg", article=article_template.format(origins, traits,ecosystem_influence)))
 
     for animal in animals:
         db.session.add(animal)
