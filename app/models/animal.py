@@ -10,7 +10,9 @@ class Animal(db.Model):
     species = db.Column(db.String, nullable=False)
     sub_species = db.Column(db.String, nullable=False)
     img_url = db.Column(db.String, nullable=False)
-    article = db.Column(db.String, nullable=False)
+    origins = db.Column(db.String, nullable=False)
+    traits = db.Column(db.String, nullable=False)
+    ecosystem_influence = db.Column(db.String, nullable=False)
 
     sightings = db.relationship("Sighting", back_populates = "animal", cascade="all, delete-orphan")
     comments = db.relationship("Comment", back_populates = "animal", cascade="all, delete-orphan")
@@ -34,7 +36,9 @@ class Animal(db.Model):
         "species": self.species,
         "subSpecies": self.sub_species,
         "imgUrl": self.img_url,
-        "article": self.article,
+        "origins": self.origins,
+        "traits": self.traits,
+        "ecosystemInfluence": self.ecosystem_influence,
         "sightings": sightings,
         "regions": regions,
         "animalTags": animal_tags,
