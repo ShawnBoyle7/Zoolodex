@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import AnimalTile from "../AnimalTile";
 
 const Animal = () => {
     const animals = Object.values(useSelector(state => state.animals))
@@ -34,6 +35,14 @@ const Animal = () => {
 
     return (
         <>
+            <div className="animal-name">
+                <h1>{animal.subSpecies}</h1>
+            </div>
+
+            <div className="animal-image">
+                <img src="https://untamedanimals.com/wp-content/uploads/2021/01/Do-Leopards-Live-In-The-Jungle.jpg"/>
+            </div>
+
             <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
             <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
             <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem Influence</button>
