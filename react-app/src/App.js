@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import NavBar from './components/NavBar';
-import Animals from './components/Animals';
-import Home from './components/Home';
-import Splash from './components/Splash';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
@@ -13,7 +10,11 @@ import { getRegions } from './store/regions';
 import { getComments } from './store/comments';
 import { getSuggestions } from './store/suggestions';
 import { getSightings } from './store/sightings';
+import NavigationBar from './components/NavigationBar/index.';
+import Animals from './components/Animals';
+import Home from './components/Home';
 import Suggestions from './components/Suggestions';
+import Profile from './components/Profile';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,24 +46,23 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavigationBar sessionUser={sessionUser} authenticated={authenticated}/>
       <Switch>
-        {authenticated && 
-        <Route path="/" exact={true}>
-          <Home/>
-        </Route>
-        }
-        {!authenticated && 
-        <Route path="/" exact={true}>
-          <Splash/>
-        </Route>
-        }
-        <Route path="/animals">
-          <Animals/>
-        </Route>
-        <Route path="/suggestions">
-          <Suggestions/>
-        </Route>
+          <Route exact path="/">
+            <Home authenticated={authenticated}/>
+          </Route>
+
+          <ProtectedRoute path="/profile">
+            <Profile/>
+          </ProtectedRoute>
+
+          <Route path="/animals">
+            <Animals/>
+          </Route>
+
+          <Route path="/suggestions">
+            <Suggestions/>
+          </Route>
       </Switch>
     </>
   );

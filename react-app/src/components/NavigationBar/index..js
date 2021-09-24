@@ -1,17 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-import LoginFormModal from "./LoginFormModal"
-import SignUpFormModal from './SignUpFormModal';
-import SuggestionFormModal from './SuggestionFormModal';
+import LogoutButton from '../auth/LogoutButton';
+import LoginFormModal from "../LoginFormModal"
+import SignUpFormModal from '../SignUpFormModal';
+import SuggestionFormModal from '../SuggestionFormModal';
 
-const NavBar = () => {
-  const sessionUser = useSelector(state => state.session.user);
-  const authenticated = sessionUser !== null;
+const NavigationBar = ({ authenticated }) => {
 
   return (
-    <nav>
+    <nav className="nav-bar">
         <div>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
@@ -28,22 +25,22 @@ const NavBar = () => {
           </NavLink>
         </div>
 
-        
-        {!authenticated &&
+        {!authenticated ?
           <div>
             <LoginFormModal/>
             <SignUpFormModal/>
           </div>
-
-        }
-        {authenticated &&
+        :
           <div>
-            <LogoutButton/>
+            <NavLink to='/profile' exact={true} activeClassName='active'>
+              Profile
+            </NavLink>
             <SuggestionFormModal/>
+            <LogoutButton/>
           </div>
         }
     </nav>
   );
 }
 
-export default NavBar;
+export default NavigationBar;
