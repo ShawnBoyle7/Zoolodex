@@ -54,16 +54,16 @@ export const newSuggestion = (type, title, description, imgFile, userId) => asyn
     }
 }
 
-export const editSuggestion = (type, title, description, imgFile, userId) => async (dispatch) => {
+export const editSuggestion = (type, title, description, imgFile, suggestionId) => async (dispatch) => {
     const form = new FormData()
     form.append("type", type)
     form.append("title", title)
     form.append("description", description)
     form.append("img_file", imgFile)
-    form.append("user_id", userId)
+    form.append("suggestion_id", suggestionId)
 
-    const response = await fetch("/api/suggestions/", {
-        method: "POST",
+    const response = await fetch(`/api/suggestions/${suggestionId}`, {
+        method: "PUT",
         body: form
     });
 

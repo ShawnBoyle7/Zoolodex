@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newSuggestion } from "../../store/suggestions";
 
-const SuggestionForm = ({ setShowModal }) => {
+const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
     const dispatch = useDispatch();
 
-    const userId = useSelector(state => state.session.user.id)
+    const suggestion = useSelector(state => state.suggestions[suggestionId])
 
-    const [type, setType] = useState("") 
-    const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
+    const [type, setType] = useState(suggestion?.type) 
+    const [title, setTitle] = useState(suggestion?.title)
+    const [description, setDescription] = useState(suggestion?.description)
     const [imgFile, setImgFile] = useState("")
     const [errors, setErrors] = useState([])
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const data = await dispatch(newSuggestion(type, title, description, imgFile, userId))
+        const data = await dispatch(newSuggestion(type, title, description, imgFile, suggestionId))
         if (data) {
             setErrors(data)
         // Why else here
@@ -115,4 +115,4 @@ const SuggestionForm = ({ setShowModal }) => {
     )
 };
 
-export default SuggestionForm;
+export default EditSuggestionForm;

@@ -49,8 +49,8 @@ def create_suggestion():
         return suggestion.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-@suggestion_routes.route('/', methods=["PUT"])
-# Why does this take an ID
+@suggestion_routes.route("/<int:id>", methods=["PUT"])
+# This takes the ID from the fetch URL?
 def update_suggestion(id):
     suggestion = Suggestion.query.get(id)
 
@@ -62,7 +62,6 @@ def update_suggestion(id):
         type=request.form["type"],
         title=request.form["title"],
         description=request.form["description"],
-        user_id=request.form["user_id"],
         img_file = None
         img_url=suggestion.img_url
 
@@ -84,8 +83,6 @@ def update_suggestion(id):
             suggestion.title = title
         if description:
             suggestion.description = description
-        if user_id:
-            suggestion.user_id = user_id
         if img_url:
             suggestion.img_url = img_url
     

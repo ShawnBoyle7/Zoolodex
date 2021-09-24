@@ -9,7 +9,7 @@ const [showModal, setShowModal] = useState(false)
         <>
             <button onClick={() => setShowModal(true)}>Suggest</button>
             {showModal && (
-            <Modal onClose={() => setShowModal(false)} className="signup-modal">
+            <Modal onClose={() => setShowModal(false)} className="suggestion-modal">
                 <SuggestionForm setShowModal={setShowModal}/>
             </Modal>
             )}
