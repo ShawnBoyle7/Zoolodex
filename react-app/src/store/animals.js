@@ -29,7 +29,6 @@ export const getAnimals = () => async (dispatch) => {
     }
 };
 
-// Reducer
 const initialState = {}
 
 // Reducer takes in a default object as the state, and an action which it retrieves from any returned action creator

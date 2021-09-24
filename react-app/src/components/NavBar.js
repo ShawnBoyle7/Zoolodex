@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import LoginFormModal from "./LoginFormModal"
 import SignUpFormModal from './SignUpFormModal';
+import SuggestionFormModal from './SuggestionFormModal';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -16,6 +17,17 @@ const NavBar = () => {
             Home
           </NavLink>
         </div>
+        <div>
+          <NavLink to='/animals' exact={true} activeClassName='active'>
+            Animals
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to='/suggestions' exact={true} activeClassName='active'>
+            Suggestions
+          </NavLink>
+        </div>
+
         
         {!authenticated &&
           <div>
@@ -27,6 +39,7 @@ const NavBar = () => {
         {authenticated &&
           <div>
             <LogoutButton/>
+            <SuggestionFormModal/>
           </div>
         }
     </nav>
