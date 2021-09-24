@@ -32,22 +32,10 @@ const Suggestions = () => {
     
     return(
         <>
-            <div>
+            <div className="all-suggestions">
                 {suggestions.map(suggestion =>
                     <div key={suggestion?.id}>
                         <SuggestionTile suggestion={suggestion}/>
-                            {sessionUser?.id === suggestion?.userId &&
-                                <div>
-                                    {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the edit form modal */}
-                                    <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>
-                                    {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the delete confirmation modal */}
-                                    <button className="suggestion-delete-button" onClick={renderDeleteModal} id={suggestion.id}>Delete</button>
-                                </div>
-                            }
-                            {/* Once showModal is set to true from the edit button, this modal will render which will pop out a form rather than rendering a new page */}
-                            <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
-                            {/* Once showModal is set to true from the delete button, this modal will render which gives a confirmation button for the delete*/}
-                            <DeleteSuggestionModal suggestionId={suggestionIdDelete} showModal={showDeleteModal} setShowModal={setShowDeleteModal}/>
                     </div>
                 )}
             </div>
