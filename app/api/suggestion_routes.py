@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from app.models import db, Suggestion
-from app.forms.suggestion_form import SuggestionForm
-from app.forms.edit_suggestion_form import EditSuggestionForm
+from app.forms import SuggestionForm
+from app.forms import EditSuggestionForm
 from .utils import validation_errors_to_error_messages
 from werkzeug.utils import secure_filename
 from .aws_s3 import public_file_upload
@@ -15,6 +15,7 @@ def suggestions():
 
     return {"suggestions": [suggestion.to_dict() for suggestion in suggestions]}
 
+# Revisit and comment
 @suggestion_routes.route('/', methods=["POST"])
 def create_suggestion():
     form = SuggestionForm()
@@ -51,8 +52,8 @@ def create_suggestion():
         return suggestion.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+# Revisit and comment
 @suggestion_routes.route("/<int:id>", methods=["PUT"])
-# This takes the ID from the fetch URL?
 def update_suggestion(id):
     form = EditSuggestionForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
