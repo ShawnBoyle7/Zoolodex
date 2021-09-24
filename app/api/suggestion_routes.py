@@ -26,6 +26,7 @@ def create_suggestion():
         if "img_file" in request.files:
             img_file = request.files["img_file"]
 
+        img_url = None
         if img_file:
             try:
                 temp_file_name = "app/api/tmp" + secure_filename(img_file.filename)
@@ -35,7 +36,7 @@ def create_suggestion():
             except KeyError:
                 pass
 
-        img_url = None
+        
         suggestion = Suggestion(
             type=request.form["type"],
             title=request.form["title"],
