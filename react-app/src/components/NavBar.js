@@ -11,7 +11,7 @@ const NavBar = () => {
   const authenticated = sessionUser !== null;
 
   return (
-    <nav>
+    <nav className="nav-bar">
         <div>
           <NavLink to='/' exact={true} activeClassName='active'>
             Home

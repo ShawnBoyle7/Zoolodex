@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const Profile = () => {
     
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser.suggestions)
+    const suggestions = Object.values(useSelector(state => state.suggestions)).filter(suggestion => suggestion.userId === sessionUser.id)
     
     return(
         <>
@@ -15,16 +15,16 @@ const Profile = () => {
             <div className="profile-username">
                 <h2>{sessionUser.username}</h2>
             </div>
-{/* 
+
             <div className="profile-suggestions">
-                {sessionUser.suggestions.map(suggestion => {
-                    <div className="profile-suggestion">
+                {suggestions.map(suggestion => 
+                    <div className="profile-suggestion" key={suggestion.id}>
                         <h3>{suggestion.title}</h3>
-                        <img src={suggestion.img_url}/>
+                        <img src={suggestion.img_url} alt="suggestion"/>
                         <p>{suggestion.description}</p>
                     </div>
-                })}
-            </div> */}
+                )}
+            </div>
         </>
     )
 };
