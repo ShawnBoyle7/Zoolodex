@@ -46,6 +46,7 @@ const Suggestions = () => {
                             }
                             {/* Once showModal is set to true from the edit button, this modal will render which will pop out a form rather than rendering a new page */}
                             <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
+                            {/* Once showModal is set to true from the delete button, this modal will render which gives a confirmation button for the delete*/}
                             <DeleteSuggestionModal suggestionId={suggestionIdDelete} showModal={showDeleteModal} setShowModal={setShowDeleteModal}/>
                     </div>
                 )}

@@ -3,6 +3,7 @@ const clone = rfdc();
 
 const LOAD_SUGGESTIONS = "suggestions/LOAD_SUGGESTIONS";
 const ADD_SUGGESTION = "suggestions/ADD_SUGGESTION";
+const REMOVE_SUGGESTION = "suggestions/REMOVE_SUGGESTION"
 
 const loadSuggestions = (data) => ({
     type: LOAD_SUGGESTIONS,
@@ -12,7 +13,12 @@ const loadSuggestions = (data) => ({
 const addSuggestion = (data) => ({
     type: ADD_SUGGESTION,
     data
-})
+});
+
+const removeSuggestion = (data) => ({
+    type: REMOVE_SUGGESTION,
+    data
+});
 
 export const getSuggestions = () => async (dispatch) => {
     const response = await fetch("/api/suggestions/");
@@ -82,6 +88,28 @@ export const editSuggestion = (type, title, description, imgFile, suggestionId) 
     };
 }
 
+export const deleteSuggestion = (suggestionId) => async (dispatch) => {
+    const response = await fetch(`/api/suggestions/${suggestionId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(removeSuggestion(data))
+        return null;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data.errors
+        };
+    } else {
+        return ["An error occurred. Please try again."]
+    };
+};
+
 const initialState = {}
 
 export default function reducer(state = initialState, action) {
@@ -96,6 +124,9 @@ export default function reducer(state = initialState, action) {
         case ADD_SUGGESTION:
             // Console log this to understand then re-document it
             stateCopy[action.data.id] = action.data;
+            return stateCopy;
+        case REMOVE_SUGGESTION:
+            delete stateCopy[action.data.id]
             return stateCopy;
         default:
             return state;
