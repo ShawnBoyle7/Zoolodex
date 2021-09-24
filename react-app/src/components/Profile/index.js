@@ -9,7 +9,7 @@ const Profile = () => {
     return(
         <>
             <div className="profile-image">
-                <img src={sessionUser.img_url} alt="profile"/>
+                <img src={sessionUser.imgUrl} alt="profile"/>
             </div>
 
             <div className="profile-username">
@@ -20,7 +20,7 @@ const Profile = () => {
                 {suggestions.map(suggestion => 
                     <div className="profile-suggestion" key={suggestion.id}>
                         <h3>{suggestion.title}</h3>
-                        <img src={suggestion.img_url} alt="suggestion"/>
+                        <img src={suggestion.imgUrl} alt="suggestion"/>
                         <p>{suggestion.description}</p>
                     </div>
                 )}
