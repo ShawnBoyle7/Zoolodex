@@ -10,12 +10,12 @@ const SuggestionForm = ({ setShowModal }) => {
     const [type, setType] = useState("") 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
-    const [imgUrl, setImgUrl] = useState("test")
+    const [imgFile, setImgFile] = useState("test")
     const [errors, setErrors] = useState([])
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const data = await dispatch(newSuggestion(type, title, description, imgUrl, userId))
+        const data = await dispatch(newSuggestion(type, title, description, imgFile, userId))
         if (data) {
             setErrors(data)
         // Why else here
@@ -34,6 +34,11 @@ const SuggestionForm = ({ setShowModal }) => {
 
     const updateDescription = (e) => {
         setDescription(e.target.value)
+    }
+
+    const updateImgFile = (e) => {
+        const file = e.target.files[0]
+        setImgFile(file)
     }
 
     return(
@@ -90,8 +95,17 @@ const SuggestionForm = ({ setShowModal }) => {
                     name="description"
                     onChange={updateDescription}
                     value={description}
-                    placeholder="Tell us more about it!"
+                    placeholder="Tell us more"
                     required={true}/>
+            </div>
+
+            <div className="form-img-upload">
+                <label>Show us!</label>
+                <input
+                    type="file"
+                    name="imgFile"
+                    onChange={updateImgFile}
+                    required={false}/>
             </div>
             <div>
                 <button type="submit">Submit</button>
