@@ -13,6 +13,7 @@ import { getRegions } from './store/regions';
 import { getComments } from './store/comments';
 import { getSuggestions } from './store/suggestions';
 import { getSightings } from './store/sightings';
+import Suggestions from './components/Suggestions';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,6 +59,9 @@ function App() {
         }
         <Route path="/animals">
           <Animals/>
+        </Route>
+        <Route path="/suggestions">
+          <Suggestions/>
         </Route>
       </Switch>
     </>

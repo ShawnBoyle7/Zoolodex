@@ -1,10 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import SuggestionTile from "../SuggestionTile";
 
 const Suggestions = () => {
 
+    const suggestions = Object.values(useSelector(state => state.suggestions)) 
+    
     return(
         <>
-            <h1>Suggestions</h1>
+            <div>
+                {suggestions.map(suggestion =>
+                    <SuggestionTile suggestion={suggestion} key={suggestion.id}/>
+                )}
+            </div>
         </>
     )
 };

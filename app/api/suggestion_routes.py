@@ -11,6 +11,7 @@ def suggestions():
 
     return {"suggestions": [suggestion.to_dict() for suggestion in suggestions]}
 
+# REFACTOR FOR AWS
 @suggestion_routes.route('/', methods=["POST"])
 def post_suggestion():
 

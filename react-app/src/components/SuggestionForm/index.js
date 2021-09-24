@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newSuggestion } from "../../store/suggestions";
 
-const SuggestionForm = () => {
+const SuggestionForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
 
     const userId = useSelector(state => state.session.user.id)
@@ -10,14 +10,17 @@ const SuggestionForm = () => {
     const [type, setType] = useState("") 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
-    const [imgUrl, setImgUrl] = useState("")
+    const [imgUrl, setImgUrl] = useState("test")
     const [errors, setErrors] = useState([])
 
-    const handleSubmit = () => {
-        e.preventDefault()
+    const onSubmit = async (e) => {
+        e.preventDefault();
         const data = await dispatch(newSuggestion(type, title, description, imgUrl, userId))
         if (data) {
             setErrors(data)
+        // Why else here
+        } else {
+            setShowModal(false)
         }
     };
 
@@ -34,23 +37,25 @@ const SuggestionForm = () => {
     }
 
     return(
-        <form onSubmit={handleSubmit} className="suggestion-form">
+        <form onSubmit={onSubmit} className="suggestion-form">
+            <h2>Suggestion Form</h2>
             <div className="form-errors">
                 {errors.map((error, idx) => 
                 <div className="form-error" key={idx}>
                     {error}
                 </div>)}
             </div>
-            {/* I want to add a required here later */}
             <div className="form-radio">
                 <label>
                     <input 
                         type="radio"
                         // I forget what name is for, I think to connect the label/input?
                         name="type"
-                        value="option1"
+                        value="animal"
                         onChange={updateType}
-                        checked={type === "option1"}/>
+                        checked={type === "animal"}
+                        required={true}/>
+                    Animal
                 </label>
             </div>
 
@@ -60,9 +65,11 @@ const SuggestionForm = () => {
                         type="radio"
                         // I forget what name is for, I think to connect the label/input?
                         name="type"
-                        value="option2"
+                        value="region"
                         onChange={updateType}
-                        checked={type === "option2"}/>
+                        checked={type === "region"}
+                        required={true}/>
+                    Region
                 </label>
             </div>
 
@@ -73,6 +80,7 @@ const SuggestionForm = () => {
                     onChange={updateTitle}
                     // I forgot how value is used here
                     value={title}
+                    placeholder="Name"
                     required={true}/>
             </div>
 
@@ -82,7 +90,12 @@ const SuggestionForm = () => {
                     name="description"
                     onChange={updateDescription}
                     value={description}
+                    placeholder="Tell us more about it!"
                     required={true}/>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <button onClick={() => setShowModal(false)}>Cancel</button>
             </div>
         </form>
     )

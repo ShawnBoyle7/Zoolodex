@@ -24,8 +24,9 @@ export const getSuggestions = () => async (dispatch) => {
     };
 };
 
+// REFACTOR FOR AWS
 export const newSuggestion = (type, title, description, imgUrl, userId) => async (dispatch) => {
-    const response = await fetch("/api/suggestions", {
+    const response = await fetch("/api/suggestions/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
