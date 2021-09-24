@@ -95,12 +95,12 @@ const SuggestionForm = ({ setShowModal }) => {
                     name="description"
                     onChange={updateDescription}
                     value={description}
-                    placeholder="Tell us more about it!"
+                    placeholder="Tell us more"
                     required={true}/>
             </div>
 
             <div className="form-img-upload">
-                <label>Upload Image</label>
+                <label>Show us!</label>
                 <input
                     type="file"
                     name="imgFile"

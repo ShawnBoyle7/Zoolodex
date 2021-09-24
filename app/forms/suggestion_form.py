@@ -6,5 +6,4 @@ class SuggestionForm(FlaskForm):
     type = RadioField("type", choices=[("animal", "animal"), ("region", "region")], validators=[DataRequired()])
     title = StringField("title", validators=[DataRequired()])
     description = StringField("description", validators=[DataRequired()])
-    img_url = StringField("img_url", validators=[DataRequired()])
     user_id = IntegerField("user_id", validators=[DataRequired()])
