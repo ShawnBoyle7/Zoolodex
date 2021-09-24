@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.models import db, Comment
-from app.forms import CommentForm
+from app.forms import CommentForm, EditCommentForm
 from .utils import validation_errors_to_error_messages
 
 comment_routes = Blueprint("comments", __name__)
@@ -37,5 +37,21 @@ def new_comment():
         return comment.to_dict()
         
     # If the form had validation errors, we return a dictionary with a key of errors and each error as a value, with a 401 error code.
+    return {"errors": validation_errors_to_error_messages(form.errors)}, 401
+
+@comment_routes.route("/<int:id>", methods=["PUT"])
+def edit_comment(id):
+    comment = Comment.query.get(id)
+
+    form = EditCommentForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        comment.content=form.data["content"]
+
+        db.session.commit()
+
+        return comment.to_dict()
+
     return {"errors": validation_errors_to_error_messages(form.errors)}, 401
 
