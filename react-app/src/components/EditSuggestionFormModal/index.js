@@ -7,7 +7,7 @@ function EditSuggestionFormModal({ suggestionId, showModal, setShowModal }) {
     return (
     <>
         {showModal && (
-        <Modal onClose={() => setShowModal(false)} className="suggestion-modal">
+        <Modal onClose={() => setShowModal(false)}>
             <EditSuggestionForm setShowModal={setShowModal} suggestionId={suggestionId}/>
         </Modal>
         )}

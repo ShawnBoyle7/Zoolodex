@@ -3,6 +3,7 @@ const clone = rfdc();
 
 const LOAD_SUGGESTIONS = "suggestions/LOAD_SUGGESTIONS";
 const ADD_SUGGESTION = "suggestions/ADD_SUGGESTION";
+const REMOVE_SUGGESTION = "suggestions/REMOVE_SUGGESTION"
 
 const loadSuggestions = (data) => ({
     type: LOAD_SUGGESTIONS,
@@ -12,7 +13,12 @@ const loadSuggestions = (data) => ({
 const addSuggestion = (data) => ({
     type: ADD_SUGGESTION,
     data
-})
+});
+
+const removeSuggestion = (suggestionId) => ({
+    type: REMOVE_SUGGESTION,
+    suggestionId
+});
 
 export const getSuggestions = () => async (dispatch) => {
     const response = await fetch("/api/suggestions/");
@@ -82,6 +88,17 @@ export const editSuggestion = (type, title, description, imgFile, suggestionId) 
     };
 }
 
+export const deleteSuggestion = (suggestionId) => async (dispatch) => {
+    const response = await fetch(`/api/suggestions/${suggestionId}`, {
+        method: "DELETE",
+    });
+
+    if (response.ok) {
+        dispatch(removeSuggestion(suggestionId))
+        return null;
+    }
+};
+
 const initialState = {}
 
 export default function reducer(state = initialState, action) {
@@ -96,6 +113,9 @@ export default function reducer(state = initialState, action) {
         case ADD_SUGGESTION:
             // Console log this to understand then re-document it
             stateCopy[action.data.id] = action.data;
+            return stateCopy;
+        case REMOVE_SUGGESTION:
+            delete stateCopy[action.suggestionId]
             return stateCopy;
         default:
             return state;
