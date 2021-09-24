@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { newComment } from "../../store/comments";
+
+const CommentForm = ({ animal, sighting }) => {
+    const dispatch = useDispatch();
+    
+    const userId = useSelector(state => state.session?.user?.id);
+
+    const [content, setContent] = useState("");
+    const [errors, setErrors] = useState([])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        // Sighting placeholder
+        const data = await dispatch(newComment(content, userId, animal?.id, sighting?.id ))
+        
+        if (data) {
+            setErrors(data)
+        }
+    };
+
+    const updateContent = (e) => {
+        setContent(e.target.value)
+    }
+
+    return (
+        <form className="comment-form" onSubmit={handleSubmit}>
+            <div className="form-errors">
+                {errors?.map((error, idx) => 
+                    <div className="form-error" key={idx}>
+                        {error}
+                    </div>)}
+            </div>
+
+            <div className="comment-content-input">
+                <input 
+                    type="text"
+                    name="content"
+                    placeholder="Write your comment here"
+                    onChange={updateContent}
+                    value={content}
+                    required={true}/>
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    );
+};
+
+export default CommentForm;

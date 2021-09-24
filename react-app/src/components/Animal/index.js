@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CommentForm from "../CommentForm";
+import Comments from "../Comments";
 
 const Animal = () => {
     // const article = JSON.parse(animal?.article)
@@ -9,7 +11,7 @@ const Animal = () => {
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
     
-    const [showOrigins, setShowOrigins] = useState(false)
+    const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
     const [showEcosystemInfluence, setShowEcosystemInfluence] = useState(false)
     
@@ -64,6 +66,12 @@ const Animal = () => {
                     {animal.ecosystemInfluence}
                 </div>
             }
+            <div>
+                {/* Sighting placeholder */}
+                <h2>Comments</h2>
+                <CommentForm animal={animal} sighting={null}/>
+                <Comments animalId={animal.id}/>
+            </div>
         </>
     )
 }
