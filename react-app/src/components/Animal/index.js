@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CommentForm from "../CommentForm";
 
 const Animal = () => {
     // const article = JSON.parse(animal?.article)
@@ -64,6 +65,9 @@ const Animal = () => {
                     {animal.ecosystemInfluence}
                 </div>
             }
+            <div>
+                <CommentForm animalId={animal.id}/>
+            </div>
         </>
     )
 }
