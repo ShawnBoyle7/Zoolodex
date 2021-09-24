@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CommentForm from "../CommentForm";
+import Comments from "../Comments";
 
 const Animal = () => {
     // const article = JSON.parse(animal?.article)
@@ -69,6 +70,7 @@ const Animal = () => {
                 {/* Sighting placeholder */}
                 <h2>Comments</h2>
                 <CommentForm animal={animal} sighting={null}/>
+                <Comments animalId={animal.id}/>
             </div>
         </>
     )
