@@ -15,9 +15,9 @@ const addSuggestion = (data) => ({
     data
 });
 
-const removeSuggestion = (data) => ({
+const removeSuggestion = (suggestionId) => ({
     type: REMOVE_SUGGESTION,
-    data
+    suggestionId
 });
 
 export const getSuggestions = () => async (dispatch) => {
@@ -91,23 +91,12 @@ export const editSuggestion = (type, title, description, imgFile, suggestionId) 
 export const deleteSuggestion = (suggestionId) => async (dispatch) => {
     const response = await fetch(`/api/suggestions/${suggestionId}`, {
         method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        }
     });
 
     if (response.ok) {
-        const data = await response.json();
-        dispatch(removeSuggestion(data))
+        dispatch(removeSuggestion(suggestionId))
         return null;
-    } else if (response.status < 500) {
-        const data = await response.json();
-        if (data.errors) {
-            return data.errors
-        };
-    } else {
-        return ["An error occurred. Please try again."]
-    };
+    }
 };
 
 const initialState = {}
@@ -126,7 +115,7 @@ export default function reducer(state = initialState, action) {
             stateCopy[action.data.id] = action.data;
             return stateCopy;
         case REMOVE_SUGGESTION:
-            delete stateCopy[action.data.id]
+            delete stateCopy[action.suggestionId]
             return stateCopy;
         default:
             return state;

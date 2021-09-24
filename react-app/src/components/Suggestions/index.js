@@ -34,9 +34,9 @@ const Suggestions = () => {
         <>
             <div>
                 {suggestions.map(suggestion =>
-                    <div key={suggestion.id}>
+                    <div key={suggestion?.id}>
                         <SuggestionTile suggestion={suggestion}/>
-                            {sessionUser.id === suggestion.userId &&
+                            {sessionUser?.id === suggestion?.userId &&
                                 <div>
                                     {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the edit form modal */}
                                     <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>

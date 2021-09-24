@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Modal } from '../../context/Modal';
+import { deleteSuggestion } from "../../store/suggestions";
 
 function DeleteSuggestionModal({ suggestionId, setShowModal, showModal }) {
     const dispatch = useDispatch();

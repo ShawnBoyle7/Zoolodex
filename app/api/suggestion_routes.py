@@ -90,3 +90,11 @@ def update_suggestion(id):
         return suggestion.to_dict()
 
     return {"errors": validation_errors_to_error_messages(form.errors)}, 401
+
+@suggestion_routes.route("/<int:id>", methods=["DELETE"])
+def delete_suggestion(id):
+    suggestion = Suggestion.query.get(id)
+    db.session.delete(suggestion)
+    db.session.commit()
+
+    return {"message": "Suggestion Deleted"}
