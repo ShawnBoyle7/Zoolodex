@@ -1,7 +1,7 @@
-import React from "react";
+import React, { } from "react";
 
 const SuggestionTile = ({ suggestion }) => {
-
+    
     return (
         <div className="suggestion-div">
             <div className="suggestion-tile-title">
