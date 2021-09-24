@@ -18,6 +18,11 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div>
+          <NavLink to='/profile' exact={true} activeClassName='active'>
+            Profile
+          </NavLink>
+        </div>
+        <div>
           <NavLink to='/animals' exact={true} activeClassName='active'>
             Animals
           </NavLink>
@@ -28,7 +33,6 @@ const NavBar = () => {
           </NavLink>
         </div>
 
-        
         {!authenticated &&
           <div>
             <LoginFormModal/>
