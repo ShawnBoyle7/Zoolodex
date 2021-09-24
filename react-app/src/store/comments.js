@@ -56,7 +56,30 @@ export const newComment = (content, userId, animalId, sightingId) => async (disp
     } else {
         return ["An error occurred. Please try again."]
     }
-}; 
+};
+
+export const editComment = (content, commentId) => async (dispatch) => {
+    const response = await fetch(`/api/comments/${commentId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: content
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(newComment(data))
+        return null;
+    } else if (response.status < 500) {
+        const data = await response.json();
+        if (data.errors) {
+            return data.errors;
+        }
+    } else {
+        return ["An error occurred. Please try again."]
+    }
+};
 
 const initialState = {}
 
