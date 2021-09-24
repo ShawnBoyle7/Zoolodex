@@ -27,11 +27,12 @@ const Suggestions = () => {
                                     <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>
                                 </div>
                             }
+                            <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
                     </div>
                 )}
             </div>
 
-            <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
+            
         </>
     )
 };

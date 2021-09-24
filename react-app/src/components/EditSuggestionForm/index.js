@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { newSuggestion } from "../../store/suggestions";
+import { editSuggestion } from "../../store/suggestions";
 
 const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
     const dispatch = useDispatch();
+
+    // console.log(suggestionId)
 
     const suggestion = useSelector(state => state.suggestions[suggestionId])
 
@@ -15,7 +17,7 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const data = await dispatch(newSuggestion(type, title, description, imgFile, suggestionId))
+        const data = await dispatch(editSuggestion(type, title, description, imgFile, suggestionId))
         if (data) {
             setErrors(data)
         // Why else here

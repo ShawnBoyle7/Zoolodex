@@ -7,7 +7,7 @@ class Suggestion(db.Model):
     type = db.Column(db.String, nullable=False)
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
-    img_url = db.Column(db.String, nullable=False)
+    img_url = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     user = db.relationship("User", back_populates = "suggestions")

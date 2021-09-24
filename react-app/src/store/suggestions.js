@@ -65,7 +65,7 @@ export const editSuggestion = (type, title, description, imgFile, suggestionId) 
     const response = await fetch(`/api/suggestions/${suggestionId}`, {
         method: "PUT",
         body: form
-    });
+    }); 
 
     if (response.ok) {
         const data = await response.json();

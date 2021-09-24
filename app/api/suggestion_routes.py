@@ -1,7 +1,7 @@
-from app.forms.edit_suggestion_form import EditSuggestionForm
 from flask import Blueprint, request
 from app.models import db, Suggestion
 from app.forms.suggestion_form import SuggestionForm
+from app.forms.edit_suggestion_form import EditSuggestionForm
 from .utils import validation_errors_to_error_messages
 from werkzeug.utils import secure_filename
 from .aws_s3 import public_file_upload
@@ -18,11 +18,11 @@ def suggestions():
 @suggestion_routes.route('/', methods=["POST"])
 def create_suggestion():
     form = SuggestionForm()
+
     form["csrf_token"].data = request.cookies["csrf_token"]
     if form.validate_on_submit():
 
         img_file = None
-
         if "img_file" in request.files:
             img_file = request.files["img_file"]
 
@@ -35,12 +35,13 @@ def create_suggestion():
             except KeyError:
                 pass
 
+        img_url = None
         suggestion = Suggestion(
             type=request.form["type"],
             title=request.form["title"],
             description=request.form["description"],
             user_id=request.form["user_id"],
-            img_url=img_url
+            img_url=img_url 
         )
 
         db.session.add(suggestion)
@@ -52,19 +53,17 @@ def create_suggestion():
 @suggestion_routes.route("/<int:id>", methods=["PUT"])
 # This takes the ID from the fetch URL?
 def update_suggestion(id):
-    suggestion = Suggestion.query.get(id)
-
     form = EditSuggestionForm()
-    form["csrf_token"].data = request.cookies("csrf_token")
+    form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
+        suggestion = Suggestion.query.get(id)
 
         type=request.form["type"],
         title=request.form["title"],
         description=request.form["description"],
         img_file = None
         img_url=suggestion.img_url
-
         if "img_file" in request.files:
             img_file = request.files["img_file"]
 
