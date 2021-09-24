@@ -11,7 +11,7 @@ const Animal = () => {
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
     
-    const [showOrigins, setShowOrigins] = useState(false)
+    const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
     const [showEcosystemInfluence, setShowEcosystemInfluence] = useState(false)
     

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { newComment } from "../../store/comments";
+import { useDispatch, useSelector } from "react-redux";
+import { editComment } from "../../store/comments";
 
-const CommentForm = ({ animal, sighting }) => {
+const EditCommentForm = ({ commentId, setShowModal }) => {
     const dispatch = useDispatch();
-    
-    const userId = useSelector(state => state.session.user.id);
 
-    const [content, setContent] = useState("");
+    const comment = useSelector(state => state.comments[commentId])
+
+    const [content, setContent] = useState(comment?.content);
     const [errors, setErrors] = useState([])
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         // Sighting placeholder
-        const data = await dispatch(newComment(content, userId, animal?.id, sighting?.id ))
+        const data = await dispatch(editComment(content, commentId))
         
         if (data) {
             setErrors(data)
@@ -44,10 +45,11 @@ const CommentForm = ({ animal, sighting }) => {
             </div>
 
             <div>
-                <button type="submit">Submit</button>
+                <button onClick={() => setShowModal(false)} type="submit">Submit</button>
+                <button onClick={() => setShowModal(false)}>Cancel</button>
             </div>
         </form>
     );
 };
 
-export default CommentForm;
+export default EditCommentForm;

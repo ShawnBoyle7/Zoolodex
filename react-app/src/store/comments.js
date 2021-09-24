@@ -64,12 +64,14 @@ export const editComment = (content, commentId) => async (dispatch) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: content
+        body: JSON.stringify({
+            content: content
+        })
     });
 
     if (response.ok) {
         const data = await response.json();
-        dispatch(newComment(data))
+        dispatch(addComment(data))
         return null;
     } else if (response.status < 500) {
         const data = await response.json();

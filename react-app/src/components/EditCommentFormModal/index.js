@@ -1,18 +1,18 @@
 import React from "react";
 import { Modal } from "../../context/Modal";
-import EditSuggestionForm from "../EditSuggestionForm";
+import EditCommentForm from "../EditCommentForm";
 
-function EditSuggestionFormModal({ suggestionId, showModal, setShowModal }) {
+function EditCommentFormModal({ commentId, showModal, setShowModal }) {
 
     return (
     <>
         {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-            <EditSuggestionForm setShowModal={setShowModal} suggestionId={suggestionId}/>
+            <EditCommentForm setShowModal={setShowModal} commentId={commentId}/>
         </Modal>
         )}
     </>
     )
 }
 
-export default EditSuggestionFormModal;
+export default EditCommentFormModal;

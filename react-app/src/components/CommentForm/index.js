@@ -5,7 +5,7 @@ import { newComment } from "../../store/comments";
 const CommentForm = ({ animal, sighting }) => {
     const dispatch = useDispatch();
     
-    const userId = useSelector(state => state.session.user.id);
+    const userId = useSelector(state => state.session?.user?.id);
 
     const [content, setContent] = useState("");
     const [errors, setErrors] = useState([])
