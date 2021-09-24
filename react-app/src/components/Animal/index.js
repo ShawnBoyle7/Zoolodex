@@ -66,7 +66,9 @@ const Animal = () => {
                 </div>
             }
             <div>
-                <CommentForm animalId={animal.id}/>
+                {/* Sighting placeholder */}
+                <h2>Comments</h2>
+                <CommentForm animal={animal} sighting={null}/>
             </div>
         </>
     )

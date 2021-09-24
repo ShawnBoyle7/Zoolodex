@@ -1,15 +1,8 @@
-// Imports
-// State variables
-// handleSubmit
-// Input fields
-// Commenting on animal article vs sighting?
-
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { newComment } from "../../store/comments";
 
-// ID's as props?
-const CommentForm = ({ animalId }) => {
+const CommentForm = ({ animal, sighting }) => {
     const dispatch = useDispatch();
     
     const userId = useSelector(state => state.session.user.id);
@@ -19,7 +12,8 @@ const CommentForm = ({ animalId }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const data = await dispatch(newComment(content, userId, animalId))
+        // Sighting placeholder
+        const data = await dispatch(newComment(content, userId, animal?.id, sighting?.id ))
         
         if (data) {
             setErrors(data)
@@ -45,7 +39,8 @@ const CommentForm = ({ animalId }) => {
                     name="content"
                     placeholder="Write your comment here"
                     onChange={updateContent}
-                    value={content}/>
+                    value={content}
+                    required={true}/>
             </div>
 
             <div>
