@@ -28,6 +28,19 @@ export const authenticate = () => async (dispatch) => {
   }
 }
 
+export const demo = () => async (dispatch) => {
+  const response = await fetch('/api/auth/demo')
+
+  if (response.ok) {
+    const data = await response.json();
+    if (data.errors) {
+      return;
+    }
+
+    dispatch(setUser(data))
+  }
+}
+
 export const login = (email, password) => async (dispatch) => {
   const response = await fetch('/api/auth/login', {
     method: 'POST',
