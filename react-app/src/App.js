@@ -52,9 +52,9 @@ function App() {
             <Home authenticated={authenticated}/>
           </Route>
 
-          <ProtectedRoute path="/profile">
+          <Route path="/users/:userId">
             <Profile/>
-          </ProtectedRoute>
+          </Route>
 
           <Route path="/animals">
             <Animals/>
