@@ -8,7 +8,7 @@ def seed_users():
         username='GreekLife', email='chadwickrules@chadwick.io', first_name="Chadwick", last_name="Dezin", img_url="https://i.imgur.com/tGthvVP.png", password='password')
     roman = User(
         username='BigRome', email='the_rome@roman.io', first_name="Roman", last_name="Montera", img_url="https://i.imgur.com/tGthvVP.png", password='password')
-
+    
     db.session.add(demo)
     db.session.add(chadwick)
     db.session.add(roman)

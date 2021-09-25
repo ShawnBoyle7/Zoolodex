@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import ProtectedRoute from './components/Authentication/ProtectedRoute';
+// import ProtectedRoute from './components/Authentication/ProtectedRoute';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
@@ -15,6 +15,7 @@ import Animals from './components/Animals';
 import Home from './components/Home';
 import Suggestions from './components/Suggestions';
 import Profile from './components/Profile';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +23,8 @@ function App() {
   
   const sessionUser = useSelector(state => state.session.user);
   const authenticated = sessionUser !== null;
+
+
 
   // What is all this? Any time one of these dispatches is called it will listen to that and run them?
   useEffect(() => {
@@ -51,10 +54,11 @@ function App() {
           <Route exact path="/">
             <Home authenticated={authenticated}/>
           </Route>
-
+          
           <Route path="/users/:userId">
             <Profile/>
           </Route>
+          
 
           <Route path="/animals">
             <Animals/>
@@ -62,6 +66,9 @@ function App() {
 
           <Route path="/suggestions">
             <Suggestions/>
+          </Route>
+          <Route>
+            <PageNotFound/>
           </Route>
       </Switch>
     </>
