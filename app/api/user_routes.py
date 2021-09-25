@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required
 from werkzeug.utils import secure_filename
 from app.models import db, User
-from app.forms import EditSuggestionForm
+from app.forms import EditUserForm
 from .utils import validation_errors_to_error_messages
 from werkzeug.utils import secure_filename
 from .aws_s3 import public_file_upload
@@ -25,7 +25,7 @@ def user(id):
 
 @user_routes.route('/<int:id>', methods=["PUT"])
 def edit_user(id):
-    form = EditSuggestionForm()
+    form = EditUserForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
     if form.validate_on_submit():
@@ -55,7 +55,7 @@ def edit_user(id):
         if email:
             user.email = email
         if username:
-            user.username = email
+            user.username = username
         if first_name:
             user.first_name = first_name
         if last_name:

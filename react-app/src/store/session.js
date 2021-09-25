@@ -121,12 +121,12 @@ export const editUser = (email, username, firstName, lastName, password, imgFile
     form.append("user_id", userId)
   
     const response = await fetch(`/api/users/${userId}`, {
-      method="PUT",
+      method: "PUT",
       body: form
     });
 
     if (response.ok) {
-      data = await response.json(); 
+      const data = await response.json(); 
       dispatch(setUser(data))
       return null;
     } else if (response.status < 500) {
