@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import EditSuggestionFormModal from "../EditSuggestionFormModal";
 import DeleteSuggestionModal from "../DeleteSuggestionModal";
+import { Link } from "react-router-dom"
 
 const SuggestionTile = ({ suggestion }) => {
 
@@ -15,6 +16,7 @@ const SuggestionTile = ({ suggestion }) => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const sessionUser = useSelector(state => state.session.user)
+    const users = Object.values(useSelector(state => state.users))
 
     // Function to set our ID state variable to the suggestion ID that we store on the edit button
     const renderEditModal = (e) => {
@@ -31,7 +33,11 @@ const SuggestionTile = ({ suggestion }) => {
     return (
         <div className="suggestion-div">
             <div className="suggestion-tile-title">
-                <h2>{suggestion.title}</h2>
+                <h2>
+                    <Link to={`/users/${suggestion.userId}`}>
+                        {users[suggestion.userId].username}
+                    </Link> Suggested the {suggestion.title}
+                </h2>
             </div>
 
             <div className="suggestion-tile-image">
