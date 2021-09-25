@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
+import LogoutButton from '../Authentication/LogoutButton';
 import LoginFormModal from "../LoginFormModal"
 import SignUpFormModal from '../SignUpFormModal';
 import SuggestionFormModal from '../SuggestionFormModal';
 import { demo } from '../../store/session';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AboutModal from '../AboutModal';
 
 const NavigationBar = ({ authenticated }) => {
     const dispatch = useDispatch();
+
+    const sessionUser = useSelector(state => state.session.user)
 
     const loginDemo = async () => {
       dispatch(demo())
@@ -43,7 +45,7 @@ const NavigationBar = ({ authenticated }) => {
             </div>
           :
             <div>
-              <NavLink to='/profile' exact={true} activeClassName='active'>
+              <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
                 Profile
               </NavLink>
               <SuggestionFormModal/>

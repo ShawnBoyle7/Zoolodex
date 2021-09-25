@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import ProtectedRoute from './components/auth/ProtectedRoute';
+import ProtectedRoute from './components/Authentication/ProtectedRoute';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
@@ -52,9 +52,9 @@ function App() {
             <Home authenticated={authenticated}/>
           </Route>
 
-          <ProtectedRoute path="/profile">
+          <Route path="/users/:userId">
             <Profile/>
-          </ProtectedRoute>
+          </Route>
 
           <Route path="/animals">
             <Animals/>
