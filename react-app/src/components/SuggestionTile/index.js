@@ -31,11 +31,14 @@ const SuggestionTile = ({ suggestion }) => {
     }
 
     return (
-        <div className="suggestion-div">
+        <div className="suggestion-tile">
             <div className="suggestion-tile-title">
                 <h2>
                     <Link to={`/users/${suggestion.userId}`}>
-                        {users[suggestion.userId].username}
+                        {/* {console.log("USERS", users)} */}
+                        {/* {console.log(users[suggestion.userId])} */}
+                        {/* Seeds are indexed from 1 but my store indexes from 0, is this a bandaid fix? */}
+                        {users[suggestion.userId -1].username}
                     </Link> Suggested the {suggestion.title}
                 </h2>
             </div>
