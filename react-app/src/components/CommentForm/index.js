@@ -18,6 +18,7 @@ const CommentForm = ({ animal, sighting }) => {
         if (data) {
             setErrors(data)
         }
+        setContent("")
     };
 
     const updateContent = (e) => {
@@ -34,13 +35,11 @@ const CommentForm = ({ animal, sighting }) => {
             </div>
 
             <div className="comment-content-input">
-                <input 
-                    type="text"
+                <textarea
                     name="content"
                     placeholder="Write your comment here"
                     onChange={updateContent}
-                    value={content}
-                    required={true}/>
+                    value={content}/>
             </div>
 
             <div>
