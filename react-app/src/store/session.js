@@ -139,6 +139,19 @@ export const editUser = (email, username, firstName, lastName, password, imgFile
     }
 };
 
+export const deleteUser = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/auth/${userId}`, {
+      method: "DELETE"
+    });
+
+    if (response.ok) {
+      dispatch(removeUser(userId))
+      return null;
+    } else {
+      return "Error deleting user"
+    }
+}
+
 export default function reducer(state = initialState, action) {
     switch (action.type) {
       case SET_USER:

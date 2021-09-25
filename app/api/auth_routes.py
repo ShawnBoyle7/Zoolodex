@@ -77,7 +77,15 @@ def sign_up():
         login_user(user)
         return user.session_to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    
 
+@auth_routes.route("/<int:id>", methods=["DELETE"])
+def delete_user(id):
+    user = User.query.get(id)
+    db.session.delete(user)
+    db.session.commit()
+
+    return {"message": "User Deleted"}
 
 @auth_routes.route('/unauthorized')
 def unauthorized():
