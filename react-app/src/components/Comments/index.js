@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import EditCommentFormModal from "../EditCommentFormModal";
+import DeleteCommentModal from "../DeleteCommentModal";
 
 const Comments = ({ animalId }) => {
 
@@ -35,7 +36,7 @@ const Comments = ({ animalId }) => {
                         {comment.userId === userId && 
                             <div>
                                 <button className="comment-edit-button" onClick={renderEditModal} id={comment.id}>Edit</button>
-                                {/* <button className="comment-delete-button" onClick={renderDeleteModal} id={comment.id}>Delete</button> */}
+                                <button className="comment-delete-button" onClick={renderDeleteModal} id={comment.id}>Delete</button>
                             </div>
                         }
                     </div>
@@ -43,7 +44,7 @@ const Comments = ({ animalId }) => {
             </div>
 
             <EditCommentFormModal commentId={commentIdEdit} setShowModal={setShowEditModal} showModal={showEditModal}/>
-            {/* <DeleteCommentModal commentId={commentIdDelete} setShowModal={setShowDeleteModal} showModal={showDeleteModal}/> */}
+            <DeleteCommentModal commentId={commentIdDelete} setShowModal={setShowDeleteModal} showModal={showDeleteModal}/>
 
             
         </>

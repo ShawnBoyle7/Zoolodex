@@ -3,6 +3,7 @@ const clone = rfdc();
 
 const LOAD_COMMENTS = "comments/LOAD_COMMENTS";
 const ADD_COMMENT = "comments/ADD_COMMENT"
+const REMOVE_COMMENT = "comments/REMOVE_COMMENT"
 
 const loadComments = (data) => ({
     type: LOAD_COMMENTS,
@@ -12,6 +13,11 @@ const loadComments = (data) => ({
 const addComment = (data) =>  ({
     type: ADD_COMMENT,
     data
+});
+
+const removeComment = (commentId) => ({
+    type: REMOVE_COMMENT,
+    commentId
 });
 
 export const getComments = () => async (dispatch) => {
@@ -83,6 +89,19 @@ export const editComment = (content, commentId) => async (dispatch) => {
     }
 };
 
+export const deleteComment = (commentId) => async (dispatch) => {
+    const response = await fetch(`/api/comments/${commentId}`, {
+        method: "DELETE"
+    });
+
+    if (response.ok) {
+        dispatch(removeComment(commentId))
+        return null;
+    } else {
+        return "Error deleting comment"
+    }
+};
+
 const initialState = {}
 
 export default function reducer(state = initialState, action) {
@@ -96,6 +115,9 @@ export default function reducer(state = initialState, action) {
             return stateCopy;
         case ADD_COMMENT:
             stateCopy[action.data.id] = action.data
+            return stateCopy;
+        case REMOVE_COMMENT:
+            delete stateCopy[action.commentId]
             return stateCopy;
         default:
             return state;

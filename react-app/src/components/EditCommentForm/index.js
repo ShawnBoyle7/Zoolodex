@@ -19,6 +19,8 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
         if (data) {
             setErrors(data)
         }
+        setContent("")
+        setShowModal(false)
     };
 
     const updateContent = (e) => {
@@ -35,18 +37,16 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
             </div>
 
             <div className="comment-content-input">
-                <input 
-                    type="text"
+                <textarea
                     name="content"
                     placeholder="Write your comment here"
                     onChange={updateContent}
-                    value={content}
-                    required={true}/>
+                    value={content}/>
             </div>
 
             <div>
-                <button onClick={() => setShowModal(false)} type="submit">Submit</button>
-                <button onClick={() => setShowModal(false)}>Cancel</button>
+                <button type="submit">Edit</button>
+                <button onClick={() => setShowModal(false)} type="button">Cancel</button>
             </div>
         </form>
     );

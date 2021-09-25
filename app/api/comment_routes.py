@@ -55,3 +55,11 @@ def edit_comment(id):
 
     return {"errors": validation_errors_to_error_messages(form.errors)}, 401
 
+@comment_routes.route("/<int:id>", methods=["DELETE"])
+def delete_comment(id):
+    comment = Comment.query.get(id)
+    db.session.delete(comment)
+    db.session.commit()
+
+    return {"message": "Comment Deleted"}
+
