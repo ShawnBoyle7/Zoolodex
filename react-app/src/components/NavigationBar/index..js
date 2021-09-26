@@ -37,17 +37,19 @@ const NavigationBar = ({ authenticated }) => {
               Suggestions
             </NavLink>
           </div>
+          <div>
+            <AboutModal/>
+          </div>
 
           {!authenticated ?
             <div>
               <LoginFormModal/>
               <SignUpFormModal/>
               <button onClick={loginDemo}>Demo</button>
-              <AboutModal/>
-              {/* Render a modal component */}
             </div>
           :
             <div>
+              Welcome, {sessionUser.firstName}
               <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
                 Profile
               </NavLink>
