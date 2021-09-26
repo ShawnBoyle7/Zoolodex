@@ -16,8 +16,7 @@ const SuggestionTile = ({ suggestion }) => {
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const sessionUser = useSelector(state => state.session.user)
-    const users = Object.values(useSelector(state => state.users))
-
+    const users = useSelector(state => state.users)
     // Function to set our ID state variable to the suggestion ID that we store on the edit button
     const renderEditModal = (e) => {
         setSuggestionIdEdit(e.target.id)
@@ -38,7 +37,7 @@ const SuggestionTile = ({ suggestion }) => {
                 <>
                     <h2>
                         <Link to={`/users/${suggestion.userId}`}>
-                            {users[suggestion.userId -1].username}
+                            {users[suggestion.userId].username}
                         </Link> Suggested the {suggestion.title}
                     </h2>
                 </>   
