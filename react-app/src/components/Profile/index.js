@@ -8,17 +8,16 @@ import PageNotFound from "../PageNotFound";
 const Profile = () => {
     const { userId } = useParams();
 
-    const sessionUser = useSelector(state => state.session?.user)
+    const sessionUser = useSelector(state => state.session?.user);
     
     // Finds the user of the profile from useParams for rendering their data
-    const profileUser = Object.values(useSelector(state => state.users)).find(user => user.id === +userId)
+    const profileUser = Object.values(useSelector(state => state.users)).find(user => user.id === +userId);
 
-    const suggestions = Object.values(useSelector(state => state.suggestions)).filter(suggestion => suggestion?.userId === profileUser?.id)
+    const suggestions = Object.values(useSelector(state => state.suggestions)).filter(suggestion => suggestion?.userId === profileUser?.id);
 
     // Prevents non-existent profiles from rendering
-    const users = Object.values(useSelector(state => state.users))
-    const finalUserId = users?.length
-    const userExists = userId <= finalUserId
+    const users = useSelector(state => state.users);
+    const userExists = users[+userId] !== undefined;
 
     return(
             userExists ?
