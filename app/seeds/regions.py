@@ -7,7 +7,7 @@ def seed_regions():
 
     regions = []
 
-    regions.append(Region(name="Amur Heilong Forests", climate="Forest", continent="Asia", img_url_1="https://i.imgur.com/NTbPZdK.png", img_url_2="https://i.imgur.com/tEUU0Gy.jpg", img_url_3="https://i.imgur.com/lmG8HrJ.jpg", img_url_4="https://i.imgur.com/ftHe6Ct.jpg", img_url_5="https://i.imgur.com/BayYwuD.jpg")) # leopard
+    regions.append(Region(name="Amur Heilong Forests", climate="Forest", continent="Asia", img_url_1="https://i.imgur.com/oJwXdHZ.png", img_url_2="https://i.imgur.com/tEUU0Gy.jpg", img_url_3="https://i.imgur.com/lmG8HrJ.jpg", img_url_4="https://i.imgur.com/ftHe6Ct.jpg", img_url_5="https://i.imgur.com/BayYwuD.jpg")) # leopard
 
     regions.append(Region(name="Dana Biosphere Reserve", climate="Desert", continent="Asia", img_url_1="https://i.imgur.com/cMQvGpO.jpg", img_url_2="https://i.imgur.com/X9oLhb9.jpg", img_url_3="https://i.imgur.com/5IEDWuY.jpg", img_url_4="https://i.imgur.com/TL42F0A.jpg", img_url_5="https://i.imgur.com/EfDSua1.jpg")) # wolf
 

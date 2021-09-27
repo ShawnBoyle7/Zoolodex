@@ -9,7 +9,7 @@ def seed_suggestions():
 
     # Animals
 
-    suggestions.append(Suggestion(type="animal", title="Akhal Tele Horse", description=faker.text(300), img_url="https://i.imgur.com/69NNq2z.png", user_id=1))
+    suggestions.append(Suggestion(type="animal", title="Akhal Tele Horse", description=faker.text(300), img_url="https://i.imgur.com/IIWIQpp.png", user_id=1))
 
     suggestions.append(Suggestion(type="animal", title="Red Panda", description=faker.text(300), img_url="https://i.imgur.com/KYNYa4z.jpg", user_id=1))
 
@@ -38,7 +38,7 @@ def seed_suggestions():
 
     suggestions.append(Suggestion(type="region", title="The Antarctic Peninsula", description=faker.text(300), img_url="https://i.imgur.com/qAPlL2p.png", user_id=1))
 
-    suggestions.append(Suggestion(type="region", title="Drake Passage", description=faker.text(300), img_url="https://i.imgur.com/vkuQskF.png", user_id=1))
+    suggestions.append(Suggestion(type="region", title="Drake Passage", description=faker.text(300), img_url="https://i.imgur.com/4mclNM3.jpeg", user_id=1))
 
     suggestions.append(Suggestion(type="region", title="Llanos Grasslands", description=faker.text(300), img_url="https://i.imgur.com/tSMOCZ5.png", user_id=1))
 
