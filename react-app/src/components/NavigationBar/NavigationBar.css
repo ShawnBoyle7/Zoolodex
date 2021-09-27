@@ -14,6 +14,15 @@ nav {
     /* background: transparent; */
 }
 
+nav a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.search-div {
+    width: 100%;
+}
+
 .search-div input {
     width: 100%;
 }
