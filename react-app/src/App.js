@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import ProtectedRoute from './components/Authentication/ProtectedRoute';
 import { authenticate } from './store/session';
 import { getAnimals } from './store/animals';
 import { getUsers } from './store/users';
@@ -22,7 +21,7 @@ import "./index.css"
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-  // const history = useHistory()
+  const history = useHistory()
   
   const sessionUser = useSelector(state => state.session.user);
   const authenticated = sessionUser !== null;
@@ -41,9 +40,9 @@ function App() {
       // What is this?
       setLoaded(true);
     })();
-  //   history.listen(()=>{
-  //     document.querySelector(".page").scrollTop = 0
-  // })
+    history.listen(()=>{
+      document.querySelector("html").scrollTop = 0
+  })
   }, [dispatch]);
 
   // What
@@ -54,7 +53,6 @@ function App() {
   return (
     <>
       <NavigationBar sessionUser={sessionUser} authenticated={authenticated}/>
-      {/* <div className="page"> */}
         <Switch>
             <Route exact path="/">
               <Home authenticated={authenticated}/>
@@ -80,7 +78,6 @@ function App() {
               <PageNotFound/>
             </Route>
         </Switch>
-      {/* </div> */}
     </>
   );
 }
