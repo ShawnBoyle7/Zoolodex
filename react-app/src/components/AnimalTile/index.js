@@ -7,7 +7,7 @@ const AnimalTile = ({ animal }) => {
             <div className="animal-tile-image">
                 <img src={animal.imgUrl} alt="animal"/>
             </div>
-            <div className="animal-tile-name">
+            <div className="tile-name">
                 <h2>{animal.subSpecies}</h2>
             </div>
         </div>
