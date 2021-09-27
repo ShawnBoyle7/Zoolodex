@@ -57,26 +57,28 @@ function App() {
             <Route exact path="/">
               <Home authenticated={authenticated}/>
             </Route>
-            
-            <Route path="/users/:userId">
-              <Profile/>
-            </Route>
-            
-            <Route path="/animals">
-              <Animals/>
-            </Route>
 
-            <Route path="/regions">
-              <Regions/>
-            </Route>
+            <div className="page">
+              <Route path="/users/:userId">
+                <Profile/>
+              </Route>
+              
+              <Route path="/animals">
+                <Animals/>
+              </Route>
 
-            <Route path="/suggestions">
-              <Suggestions/>
-            </Route>
+              <Route path="/regions">
+                <Regions/>
+              </Route>
 
-            <Route>
-              <PageNotFound/>
-            </Route>
+              <Route path="/suggestions">
+                <Suggestions/>
+              </Route>
+
+              <Route>
+                <PageNotFound/>
+              </Route>
+            </div>
         </Switch>
     </>
   );

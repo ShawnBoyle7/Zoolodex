@@ -10,8 +10,19 @@
     width: 100%;
 }
 
+.page {
+    position: absolute;
+    top: 100px;
+    width: 100vw;   
+    height: calc(100vh - 100px);
+}
+
 img {
     width: 400px;
     height: 400px;
     object-fit: cover;
+}
+
+button {
+    width: fit-content;
 }
