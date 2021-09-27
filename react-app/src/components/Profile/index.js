@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SuggestionTile from "../SuggestionTile";
 import EditUserFormModal from "../EditUserFormModal";
@@ -14,6 +14,22 @@ const Profile = () => {
     const profileUser = Object.values(useSelector(state => state.users)).find(user => user.id === +userId);
 
     const suggestions = Object.values(useSelector(state => state.suggestions)).filter(suggestion => suggestion?.userId === profileUser?.id);
+
+    const animalSuggestions = suggestions.filter(suggestion => suggestion.type === "animal").reverse()
+    const regionSuggestions = suggestions.filter(suggestion => suggestion.type === "region").reverse()
+
+    const [showAnimals, setShowAnimals] = useState(true)
+    const [showRegions, setShowRegions] = useState(false)
+
+    const animalClick = () => {
+        setShowAnimals(true)
+        setShowRegions(false)
+    };
+
+    const regionClick = () => {
+        setShowAnimals(false)
+        setShowRegions(true)
+    };
 
     // Prevents non-existent profiles from rendering
     const users = useSelector(state => state.users);
@@ -36,12 +52,21 @@ const Profile = () => {
                     <img src={profileUser?.imgUrl} alt="profile"/>
                 </div>
 
+                <button onClick={animalClick}>Animal Suggestions</button>
+                <button onClick={regionClick}>Region Suggestions</button>
                 <div className="profile-suggestions">
-                    <h1>Suggestions</h1>
-                    {suggestions?.map(suggestion => 
-                        <div className="profile-suggestion" key={suggestion.id}>
-                            <SuggestionTile suggestion={suggestion}/>
-                        </div>
+                    {showAnimals &&
+                        animalSuggestions.map(suggestion =>
+                            <div className="suggestion-div" key={suggestion?.id}>
+                                <SuggestionTile suggestion={suggestion}/>
+                            </div>
+                    )}
+
+                    {showRegions &&
+                        regionSuggestions.map(suggestion =>
+                            <div className="suggestion-div" key={suggestion?.id}>
+                                <SuggestionTile suggestion={suggestion}/>
+                            </div>
                     )}
                 </div>
             </>

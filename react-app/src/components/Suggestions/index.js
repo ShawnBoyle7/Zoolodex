@@ -6,8 +6,8 @@ import SuggestionTile from "../SuggestionTile";
 const Suggestions = () => {
 
     const suggestions = Object.values(useSelector(state => state.suggestions))
-    const animalSuggestions = suggestions.filter(suggestion => suggestion.type === "animal")
-    const regionSuggestions = suggestions.filter(suggestion => suggestion.type === "region")
+    const animalSuggestions = suggestions.filter(suggestion => suggestion.type === "animal").reverse()
+    const regionSuggestions = suggestions.filter(suggestion => suggestion.type === "region").reverse()
 
     const [showAnimals, setShowAnimals] = useState(true)
     const [showRegions, setShowRegions] = useState(false)
