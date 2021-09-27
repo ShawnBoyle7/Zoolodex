@@ -33,6 +33,11 @@ const NavigationBar = ({ authenticated }) => {
             </NavLink>
           </div>
           <div>
+            <NavLink to='/regions' exact={true} activeClassName='active'>
+              Regions
+            </NavLink>
+          </div>
+          <div>
             <NavLink to='/suggestions' exact={true} activeClassName='active'>
               Suggestions
             </NavLink>
