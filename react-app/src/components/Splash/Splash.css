@@ -9,9 +9,8 @@
     height: 100vh;
 } */
 
-/* .splash-background {
-    background-image: url(https://i.imgur.com/I846Afe.jpeg);
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-} */
+.splash-background {
+    background-image: url("https://zoolodex-bucket.s3.us-west-1.amazonaws.com/748043.jpg");
+    background-size: cover;
+    height: 100%;
+}
