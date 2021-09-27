@@ -47,44 +47,31 @@ const NavigationBar = ({ authenticated }) => {
               </NavLink>
           </div>
 
+          <div className="search-div">
+            <input/>
+          </div>
+
           <div>
               <AboutModal/>
           </div>
 
-          <div className="nav-auth">
-            {!authenticated ?
+          <div className="navigation-auth">
+              {!authenticated ?
               <>
-                <div>
-                    <LoginFormModal/>
-                </div>
-
-                <div>
-                    <SignUpFormModal/>
-                </div>
-
-                <div>
-                    <button onClick={loginDemo}>Demo</button>
-                </div>
-              </>
+                  <LoginFormModal/>
+                  <SignUpFormModal/>
+                  <button onClick={loginDemo}>Demo</button>
+              </> 
               :
               <>
-                  <div>
+                  <span>
                       Welcome, {sessionUser.firstName}
-                  </div>
-
-                  <div>
-                      <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
-                          Profile
-                      </NavLink>
-                  </div>
-
-                  <div>
-                      <SuggestionFormModal/>
-                  </div>
-
-                  <div>
-                      <LogoutButton/>
-                  </div>
+                  </span>
+                  <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
+                      Profile
+                  </NavLink>
+                  <SuggestionFormModal/>
+                  <LogoutButton/>
               </>
               }
           </div>

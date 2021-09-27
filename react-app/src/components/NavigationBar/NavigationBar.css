@@ -1,7 +1,27 @@
+#root {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
 .navigation {
     display: grid;
     position: fixed;
-    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-columns: 10% 10% 10% 10% 20% 20% 20%;
     top: 0px;
     width: 100vw;
+    height: 10vh;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+.navigation-auth {
+    display: flex;
+    width: 100vw;
+}
+
+.search-div input {
+    width: 100%;
 }
