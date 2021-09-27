@@ -11,6 +11,7 @@ import { getSuggestions } from './store/suggestions';
 import { getSightings } from './store/sightings';
 import NavigationBar from './components/NavigationBar/index.';
 import Animals from './components/Animals';
+import Animal from './components/Animal';
 import Regions from './components/Regions';
 import Home from './components/Home';
 import Suggestions from './components/Suggestions';
@@ -54,29 +55,33 @@ function App() {
     <>
       <NavigationBar sessionUser={sessionUser} authenticated={authenticated}/>
         <Switch>
-            <Route exact path="/">
-              <Home authenticated={authenticated}/>
-            </Route>
-            
-            <Route path="/users/:userId">
-              <Profile/>
-            </Route>
-            
-            <Route path="/animals">
-              <Animals/>
-            </Route>
+                <Route exact path="/">
+                  <Home authenticated={authenticated}/>
+                </Route>
 
-            <Route path="/regions">
-              <Regions/>
-            </Route>
+                <Route path="/users/:userId">
+                  <Profile/>
+                </Route>
+                
+                <Route exact path="/animals">
+                  <Animals/>
+                </Route>
 
-            <Route path="/suggestions">
-              <Suggestions/>
-            </Route>
+                <Route path="/animals/:animalId">
+                  <Animal/>
+                </Route>
 
-            <Route>
-              <PageNotFound/>
-            </Route>
+                <Route path="/regions">
+                  <Regions/>
+                </Route>
+
+                <Route path="/suggestions">
+                  <Suggestions/>
+                </Route>
+
+                <Route>
+                  <PageNotFound/>
+                </Route>
         </Switch>
     </>
   );

@@ -48,10 +48,10 @@ return (
         </div>
 
         <div className="search-div">
-        <input/>
+            <input/>
         </div>
 
-        <div>
+        <div className="about-button">
             <AboutModal/>
         </div>
 

@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CommentForm from "../CommentForm";
 import Comments from "../Comments";
+import './Animal.css'
 
 const Animal = () => {
-    // const article = JSON.parse(animal?.article)
-
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
@@ -37,40 +36,45 @@ const Animal = () => {
 
     return (
         <>
-            <div className="animal-name">
-                <h1>{animal.subSpecies}</h1>
-            </div>
+            <div className="background-image"><img src="https://wallpaperaccess.com/full/732629.jpg"/></div>
+            <div className="page-content">
+                <div className="animal-page">
+                    <div className="animal-name">
+                        <h1>{animal.subSpecies}</h1>
+                    </div>
 
-            <div className="animal-image">
-                <img src={animal.imgUrl} alt="animal"/>
-            </div>
+                    <div className="animal-image">
+                        <img src={animal.imgUrl} alt="animal"/>
+                    </div>
 
-            <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
-            <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
-            <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem Influence</button>
+                    <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
+                    <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
+                    <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem Influence</button>
 
-            {showOrigins && 
-                <div>
-                    {animal.origins}
+                    {showOrigins && 
+                        <div>
+                            {animal.origins}
+                        </div>
+                    }
+
+                    {showTraits && 
+                        <div>
+                            {animal.traits}
+                        </div>
+                    }
+
+                    {showEcosystemInfluence && 
+                        <div>
+                            {animal.ecosystemInfluence}
+                        </div>
+                    }
+                    <div>
+                        {/* Sighting placeholder */}
+                        <h2>Comments</h2>
+                        <CommentForm animal={animal} sighting={null}/>
+                        <Comments animalId={animal.id}/>
+                    </div>
                 </div>
-            }
-
-            {showTraits && 
-                <div>
-                    {animal.traits}
-                </div>
-            }
-
-            {showEcosystemInfluence && 
-                <div>
-                    {animal.ecosystemInfluence}
-                </div>
-            }
-            <div>
-                {/* Sighting placeholder */}
-                <h2>Comments</h2>
-                <CommentForm animal={animal} sighting={null}/>
-                <Comments animalId={animal.id}/>
             </div>
         </>
     )

@@ -7,7 +7,8 @@ const RegionTile = ({ region }) => {
             <div className="region-tile-image">
                 <img src={region.imgUrl1} alt="region"/>
             </div>
-            <div className="region-tile-name">
+
+            <div className="tile-name">
                 <h2>{region.name}</h2>
             </div>
         </div>

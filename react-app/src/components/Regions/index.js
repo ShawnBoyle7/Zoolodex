@@ -10,15 +10,20 @@ const Regions = () => {
 
     return (
         <>  
-            <Route exact path="/regions">
-                <div>
-                    {regions.map(region =>
-                        <Link to={`/regions/${region.id}`} key={region.id}>
-                            <RegionTile region={region}/>
-                        </Link>
-                    )}
-                </div>
-            </Route>
+            <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
+            <div className="page-content">
+                <Route exact path="/regions">
+                    <div className="gallery-page">
+                        {regions.map(region =>
+                            <div className="gallery-tile">
+                                <Link to={`/regions/${region.id}`} key={region.id}>
+                                    <RegionTile region={region}/>
+                                </Link>
+                            </div>
+                        )}
+                    </div>
+                </Route>
+            </div>
 
             <Route path="/regions/:regionId">
                 <Region/>

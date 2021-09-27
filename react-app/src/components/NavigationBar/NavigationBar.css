@@ -1,5 +1,6 @@
 nav * {
-    color: white;
+    color: purple;
+    margin: auto;
 }
 
 nav {
@@ -8,16 +9,31 @@ nav {
     grid-template-columns: 10% 10% 10% 10% 20% 20% 20%;
     top: 0px;
     width: 100vw;
-    height: 10vh;
+    height: 60px;
     border-bottom: 1px solid black;
-    background: transparent;
+    z-index: 2;
 }
 
-.navigation-auth {
-    display: flex;
-    width: 100vw;
+nav a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.search-div {
+    width: 100%;
 }
 
 .search-div input {
     width: 100%;
+}
+
+.navigation-auth {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav button {
+    width: 5.5em;
+    height: 1.8em;
 }
