@@ -8,6 +8,7 @@ import { demo } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import AboutModal from '../AboutModal';
 import { useHistory } from 'react-router-dom';
+import "./NavigationBar.css"
 
 const NavigationBar = ({ authenticated }) => {
     const dispatch = useDispatch();
@@ -21,47 +22,72 @@ const NavigationBar = ({ authenticated }) => {
     }
 
     return (
-      <nav className="nav-bar">
+      <nav className="navigation">
           <div>
-            <NavLink to='/' exact={true} activeClassName='active'>
-              Home
-            </NavLink>
-          </div>
-          <div>
-            <NavLink to='/animals' exact={true} activeClassName='active'>
-              Animals
-            </NavLink>
-          </div>
-          <div>
-            <NavLink to='/regions' exact={true} activeClassName='active'>
-              Regions
-            </NavLink>
-          </div>
-          <div>
-            <NavLink to='/suggestions' exact={true} activeClassName='active'>
-              Suggestions
-            </NavLink>
-          </div>
-          <div>
-            <AboutModal/>
+              <NavLink to='/' exact={true} activeClassName='active'>
+                  Home
+              </NavLink>
           </div>
 
-          {!authenticated ?
-            <div>
-              <LoginFormModal/>
-              <SignUpFormModal/>
-              <button onClick={loginDemo}>Demo</button>
-            </div>
-          :
-            <div>
-              Welcome, {sessionUser.firstName}
-              <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
-                Profile
+          <div>
+              <NavLink to='/animals' exact={true} activeClassName='active'>
+                  Animals
               </NavLink>
-              <SuggestionFormModal/>
-              <LogoutButton/>
-            </div>
-          }
+          </div>
+
+          <div>
+              <NavLink to='/regions' exact={true} activeClassName='active'>
+                  Regions
+              </NavLink>
+          </div>
+
+          <div>
+              <NavLink to='/suggestions' exact={true} activeClassName='active'>
+                  Suggestions
+              </NavLink>
+          </div>
+
+          <div>
+              <AboutModal/>
+          </div>
+
+          <div className="nav-auth">
+            {!authenticated ?
+              <>
+                <div>
+                    <LoginFormModal/>
+                </div>
+
+                <div>
+                    <SignUpFormModal/>
+                </div>
+
+                <div>
+                    <button onClick={loginDemo}>Demo</button>
+                </div>
+              </>
+              :
+              <>
+                  <div>
+                      Welcome, {sessionUser.firstName}
+                  </div>
+
+                  <div>
+                      <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
+                          Profile
+                      </NavLink>
+                  </div>
+
+                  <div>
+                      <SuggestionFormModal/>
+                  </div>
+
+                  <div>
+                      <LogoutButton/>
+                  </div>
+              </>
+              }
+          </div>
       </nav>
     );
 }
