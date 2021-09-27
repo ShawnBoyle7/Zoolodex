@@ -1,3 +1,9 @@
+.splash-background {
+    background-image: url("https://zoolodex-bucket.s3.us-west-1.amazonaws.com/748043.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
 /* .carousel-image-div {
     display: flex;
     justify-content: center;
@@ -8,9 +14,3 @@
     width: 100vw;
     height: 100vh;
 } */
-
-.splash-background {
-    background-image: url("https://zoolodex-bucket.s3.us-west-1.amazonaws.com/748043.jpg");
-    background-size: cover;
-    height: 100%;
-}

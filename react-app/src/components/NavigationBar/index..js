@@ -22,7 +22,7 @@ const NavigationBar = ({ authenticated }) => {
     }
 
     return (
-      <nav className="navigation">
+      <nav>
           <div>
               <NavLink to='/' exact={true} activeClassName='active'>
                   Home
