@@ -12,20 +12,26 @@
 
 .page {
     position: absolute;
-    top: 100px;
+    top: 60px;
     width: 100vw;
-    padding: 0 5%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 60px);
     overflow-y: auto;
+}
+
+.gallery-page {
+    display: grid;
+    grid-template-columns: 33.3333333333% 33.3333333333% 33.3333333333%;
     margin-top: 2%;
+}
+
+.gallery-tile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4%;
 }
 
 img {
     width: 400px;
     height: 400px;
     object-fit: cover;
-}
-
-button {
-    width: fit-content;
 }

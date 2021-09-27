@@ -58,7 +58,7 @@ function App() {
               <Home authenticated={authenticated}/>
             </Route>
 
-            <div className="page">
+            <container className="page">
               <Route path="/users/:userId">
                 <Profile/>
               </Route>
@@ -78,7 +78,7 @@ function App() {
               <Route>
                 <PageNotFound/>
               </Route>
-            </div>
+            </container>
         </Switch>
     </>
   );

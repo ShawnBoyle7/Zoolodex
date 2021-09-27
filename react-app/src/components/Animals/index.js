@@ -12,11 +12,13 @@ const Animals = () => {
     return (
         <>  
             <Route exact path="/animals">
-                <div className="animals-page">
+                <div className="gallery-page">
                     {animals.map(animal =>
-                        <Link to={`/animals/${animal.id}`} key={animal.id}>
-                            <AnimalTile animal={animal}/>
-                        </Link>
+                        <div className="gallery-tile">
+                            <Link to={`/animals/${animal.id}`} key={animal.id}>
+                                <AnimalTile animal={animal}/>
+                            </Link>
+                        </div>
                     )}
                 </div>
             </Route>

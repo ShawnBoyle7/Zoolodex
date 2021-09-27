@@ -11,11 +11,13 @@ const Regions = () => {
     return (
         <>  
             <Route exact path="/regions">
-                <div>
+                <div className="gallery-page">
                     {regions.map(region =>
-                        <Link to={`/regions/${region.id}`} key={region.id}>
-                            <RegionTile region={region}/>
-                        </Link>
+                        <div className="gallery-tile">
+                            <Link to={`/regions/${region.id}`} key={region.id}>
+                                <RegionTile region={region}/>
+                            </Link>
+                        </div>
                     )}
                 </div>
             </Route>
