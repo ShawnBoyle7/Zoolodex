@@ -2,7 +2,7 @@ nav * {
     color: white;
 }
 
-.nav {
+nav {
     display: grid;
     position: fixed;
     grid-template-columns: 10% 10% 10% 10% 20% 20% 20%;
@@ -13,11 +13,11 @@ nav * {
     background: transparent;
 }
 
-.search-div input {
-    width: 100%;
-}
-
 .navigation-auth {
     display: flex;
     width: 100vw;
+}
+
+.search-div input {
+    width: 100%;
 }

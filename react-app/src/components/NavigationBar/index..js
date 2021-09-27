@@ -17,65 +17,65 @@ const NavigationBar = ({ authenticated }) => {
     const sessionUser = useSelector(state => state.session.user)
 
     const loginDemo = async () => {
-      dispatch(demo())
-      history.push("/")
-    }
+    dispatch(demo())
+    history.push("/")
+}
 
-    return (
-      <nav>
-          <div>
-              <NavLink to='/' exact={true} activeClassName='active'>
-                  Home
-              </NavLink>
-          </div>
+return (
+    <nav>
+        <div>
+            <NavLink to='/' exact={true} activeClassName='active'>
+                Home
+            </NavLink>
+        </div>
 
-          <div>
-              <NavLink to='/animals' exact={true} activeClassName='active'>
-                  Animals
-              </NavLink>
-          </div>
+        <div>
+            <NavLink to='/animals' exact={true} activeClassName='active'>
+                Animals
+            </NavLink>
+        </div>
 
-          <div>
-              <NavLink to='/regions' exact={true} activeClassName='active'>
-                  Regions
-              </NavLink>
-          </div>
+        <div>
+            <NavLink to='/regions' exact={true} activeClassName='active'>
+                Regions
+            </NavLink>
+        </div>
 
-          <div>
-              <NavLink to='/suggestions' exact={true} activeClassName='active'>
-                  Suggestions
-              </NavLink>
-          </div>
+        <div>
+            <NavLink to='/suggestions' exact={true} activeClassName='active'>
+                Suggestions
+            </NavLink>
+        </div>
 
-          <div className="search-div">
-            <input/>
-          </div>
+        <div className="search-div">
+        <input/>
+        </div>
 
-          <div>
-              <AboutModal/>
-          </div>
+        <div>
+            <AboutModal/>
+        </div>
 
-          <div className="navigation-auth">
-              {!authenticated ?
-              <>
-                  <LoginFormModal/>
-                  <SignUpFormModal/>
-                  <button onClick={loginDemo}>Demo</button>
-              </> 
-              :
-              <>
-                  <span>
-                      Welcome, {sessionUser.firstName}
-                  </span>
-                  <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
-                      Profile
-                  </NavLink>
-                  <SuggestionFormModal/>
-                  <LogoutButton/>
-              </>
-              }
-          </div>
-      </nav>
+        <div className="navigation-auth">
+            {!authenticated ?
+            <>
+                <LoginFormModal/>
+                <SignUpFormModal/>
+                <button onClick={loginDemo}>Demo</button>
+            </> 
+            :
+            <>
+                <span>
+                    Welcome, {sessionUser.firstName}
+                </span>
+                <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
+                    Profile
+                </NavLink>
+                <SuggestionFormModal/>
+                <LogoutButton/>
+            </>
+            }
+        </div>
+    </nav>
     );
 }
 
