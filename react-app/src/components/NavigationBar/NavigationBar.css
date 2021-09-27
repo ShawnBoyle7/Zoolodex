@@ -1,0 +1,23 @@
+nav * {
+    color: white;
+}
+
+.nav {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 10% 10% 10% 10% 20% 20% 20%;
+    top: 0px;
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+.search-div input {
+    width: 100%;
+}
+
+.navigation-auth {
+    display: flex;
+    width: 100vw;
+}
