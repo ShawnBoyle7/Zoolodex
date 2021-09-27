@@ -17,6 +17,7 @@ import Home from './components/Home';
 import Suggestions from './components/Suggestions';
 import Profile from './components/Profile';
 import PageNotFound from './components/PageNotFound';
+import "./index.css"
 
 function App() {
   const [loaded, setLoaded] = useState(false);
