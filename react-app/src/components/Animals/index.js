@@ -11,21 +11,19 @@ const Animals = () => {
 
     return (
         <>  
-            <Route exact path="/animals">
-                <div className="gallery-page">
-                    {animals.map(animal =>
-                        <div className="gallery-tile">
-                            <Link to={`/animals/${animal.id}`} key={animal.id}>
-                                <AnimalTile animal={animal}/>
-                            </Link>
-                        </div>
-                    )}
-                </div>
-            </Route>
+            <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
+            <div className="page-content">
+                    <div className="gallery-page">
+                        {animals.map(animal =>
+                            <div className="gallery-tile">
+                                <Link to={`/animals/${animal.id}`} key={animal.id}>
+                                    <AnimalTile animal={animal}/>
+                                </Link>
+                            </div>
+                        )}
+                    </div>
+            </div>
 
-            <Route path="/animals/:animalId">
-                <Animal/>
-            </Route>
         </>
     )
 }

@@ -1,8 +1,26 @@
-.splash-background {
+.splash-image > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.splash-header {
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+
+/* .splash-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     background-image: url("https://zoolodex-bucket.s3.us-west-1.amazonaws.com/748043.jpg");
     background-size: cover;
     height: 100%;
-}
+} */
 
 /* .carousel-image-div {
     display: flex;

@@ -6,10 +6,18 @@ import "./Splash.css"
 const Splash = () => {
 
         return (
-            <div className="splash-background">
+            <>
+                <div className="splash-image">
+                    <img src="https://i.imgur.com/EgUQclC.jpg"/>
+                </div>
+
+                <div className="splash-header">
+                    <h1>Splash</h1>
+                    <p>All of the content goes in here</p>
+                </div>
+
                 
-            </div>
-            
+            </>
         )
 };
 

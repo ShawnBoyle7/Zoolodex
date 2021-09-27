@@ -4,7 +4,7 @@
 
 a {
     text-decoration: none;
-    color: black;
+    color: black
 }
 
 #root {
@@ -15,11 +15,12 @@ a {
     width: 100%;
 }
 
-.page {
+.page-content {
     position: absolute;
-    top: 60px;
+    top: 400px;
+    left: 0px;
     width: 100vw;
-    height: calc(100vh - 60px);
+    /* height: calc(100vh - 60px); */
     overflow-y: auto;
 }
 
@@ -38,6 +39,11 @@ a {
 .tile-name {
     display: flex;
     justify-content: center;
+}
+
+.background-image > img {
+    height: 400px;
+    width: 100vw;
 }
 
 img {
