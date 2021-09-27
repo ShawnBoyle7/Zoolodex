@@ -7,7 +7,58 @@ def seed_suggestions():
 
     suggestions = []
 
-    suggestions.append(Suggestion(type="animal", title="African Lion", description=faker.text(300), img_url="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YW5pbWFsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.21&w=1000&q=80", user_id=1))
+    # Animals
+
+    suggestions.append(Suggestion(type="animal", title="Akhal Tele Horse", description=faker.text(300), img_url="https://i.imgur.com/tVPgWV1.png", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="Red Panda", description=faker.text(300), img_url="https://i.imgur.com/YCvNuJD.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="African Lion", description=faker.text(300), img_url="https://i.imgur.com/83ejGKm.jpeg", user_id=3))
+
+    suggestions.append(Suggestion(type="animal", title="European Fox", description=faker.text(300), img_url="https://i.imgur.com/vShY2fC.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="Qinling Panda", description=faker.text(300), img_url="https://i.imgur.com/UkFt5AN.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="Calfornian Condor", description=faker.text(300), img_url="https://i.imgur.com/an6WLFu.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="Earthworm", description=faker.text(300), img_url="https://i.imgur.com/fQkZb2m.jpeg", user_id=3))
+
+    suggestions.append(Suggestion(type="animal", title="Hercules Beetle", description=faker.text(300), img_url="https://i.imgur.com/A1eFiE2.jpeg", user_id=2))
+
+    suggestions.append(Suggestion(type="animal", title="South American Jaguar", description=faker.text(300), img_url="https://i.imgur.com/r67YTa1.jpeg", user_id=2))
+
+    suggestions.append(Suggestion(type="animal", title="Argentinosaurus", description=faker.text(300), img_url="https://i.imgur.com/6oqKFo6.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="Silverback Gorilla", description=faker.text(300), img_url="https://i.imgur.com/U82Dddv.jpeg", user_id=1))
+
+    suggestions.append(Suggestion(type="animal", title="White Raven", description=faker.text(300), img_url="https://i.imgur.com/mweGpmD.jpeg", user_id=1))
+
+
+    # Regions
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=1))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=2))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=3))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=2))
+
+    suggestions.append(Suggestion(type="region", title="", description=faker.text(300), img_url="", user_id=3))
 
     for suggestion in suggestions:
         db.session.add(suggestion)
