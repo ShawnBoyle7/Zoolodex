@@ -1,5 +1,4 @@
 nav * {
-    color: purple;
     margin: auto;
 }
 
@@ -10,12 +9,10 @@ nav {
     top: 0px;
     width: 100vw;
     height: 60px;
-    border-bottom: 1px solid black;
     z-index: 2;
 }
 
 nav a {
-    text-decoration: none;
     font-size: 1.2em;
 }
 

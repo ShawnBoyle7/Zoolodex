@@ -1,0 +1,16 @@
+.home-image > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+.home-header {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: 1;
+    color: white;
+}
