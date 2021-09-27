@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CommentForm from "../CommentForm";
 import Comments from "../Comments";
+import './Animal.css'
 
 const Animal = () => {
-    // const article = JSON.parse(animal?.article)
-
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
@@ -36,7 +35,7 @@ const Animal = () => {
     }
 
     return (
-        <>
+        <div className="animal-page">
             <div className="animal-name">
                 <h1>{animal.subSpecies}</h1>
             </div>
@@ -72,7 +71,7 @@ const Animal = () => {
                 <CommentForm animal={animal} sighting={null}/>
                 <Comments animalId={animal.id}/>
             </div>
-        </>
+        </div>
     )
 }
 

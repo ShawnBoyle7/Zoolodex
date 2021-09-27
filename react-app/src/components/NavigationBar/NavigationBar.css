@@ -10,7 +10,7 @@ nav {
     width: 100vw;
     height: 100px;
     border-bottom: 1px solid black;
-    background: transparent;
+    /* background: transparent; */
 }
 
 .search-div input {
@@ -22,7 +22,7 @@ nav {
     width: 100vw;
 }
 
-.navigation-auth button {
-    width: 3%
-}
+/* .navigation-auth button {
+
+} */
 

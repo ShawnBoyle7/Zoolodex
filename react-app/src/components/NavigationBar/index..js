@@ -48,7 +48,7 @@ return (
         </div>
 
         <div className="search-div">
-        <input/>
+            <input/>
         </div>
 
         <div>
