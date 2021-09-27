@@ -44,9 +44,7 @@ const SuggestionTile = ({ suggestion }) => {
                 :
                 <>
                 <h2>
-                    <Link to={`/users/${suggestion.userId}`}>
-                        You
-                    </Link> Suggested the {suggestion.title}
+                    You Suggested the {suggestion.title}
                 </h2>
                 </>
                 }
