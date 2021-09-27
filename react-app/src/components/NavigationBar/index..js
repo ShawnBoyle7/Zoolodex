@@ -51,7 +51,7 @@ return (
             <input/>
         </div>
 
-        <div>
+        <div className="about-button">
             <AboutModal/>
         </div>
 

@@ -1,5 +1,6 @@
 nav * {
     color: purple;
+    margin: auto;
 }
 
 nav {
@@ -19,7 +20,8 @@ nav {
 
 .navigation-auth {
     display: flex;
-    width: 100vw;
+    justify-content: space-between;
+    width: 100%;
 }
 
 nav button {
