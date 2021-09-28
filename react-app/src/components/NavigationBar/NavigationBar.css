@@ -12,7 +12,11 @@ nav {
     width: 100vw;
     height: 60px;
     z-index: 2;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
+}
+
+.logo {
+    font-size: 2em;
 }
 
 nav a {
@@ -34,13 +38,30 @@ nav a {
     width: 100%;
 }
 
-.search-div input {
-    width: 75%;
+.search-form {
+    width: 80%;
+    position: relative;
 }
 
-/* .search-div .fa-search {
+.search-form > input {
+    height: 2em;
+    width: 100%;
+    padding-left: 2em;
+    border: 1px solid black;
+    background-color: transparent;
+}
 
-} */
+.search-form .fa-search {
+    position: absolute;
+    top: 20%;
+    left: 0.3em;
+    opacity: 0.65;
+}
+
+::placeholder {
+    color: lightgray;
+    padding-left: 0.3em;
+}
 
 .welcome-message {
     color: white;

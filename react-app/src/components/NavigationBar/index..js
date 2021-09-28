@@ -24,8 +24,8 @@ const NavigationBar = ({ authenticated }) => {
 return (
     <nav>
         <div className="nav-links-div">
-            <NavLink to='/' exact={true} activeClassName='active'>
-                Home
+            <NavLink className="logo" to='/' exact={true} activeClassName='active'>
+                Zoolodex
             </NavLink>
 
             <NavLink to='/animals' exact={true} activeClassName='active'>
@@ -41,22 +41,24 @@ return (
             </NavLink>
         </div>
 
-            <div className="search-div">
-            <i className="fas fa-search"></i>
-                <input
-                    placeholder="Explore"
-                />
+        <div className="search-div">
+                <form className="search-form">
+                    <i className="fas fa-search"></i>
+                    <input 
+                    placeholder='Explore Your Curiosity'
+                    />
+                </form>
             </div>
 
 
         <div className="navigation-auth">
-            <AboutModal/>
             {!authenticated ?
             <>
+                <AboutModal/>
                 <LoginFormModal/>
                 <SignUpFormModal/>
                 <button onClick={loginDemo}>Demo</button>
-            </> 
+            </>
             :
             <>
                 <span className="welcome-message">
@@ -65,8 +67,9 @@ return (
                 <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
                     Profile
                 </NavLink>
-                <LogoutButton/>
+                <AboutModal/>
                 <SuggestionFormModal/>
+                <LogoutButton/>
             </>
             }
         </div>
