@@ -2,7 +2,7 @@ nav * {
     margin: auto;
 }
 
-nav {
+.navigation-default {
     display: grid;
     position: fixed;
     grid-template-columns: 33.333333333333333333333333333333% 33.333333333333333333333333333333% 33.333333333333333333333333333333%;
@@ -15,8 +15,38 @@ nav {
     border-bottom: 1px solid white;
 }
 
-.logo {
-    font-size: 2em;
+.navigation-scrolled {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 33.333333333333333333333333333333% 33.333333333333333333333333333333% 33.333333333333333333333333333333%;
+    grid-template-areas:
+    "links search auth";
+    top: 0px;
+    width: 100vw;
+    height: 60px;
+    z-index: 2;
+    background-color: black;
+}
+
+.logo-image-div {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.nav-links-div > a:first-child {
+    width: 207px;
+}
+
+.logo-image {
+    /* position: relative; */
+    /* margin-top: 1px; */
+    position: relative;
+    top: 2px;
+    height: 55px;
+    width: 100%;
+    object-fit: scale-down;
 }
 
 nav a {
@@ -48,14 +78,19 @@ nav a {
     width: 100%;
     padding-left: 2em;
     border: 1px solid black;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-scrolled input {
+    border: 1px solid white;
 }
 
 .search-form .fa-search {
     position: absolute;
     top: 20%;
     left: 0.3em;
-    opacity: 0.65;
+    opacity: 0.5;
+    color: white;
 }
 
 ::placeholder {
