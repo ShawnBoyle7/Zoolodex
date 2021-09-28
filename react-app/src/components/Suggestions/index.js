@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SuggestionTile from "../SuggestionTile";
-
+import './Suggestions.css'
 
 const Suggestions = () => {
 
@@ -26,8 +26,10 @@ const Suggestions = () => {
         <>
             <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
             <div className="page-content">
-                <button onClick={animalClick}>Animal Suggestions</button>
-                <button onClick={regionClick}>Region Suggestions</button>
+                <div className="suggestion-buttons">
+                    <button onClick={animalClick}>Animal Suggestions</button>
+                    <button onClick={regionClick}>Region Suggestions</button>
+                </div>
                 <div className="all-suggestions">
                     {showAnimals &&
                         animalSuggestions.map(suggestion =>

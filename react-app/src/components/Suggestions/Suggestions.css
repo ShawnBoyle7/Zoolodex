@@ -1,0 +1,8 @@
+.suggestion-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.all-suggestions {
+    margin-left: 2%;
+}

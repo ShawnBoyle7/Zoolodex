@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route } from "react-router-dom";
-import Region from "../Region";
 import RegionTile from "../RegionTile";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,6 @@ const Regions = () => {
         <>  
             <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
             <div className="page-content">
-                <Route exact path="/regions">
                     <div className="gallery-page">
                         {regions.map(region =>
                             <div className="gallery-tile">
@@ -22,12 +20,9 @@ const Regions = () => {
                             </div>
                         )}
                     </div>
-                </Route>
             </div>
 
-            <Route path="/regions/:regionId">
-                <Region/>
-            </Route>
+
         </>
     )
 }

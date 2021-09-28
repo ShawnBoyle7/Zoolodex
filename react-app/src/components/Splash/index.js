@@ -14,8 +14,6 @@ const Splash = () => {
                 <div className="splash-header">
                     <h1>Splash</h1>
                 </div>
-
-                
             </>
         )
 };

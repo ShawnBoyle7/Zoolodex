@@ -17,6 +17,7 @@ import Home from './components/Home';
 import Suggestions from './components/Suggestions';
 import Profile from './components/Profile';
 import PageNotFound from './components/PageNotFound';
+import Region from './components/Region';
 import "./index.css"
 
 function App() {
@@ -71,8 +72,12 @@ function App() {
                   <Animal/>
                 </Route>
 
-                <Route path="/regions">
+                <Route exact path="/regions">
                   <Regions/>
+                </Route>
+
+                <Route path="/regions/:regionId">
+                  <Region/>
                 </Route>
 
                 <Route path="/suggestions">
