@@ -2,7 +2,7 @@ nav * {
     margin: auto;
 }
 
-nav {
+.navigation-default {
     display: grid;
     position: fixed;
     grid-template-columns: 33.333333333333333333333333333333% 33.333333333333333333333333333333% 33.333333333333333333333333333333%;
@@ -13,6 +13,20 @@ nav {
     height: 60px;
     z-index: 2;
     border-bottom: 1px solid white;
+}
+
+.navigation-scrolled {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 33.333333333333333333333333333333% 33.333333333333333333333333333333% 33.333333333333333333333333333333%;
+    grid-template-areas:
+    "links search auth";
+    top: 0px;
+    width: 100vw;
+    height: 60px;
+    z-index: 2;
+    border-bottom: 1px solid white;
+    background-color: white;
 }
 
 .logo {
