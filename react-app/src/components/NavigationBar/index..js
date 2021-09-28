@@ -42,7 +42,10 @@ return (
         </div>
 
             <div className="search-div">
-                <input/>
+            <i className="fas fa-search"></i>
+                <input
+                    placeholder="Explore"
+                />
             </div>
 
 
@@ -56,14 +59,14 @@ return (
             </> 
             :
             <>
-                <span>
+                <span className="welcome-message">
                     Welcome, {sessionUser.firstName}
                 </span>
                 <NavLink to={`/users/${sessionUser.id}`} exact={true} activeClassName='active'>
                     Profile
                 </NavLink>
-                <SuggestionFormModal/>
                 <LogoutButton/>
+                <SuggestionFormModal/>
             </>
             }
         </div>
