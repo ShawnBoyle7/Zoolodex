@@ -53,3 +53,12 @@ img {
     height: 400px;
     object-fit: cover;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+    width: 16%;
+    height: 30px;
+    font-size: 0.96em;
+    background-color: rgb(28, 145, 101)
+}

@@ -25,11 +25,10 @@ nav * {
     width: 100vw;
     height: 60px;
     z-index: 2;
-    background-color: black;
+    background-color: rgb(136, 69, 31);
 }
 
 .logo-image-div {
-    /* position: relative; */
     width: 100%;
     height: 100%;
     margin: 0;
@@ -40,8 +39,6 @@ nav * {
 }
 
 .logo-image {
-    /* position: relative; */
-    /* margin-top: 1px; */
     position: relative;
     top: 2px;
     height: 55px;
@@ -107,9 +104,4 @@ nav a {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-}
-
-nav button {
-    width: 5.5em;
-    height: 1.8em;
 }
