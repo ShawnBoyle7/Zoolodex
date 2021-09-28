@@ -38,6 +38,14 @@ nav a {
     width: 75%;
 }
 
+/* .search-div .fa-search {
+
+} */
+
+.welcome-message {
+    color: white;
+}
+
 .navigation-auth {
     grid-area: auth;
     display: flex;
