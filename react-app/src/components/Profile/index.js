@@ -4,6 +4,7 @@ import SuggestionTile from "../SuggestionTile";
 import EditUserFormModal from "../EditUserFormModal";
 import { useParams } from "react-router-dom";
 import PageNotFound from "../PageNotFound";
+import './Profile.css'
 
 const Profile = () => {
     const { userId } = useParams();
@@ -36,42 +37,49 @@ const Profile = () => {
     const userExists = users[+userId] !== undefined;
 
     return(
-            userExists ?
-            <>
-                <div className="profile-username">
-                    <h2>{profileUser?.username}</h2>
-                </div>
+        <>
+            <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
+            <div className="page-content">
+                {userExists ?
+                <div className="profile-page">
+                    <div className="profile-tile">
+                        <h2 className="profile-username">
+                            {profileUser?.username}
+                        </h2>
 
-                {profileUser?.id === sessionUser?.id && 
-                    <div className="edit-user">
-                        <EditUserFormModal/>
+                        {profileUser?.id === sessionUser?.id && 
+                            <div className="edit-user">
+                                <EditUserFormModal/>
+                            </div>
+                        }
+                        
+                        <div className="profile-image">
+                            <img src={profileUser?.imgUrl} alt="profile"/>
+                        </div>
                     </div>
-                }
-                
-                <div className="profile-image">
-                    <img src={profileUser?.imgUrl} alt="profile"/>
-                </div>
 
-                <button onClick={animalClick}>Animal Suggestions</button>
-                <button onClick={regionClick}>Region Suggestions</button>
-                <div className="profile-suggestions">
-                    {showAnimals &&
-                        animalSuggestions.map(suggestion =>
-                            <div className="suggestion-div" key={suggestion?.id}>
-                                <SuggestionTile suggestion={suggestion}/>
-                            </div>
-                    )}
+                    <button onClick={animalClick}>Animal Suggestions</button>
+                    <button onClick={regionClick}>Region Suggestions</button>
+                    <div className="profile-suggestions">
+                        {showAnimals &&
+                            animalSuggestions.map(suggestion =>
+                                <div className="suggestion-div" key={suggestion?.id}>
+                                    <SuggestionTile suggestion={suggestion}/>
+                                </div>
+                        )}
 
-                    {showRegions &&
-                        regionSuggestions.map(suggestion =>
-                            <div className="suggestion-div" key={suggestion?.id}>
-                                <SuggestionTile suggestion={suggestion}/>
-                            </div>
-                    )}
+                        {showRegions &&
+                            regionSuggestions.map(suggestion =>
+                                <div className="suggestion-div" key={suggestion?.id}>
+                                    <SuggestionTile suggestion={suggestion}/>
+                                </div>
+                        )}
+                    </div>
                 </div>
-            </>
-            : 
-            <PageNotFound/>
+                : 
+                <PageNotFound/>}
+            </div>
+        </>
     )
 };
 

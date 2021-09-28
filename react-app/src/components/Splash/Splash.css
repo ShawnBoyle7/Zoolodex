@@ -9,20 +9,11 @@
 
 .splash-header {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 20%;
+    left: 30%;
     z-index: 1;
     color: white;
 }
-
-/* .splash-background {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-image: url("https://zoolodex-bucket.s3.us-west-1.amazonaws.com/748043.jpg");
-    background-size: cover;
-    height: 100%;
-} */
 
 /* .carousel-image-div {
     display: flex;

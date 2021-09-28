@@ -4,7 +4,6 @@
 
 a {
     text-decoration: none;
-    color: black
 }
 
 #root {
@@ -20,8 +19,11 @@ a {
     top: 400px;
     left: 0px;
     width: 100vw;
-    /* height: calc(100vh - 60px); */
     overflow-y: auto;
+}
+
+.page-content a {
+    color: rgb(8, 78, 8)
 }
 
 .gallery-page {

@@ -1,35 +1,47 @@
 nav * {
-    color: purple;
     margin: auto;
 }
 
 nav {
     display: grid;
     position: fixed;
-    grid-template-columns: 10% 10% 10% 10% 20% 20% 20%;
+    grid-template-columns: 33.333333333333333333333333333333% 33.333333333333333333333333333333% 33.333333333333333333333333333333%;
+    grid-template-areas:
+    "links search auth";
     top: 0px;
     width: 100vw;
     height: 60px;
-    border-bottom: 1px solid black;
     z-index: 2;
+    border-bottom: 1px solid black;
 }
 
 nav a {
-    text-decoration: none;
     font-size: 1.2em;
+    color: white;
+}
+
+.nav-links-div {
+    grid-area: links;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .search-div {
+    grid-area: search;
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
 .search-div input {
-    width: 100%;
+    width: 75%;
 }
 
 .navigation-auth {
+    grid-area: auth;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
 }
 
