@@ -24,22 +24,25 @@ const Suggestions = () => {
 
     return(
         <>
-            <button onClick={animalClick}>Animal Suggestions</button>
-            <button onClick={regionClick}>Region Suggestions</button>
-            <div className="all-suggestions">
-                {showAnimals &&
-                    animalSuggestions.map(suggestion =>
-                        <div className="suggestion-div" key={suggestion?.id}>
-                            <SuggestionTile suggestion={suggestion}/>
-                        </div>
-                )}
+            <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
+            <div className="page-content">
+                <button onClick={animalClick}>Animal Suggestions</button>
+                <button onClick={regionClick}>Region Suggestions</button>
+                <div className="all-suggestions">
+                    {showAnimals &&
+                        animalSuggestions.map(suggestion =>
+                            <div className="suggestion-div" key={suggestion?.id}>
+                                <SuggestionTile suggestion={suggestion}/>
+                            </div>
+                    )}
 
-                {showRegions &&
-                    regionSuggestions.map(suggestion =>
-                        <div className="suggestion-div" key={suggestion?.id}>
-                            <SuggestionTile suggestion={suggestion}/>
-                        </div>
-                )}
+                    {showRegions &&
+                        regionSuggestions.map(suggestion =>
+                            <div className="suggestion-div" key={suggestion?.id}>
+                                <SuggestionTile suggestion={suggestion}/>
+                            </div>
+                    )}
+                </div>
             </div>
         </>
     )
