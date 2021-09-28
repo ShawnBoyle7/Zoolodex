@@ -25,8 +25,7 @@ nav * {
     width: 100vw;
     height: 60px;
     z-index: 2;
-    border-bottom: 1px solid white;
-    background-color: white;
+    background-color: black;
 }
 
 .logo {
@@ -62,14 +61,19 @@ nav a {
     width: 100%;
     padding-left: 2em;
     border: 1px solid black;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-scrolled input {
+    border: 1px solid white;
 }
 
 .search-form .fa-search {
     position: absolute;
     top: 20%;
     left: 0.3em;
-    opacity: 0.65;
+    opacity: 0.5;
+    color: white;
 }
 
 ::placeholder {

@@ -21,20 +21,21 @@ const NavigationBar = ({ authenticated }) => {
     history.push("/")
 }
 
-const scrollChecker = () => {
-    const root = document.querySelector("#root")
+document.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav")
 
-    root.scrollTop === 0 
-    ?
-    root.classList.add("navigation-default")
-    :
-    root.classList.add("navigation-scrolled")
-}
+    if (window.scrollY === 0) {
+        nav.classList.add("navigation-default")
+        nav.classList.remove("navigation-scrolled")
+    } else if (window.scrollY > 0) {
+        nav.classList.remove("navigation-default")
+        nav.classList.add("navigation-scrolled")
+    }
+})
 
 return (
     <>
-        {scrollChecker()}
-        <nav>
+        <nav className="navigation-default">
             <div className="nav-links-div">
                 <NavLink className="logo" to='/' exact={true} activeClassName='active'>
                     Zoolodex
