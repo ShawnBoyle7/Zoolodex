@@ -23,7 +23,7 @@ a {
 }
 
 .page-content a {
-    color: rgb(8, 78, 8)
+    color: black;
 }
 
 .gallery-page {
@@ -60,5 +60,7 @@ button {
     width: 16%;
     height: 30px;
     font-size: 0.96em;
-    background-color: rgb(28, 145, 101)
+    color: lightgray;
+    /* background-color: rgb(28, 145, 101) */
+    background-color: rgb(136, 69, 31);
 }
