@@ -28,8 +28,25 @@ nav * {
     background-color: black;
 }
 
-.logo {
-    font-size: 2em;
+.logo-image-div {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.nav-links-div > a:first-child {
+    width: 207px;
+}
+
+.logo-image {
+    /* position: relative; */
+    /* margin-top: 1px; */
+    position: relative;
+    top: 2px;
+    height: 55px;
+    width: 100%;
+    object-fit: scale-down;
 }
 
 nav a {

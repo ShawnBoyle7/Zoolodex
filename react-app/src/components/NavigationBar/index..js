@@ -37,8 +37,10 @@ return (
     <>
         <nav className="navigation-default">
             <div className="nav-links-div">
-                <NavLink className="logo" to='/' exact={true} activeClassName='active'>
-                    Zoolodex
+                <NavLink to='/' exact={true} activeClassName='active'>
+                    <div className="logo-image-div">
+                        <img src="https://i.imgur.com/PoiGGsV.png" className="logo-image"/>
+                    </div>
                 </NavLink>
 
                 <NavLink to='/animals' exact={true} activeClassName='active'>
