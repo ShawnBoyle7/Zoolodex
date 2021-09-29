@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import EditSuggestionFormModal from "../EditSuggestionFormModal";
 import DeleteSuggestionModal from "../DeleteSuggestionModal";
 import { Link } from "react-router-dom"
+import './SuggestionTile.css'
 
 const SuggestionTile = ({ suggestion, flipped }) => {
 
@@ -48,23 +49,23 @@ const SuggestionTile = ({ suggestion, flipped }) => {
                     </>   
                     :
                     <>
-                    <h2>
+                    <h1>
                         You Suggested the {suggestion.title}
-                    </h2>
+                    </h1>
                     </>
                     }
                 </div>
 
                 <div className="suggestion-tile-description">
-                    <h2>{suggestion.description}</h2>
+                    <p>{suggestion.description}</p>
                 </div>
 
                 {sessionUser?.id === suggestion?.userId &&
-                    <div>
+                    <div className="suggestion-auth-buttons-div">
                         {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the edit form modal */}
-                        <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>
+                        <button onClick={renderEditModal} id={suggestion.id}>Edit</button>
                         {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the delete confirmation modal */}
-                        <button className="suggestion-delete-button" onClick={renderDeleteModal} id={suggestion.id}>Delete</button>
+                        <button onClick={renderDeleteModal} id={suggestion.id}>Delete</button>
                     </div>
                 }
                 {/* Once showModal is set to true from the edit button, this modal will render which will pop out a form rather than rendering a new page */}

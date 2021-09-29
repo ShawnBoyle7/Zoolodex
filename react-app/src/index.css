@@ -4,6 +4,7 @@
 
 a {
     text-decoration: none;
+    color: rgb(28, 145, 101)
 }
 
 #root {
@@ -20,10 +21,6 @@ a {
     left: 0px;
     width: 100vw;
     overflow-y: auto;
-}
-
-.page-content a {
-    color: black;
 }
 
 .gallery-page {

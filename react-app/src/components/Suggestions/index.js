@@ -26,7 +26,7 @@ const Suggestions = () => {
         <>
             <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
             <div className="page-content">
-                <div className="suggestion-buttons">
+                <div className="suggestion-conditional-buttons-div">
                     <button onClick={animalClick}>Animal Suggestions</button>
                     <button onClick={regionClick}>Region Suggestions</button>
                 </div>
