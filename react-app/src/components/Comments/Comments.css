@@ -1,45 +1,10 @@
-.comment-form {
-    margin-top: 2em;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    top: 3em;
-    right: 10.3%;
-}
-
-.comment-input-div {
-    height: 100%;
-}
-
-.comment-input-div textarea {
-    resize: none;
-    width: 50%;
-    height: 2.65rem;
-
-}
-
-textarea::placeholder {
-    color: gray;
-    position: relative;
-    top: 20%;
-    font-size: 1.3em
-}
-
-.comment-submit-div {
-    
-}
-
-.comment-submit-div button {
-
-}
-
 .all-comments {
-
+    margin-top: 3em;
 }
 
-.comment-div {
+/* .comment-div {
     
-}
+}  */
 
 .comment-image {
     border-radius: 50%;
@@ -49,7 +14,7 @@ textarea::placeholder {
     border: 1px solid black;
 }
 
-.comment-text-div {
+/* .comment-text-div {
     
 }
 
@@ -71,4 +36,4 @@ textarea::placeholder {
 
 .comment-delete-button {
 
-}
+} */

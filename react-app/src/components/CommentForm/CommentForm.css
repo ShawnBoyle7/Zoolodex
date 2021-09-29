@@ -1,0 +1,44 @@
+.comment-form-div {
+}
+
+.comment-form-image {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    margin: 1em 1em 0 0;
+    border: 1px solid black;
+}
+
+.comment-form-text {
+    position: relative;
+    width: fit-content;
+    bottom: 0.6em;
+    left: 1%;
+}
+
+.comment-input-div {
+    height: 100%;
+    width: fit-content
+}
+
+.comment-input-div textarea {
+    resize: none;
+    width: 45em;
+    height: 2.65rem;
+}
+
+textarea::placeholder {
+    color: gray;
+    position: relative;
+    top: 20%;
+    font-size: 1.3em
+}
+
+.comment-form-buttons-div {
+    
+}
+
+.comment-form-buttons-div button {
+    width: 10em;
+    height: 35px;
+}

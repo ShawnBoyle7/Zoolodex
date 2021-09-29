@@ -69,19 +69,16 @@ const Animal = () => {
                     </p>
 
                     <div className="animal-comments-div">
-                        {/* Sighting placeholder */}
-                        <h2>{comments.length} Comments</h2>
+                        <h2 className="animal-comments-header">{comments.length} Comments</h2>
                         {sessionUser &&
-                            <div className="animal-comment-form-div">
-                                <div className="comment-as-div">
-                                    <img className="comment-as-image" src={sessionUser.imgUrl}/>
-                                    {sessionUser ? 
-                                        <span className="comment-as-text">Comment as {sessionUser?.username}</span>
-                                        :
-                                        ""
-                                    }
-                                    <CommentForm animal={animal} sighting={null}/>
-                                </div>
+                            <div className="comment-form-div">
+                                {sessionUser &&
+                                    <>
+                                        <img className="comment-form-image" src={sessionUser.imgUrl}/>
+                                        <span className="comment-form-text">Comment as {sessionUser?.username}</span>
+                                        <CommentForm animal={animal} sighting={null}/>
+                                    </>
+                                }
                             </div>
                         }
                         <Comments animalId={animal.id}/>

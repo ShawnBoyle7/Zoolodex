@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { newComment } from "../../store/comments";
+import './CommentForm.css'
 
 const CommentForm = ({ animal, sighting }) => {
     const dispatch = useDispatch();
@@ -36,15 +37,15 @@ const CommentForm = ({ animal, sighting }) => {
 
             <div className="comment-input-div">
                 <textarea
-                    className="comment-textarea"
                     name="content"
                     placeholder="Leave a comment"
                     onChange={updateContent}
                     value={content}/>
             </div>
 
-            <div className="comment-submit-div">
-                <button type="submit">Submit</button>
+            <div className="comment-form-buttons-div">
+                <button type="submit">Comment</button>
+                <button>Cancel</button>
             </div>
         </form>
     );

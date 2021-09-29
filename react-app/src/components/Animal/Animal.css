@@ -34,27 +34,3 @@
     width: 65%;
     text-align: left;
 }
-
-.animal-comment-form-div {
-    margin-bottom: 6em;
-}
-
-.comment-as-div {
-    display: flex;
-    align-items: center;
-}
-
-.comment-as-image {
-    border-radius: 50%;
-    width: 4em;
-    height: 4em;
-    margin: 1em 1em 0 0;
-    border: 1px solid black;
-}
-
-.comment-as-text {
-    position: relative;
-    width: fit-content;
-    bottom: 0.6em;
-    left: 1%;
-}
