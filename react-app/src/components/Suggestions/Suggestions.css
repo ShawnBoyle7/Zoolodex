@@ -1,32 +1,13 @@
-.suggestion-buttons {
+.suggestion-conditional-buttons-div {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 2%
     /* position: fixed; */
 }
 
-.suggestion-tile {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: 10%;
-    grid-template-areas:
-    "image body";
-    margin: 3% 15% 0 15%;
-}
-
-.suggestion-tile-flipped {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-column-gap: 10%;
-    grid-template-areas:
-    "body image";
-    margin: 3% 15% 0 15%;
-}
-
-.suggestion-tile-image {
-    grid-area: image
-}
-
-.suggestion-tile-body {
-    grid-area: body
+.suggestion-conditional-buttons-div button {
+    width: 11%;
+    height: 35px;
+    margin-right: 1em;
 }
