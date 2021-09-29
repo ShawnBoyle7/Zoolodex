@@ -2,6 +2,9 @@
     margin-top: 2em;
     width: 100%;
     height: 100%;
+    position: relative;
+    top: 3em;
+    right: 10.3%;
 }
 
 .comment-input-div {
@@ -12,13 +15,14 @@
     resize: none;
     width: 50%;
     height: 2.65rem;
+
 }
 
 textarea::placeholder {
     color: gray;
     position: relative;
     top: 20%;
-    font-size: 1.4em
+    font-size: 1.3em
 }
 
 .comment-submit-div {
