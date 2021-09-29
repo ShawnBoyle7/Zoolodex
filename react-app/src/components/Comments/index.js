@@ -31,11 +31,13 @@ const Comments = ({ animalId }) => {
                 {comments.map(comment =>
                     <div className="comment-div" key={comment?.id}>
                         <img className="comment-image" src={users[comment.userId].imgUrl} alt={`${users[comment.userId].imgUrl}'s profile`}/>
-                        <p className="comment-username">{users[comment.userId].username}</p>
-                        <p className="comment-content">{comment.content}</p>
+                        <div className="comment-text-div">
+                            <p className="comment-username">{users[comment.userId].username}</p>
+                            <p className="comment-content">{comment.content}</p>
+                        </div>
 
                         {comment.userId === userId && 
-                            <div>
+                            <div className="comment-auth-buttons-div">
                                 <button className="comment-edit-button" onClick={renderEditModal} id={comment.id}>Edit</button>
                                 <button className="comment-delete-button" onClick={renderDeleteModal} id={comment.id}>Delete</button>
                             </div>

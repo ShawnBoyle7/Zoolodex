@@ -42,7 +42,7 @@ const CommentForm = ({ animal, sighting }) => {
                     value={content}/>
             </div>
 
-            <div>
+            <div className="comment-submit-div">
                 <button type="submit">Submit</button>
             </div>
         </form>

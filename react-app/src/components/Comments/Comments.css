@@ -1,7 +1,55 @@
+.comment-form {
+    margin-top: 3em;
+}
+
+.comment-content-input {
+
+}
+
+.comment-submit-div {
+    
+}
+
+.comment-submit-div button {
+
+}
+
+.all-comments {
+
+}
+
+.comment-div {
+    
+}
+
 .comment-image {
     border-radius: 50%;
     width: 5em;
     height: 5em;
     margin: 1em 1em 0 0;
     border: 1px solid black;
+}
+
+.comment-text-div {
+    
+}
+
+.comment-username {
+
+}
+
+.comment-content {
+
+}
+
+.comment-auth-buttons-div {
+    
+}
+
+.comment-edit-button {
+
+}
+
+.comment-delete-button {
+
 }
