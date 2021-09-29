@@ -47,27 +47,26 @@ const Animal = () => {
                         <img src={animal.imgUrl} alt="animal"/>
                     </div>
 
-                    <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
-                    <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
-                    <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem Influence</button>
+                    <div className="animal-conditional-buttons-div">
+                        <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
+                        <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
+                        <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem</button>
+                    </div>
 
-                    {showOrigins && 
-                        <div>
-                            {animal.origins}
-                        </div>
-                    }
+                    <p className="animal-content">
+                        {showOrigins && 
+                            animal.origins
+                        }
 
-                    {showTraits && 
-                        <div>
-                            {animal.traits}
-                        </div>
-                    }
+                        {showTraits && 
+                            animal.traits
+                        }
 
-                    {showEcosystemInfluence && 
-                        <div>
-                            {animal.ecosystemInfluence}
-                        </div>
-                    }
+                        {showEcosystemInfluence && 
+                            animal.ecosystemInfluence
+                        }
+                    </p>
+
                     <div>
                         {/* Sighting placeholder */}
                         <h2>Comments</h2>
