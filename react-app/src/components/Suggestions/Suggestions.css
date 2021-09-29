@@ -1,8 +1,32 @@
 .suggestion-buttons {
     display: flex;
     justify-content: center;
+    width: 100%;
+    /* position: fixed; */
 }
 
-.all-suggestions {
-    margin-left: 2%;
+.suggestion-tile {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 10%;
+    grid-template-areas:
+    "image body";
+    margin: 3% 15% 0 15%;
+}
+
+.suggestion-tile-flipped {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10%;
+    grid-template-areas:
+    "body image";
+    margin: 3% 15% 0 15%;
+}
+
+.suggestion-tile-image {
+    grid-area: image
+}
+
+.suggestion-tile-body {
+    grid-area: body
 }
