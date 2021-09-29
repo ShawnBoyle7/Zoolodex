@@ -38,7 +38,7 @@ const Profile = () => {
 
     return(
         <>
-            <div className="background-image"><img src="https://i.imgur.com/EgUQclC.jpg"/></div>
+            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
             <div className="page-content">
                 {userExists ?
                 <div className="profile-page">
