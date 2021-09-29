@@ -6,9 +6,10 @@ import './Comments.css'
 
 const Comments = ({ animalId }) => {
 
-    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === animalId).reverse()
+    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
     const users = useSelector(state => state.users)
     const userId = useSelector(state => state.session?.user?.id)
+    
 
     const [commentIdEdit, setCommentIdEdit] = useState("")
     const [commentIdDelete, setCommentIdDelete] = useState("")
@@ -27,7 +28,6 @@ const Comments = ({ animalId }) => {
 
     return(
         <>
-            <h2>{comments.length} Comments</h2>
             <div className="all-comments">
                 {comments.map(comment =>
                     <div className="comment-div" key={comment?.id}>

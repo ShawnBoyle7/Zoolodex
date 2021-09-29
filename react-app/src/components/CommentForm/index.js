@@ -34,10 +34,11 @@ const CommentForm = ({ animal, sighting }) => {
                     </div>)}
             </div>
 
-            <div className="comment-content-input">
+            <div className="comment-input-div">
                 <textarea
+                    className="comment-textarea"
                     name="content"
-                    placeholder="Write your comment here"
+                    placeholder="Leave a comment"
                     onChange={updateContent}
                     value={content}/>
             </div>

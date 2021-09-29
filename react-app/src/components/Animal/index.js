@@ -9,6 +9,8 @@ const Animal = () => {
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
+    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
+    const sessionUser = useSelector(state => state.session.user)
     
     const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
@@ -69,6 +71,12 @@ const Animal = () => {
 
                     <div className="animal-comments-div">
                         {/* Sighting placeholder */}
+                        <h2>{comments.length} Comments</h2>
+                        {sessionUser ? 
+                            <p>Comment as {sessionUser?.username}</p>
+                            :
+                            ""
+                        }
                         <CommentForm animal={animal} sighting={null}/>
                         <Comments animalId={animal.id}/>
                     </div>
