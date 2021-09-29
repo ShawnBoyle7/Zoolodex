@@ -45,7 +45,6 @@ const CommentForm = ({ animal, sighting }) => {
 
             <div className="comment-form-buttons-div">
                 <button type="submit">Comment</button>
-                <button>Cancel</button>
             </div>
         </form>
     );
