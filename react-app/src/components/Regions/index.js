@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route } from "react-router-dom";
 import RegionTile from "../RegionTile";
 import { Link } from "react-router-dom";
 
