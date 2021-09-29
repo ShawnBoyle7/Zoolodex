@@ -23,7 +23,7 @@ a {
 }
 
 .page-content a {
-    color: rgb(8, 78, 8)
+    color: black;
 }
 
 .gallery-page {
@@ -52,4 +52,15 @@ img {
     width: 400px;
     height: 400px;
     object-fit: cover;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    width: 16%;
+    height: 30px;
+    font-size: 0.96em;
+    color: lightgray;
+    /* background-color: rgb(28, 145, 101) */
+    background-color: rgb(136, 69, 31);
 }
