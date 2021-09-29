@@ -32,17 +32,13 @@ const Suggestions = () => {
                 </div>
                 <div className="all-suggestions">
                     {showAnimals &&
-                        animalSuggestions.map(suggestion =>
-                            <div className="suggestion-div" key={suggestion?.id}>
-                                <SuggestionTile suggestion={suggestion}/>
-                            </div>
+                        animalSuggestions?.map((suggestion, idx) =>
+                        <SuggestionTile suggestion={suggestion} flipped={idx % 2 !== 0}/>
                     )}
 
                     {showRegions &&
-                        regionSuggestions.map(suggestion =>
-                            <div className="suggestion-div" key={suggestion?.id}>
-                                <SuggestionTile suggestion={suggestion}/>
-                            </div>
+                        regionSuggestions?.map((suggestion, idx) =>
+                        <SuggestionTile suggestion={suggestion} flipped={idx % 2 !== 0}/>
                     )}
                 </div>
             </div>

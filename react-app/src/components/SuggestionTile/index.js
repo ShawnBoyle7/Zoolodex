@@ -4,7 +4,7 @@ import EditSuggestionFormModal from "../EditSuggestionFormModal";
 import DeleteSuggestionModal from "../DeleteSuggestionModal";
 import { Link } from "react-router-dom"
 
-const SuggestionTile = ({ suggestion }) => {
+const SuggestionTile = ({ suggestion, flipped }) => {
 
     // State variable to store the ID of the suggestion being clicked in by the edit button
     const [suggestionIdEdit, setSuggestionIdEdit] = useState("")
@@ -30,49 +30,48 @@ const SuggestionTile = ({ suggestion }) => {
     }
 
     return (
-        <div className="suggestion-tile">
-            <div className="suggestion-tile-title">
-                {/* If the suggester isn't you, then show their name. If it's you, show "You" suggested X. */}
-                {suggestion?.userId !== sessionUser?.id ?
-                <>
-                    <h2>
-                        <Link to={`/users/${suggestion.userId}`}>
-                            {users[suggestion.userId].username}
-                        </Link> Suggested the {suggestion.title}
-                    </h2>
-                </>   
-                :
-                <>
-                <h2>
-                    You Suggested the {suggestion.title}
-                </h2>
-                </>
-                }
-                
-            </div>
-
+        <div className={`${flipped ? "suggestion-tile-flipped" : "suggestion-tile"}`}>
             <div className="suggestion-tile-image">
                 <img src={suggestion.imgUrl} alt="suggestion"/>
             </div>
 
-            <div className="suggestion-tile-description">
-                <h2>{suggestion.description}</h2>
-            </div>
-
-            {sessionUser?.id === suggestion?.userId &&
-                <div>
-                    {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the edit form modal */}
-                    <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>
-                    {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the delete confirmation modal */}
-                    <button className="suggestion-delete-button" onClick={renderDeleteModal} id={suggestion.id}>Delete</button>
+            <div className="suggestion-tile-body">
+                <div className="suggestion-tile-title">
+                    {/* If the suggester isn't you, then show their name. If it's you, show "You" suggested X. */}
+                    {suggestion?.userId !== sessionUser?.id ?
+                    <>
+                        <h2>
+                            <Link to={`/users/${suggestion.userId}`}>
+                                {users[suggestion.userId].username}
+                            </Link> Suggested the {suggestion.title}
+                        </h2>
+                    </>   
+                    :
+                    <>
+                    <h2>
+                        You Suggested the {suggestion.title}
+                    </h2>
+                    </>
+                    }
                 </div>
-            }
-            
-            {/* Once showModal is set to true from the edit button, this modal will render which will pop out a form rather than rendering a new page */}
-            <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
-            {/* Once showModal is set to true from the delete button, this modal will render which gives a confirmation button for the delete*/}
-            <DeleteSuggestionModal suggestionId={suggestionIdDelete} showModal={showDeleteModal} setShowModal={setShowDeleteModal}/>
 
+                <div className="suggestion-tile-description">
+                    <h2>{suggestion.description}</h2>
+                </div>
+
+                {sessionUser?.id === suggestion?.userId &&
+                    <div>
+                        {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the edit form modal */}
+                        <button className="suggestion-edit-button" onClick={renderEditModal} id={suggestion.id}>Edit</button>
+                        {/* We put the suggestion ID on the button to get the value into a state variable on click, and render the delete confirmation modal */}
+                        <button className="suggestion-delete-button" onClick={renderDeleteModal} id={suggestion.id}>Delete</button>
+                    </div>
+                }
+                {/* Once showModal is set to true from the edit button, this modal will render which will pop out a form rather than rendering a new page */}
+                <EditSuggestionFormModal suggestionId={suggestionIdEdit} showModal={showEditModal} setShowModal={setShowEditModal}/>
+                {/* Once showModal is set to true from the delete button, this modal will render which gives a confirmation button for the delete*/}
+                <DeleteSuggestionModal suggestionId={suggestionIdDelete} showModal={showDeleteModal} setShowModal={setShowDeleteModal}/>
+            </div>
         </div>
     )
 }
