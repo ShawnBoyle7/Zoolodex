@@ -9,7 +9,6 @@ const Comments = ({ animalId }) => {
     const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
     const users = useSelector(state => state.users)
     const userId = useSelector(state => state.session?.user?.id)
-    
 
     const [commentIdEdit, setCommentIdEdit] = useState("")
     const [commentIdDelete, setCommentIdDelete] = useState("")

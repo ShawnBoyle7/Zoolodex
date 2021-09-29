@@ -42,10 +42,7 @@ const CommentForm = ({ animal, sighting }) => {
                     onChange={updateContent}
                     value={content}/>
             </div>
-
-            <div className="comment-form-buttons-div">
                 <button type="submit">Comment</button>
-            </div>
         </form>
     );
 };

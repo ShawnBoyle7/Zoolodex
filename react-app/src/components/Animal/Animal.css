@@ -34,3 +34,50 @@
     width: 65%;
     text-align: left;
 }
+
+/* Comment Form Styling */
+
+.comment-form-div {
+    display: flex;
+} 
+
+.comment-form-image {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    margin: 1em 1em 0 0;
+    border: 1px solid black;
+}
+
+.comment-form-no-image {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+.comment-form-text {
+    margin-top: 3.5%
+}
+
+.comment-form {
+    margin-top: 1.8%;
+}
+
+.comment-input-div textarea {
+    resize: none;
+    width: 50em;
+    height: 2.65rem;
+}
+
+textarea::placeholder {
+    color: gray;
+    position: relative;
+    top: 20%;
+    font-size: 1.3em
+}
+
+.comment-form-no-image > form > button {
+    margin-top: 0.8%;
+    width: 20%;
+}
