@@ -29,3 +29,8 @@
 .animal-content::first-letter {
     font-size: 220%
 }
+
+.animal-comments-div {
+    width: 65%;
+    text-align: left;
+}

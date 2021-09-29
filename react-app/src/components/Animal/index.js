@@ -37,7 +37,7 @@ const Animal = () => {
     return (
         <>
             <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
-            <div className="page-content">
+            {/* <div className="page-content"> */}
                 <div className="animal-page">
                     <div className="animal-name">
                         <h1>{animal.subSpecies}</h1>
@@ -67,14 +67,14 @@ const Animal = () => {
                         }
                     </p>
 
-                    <div>
+                    <div className="animal-comments-div">
                         {/* Sighting placeholder */}
                         <h2>Comments</h2>
                         <CommentForm animal={animal} sighting={null}/>
                         <Comments animalId={animal.id}/>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </>
     )
 }
