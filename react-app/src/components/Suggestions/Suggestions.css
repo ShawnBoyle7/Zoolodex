@@ -1,13 +1,19 @@
 .suggestion-conditional-buttons-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    margin-top: 2%
-    /* position: fixed; */
+    margin-top: 2%;
+    position: sticky;
+    top: 75px;
+    padding: 0 1%;
 }
 
 .suggestion-conditional-buttons-div button {
     width: 11%;
     height: 35px;
     margin-right: 1em;
+}
+
+.selected {
+    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
 }

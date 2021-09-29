@@ -41,7 +41,7 @@ const SuggestionTile = ({ suggestion, flipped }) => {
                     {/* If the suggester isn't you, then show their name. If it's you, show "You" suggested X. */}
                     {suggestion?.userId !== sessionUser?.id ?
                     <>
-                        <h2>
+                        <h2 className="suggestion-title">
                             <Link to={`/users/${suggestion.userId}`}>
                                 {users[suggestion.userId].username}
                             </Link> Suggested the {suggestion.title}
@@ -49,9 +49,9 @@ const SuggestionTile = ({ suggestion, flipped }) => {
                     </>   
                     :
                     <>
-                    <h1>
+                    <h2 className="suggestion-title">
                         You Suggested the {suggestion.title}
-                    </h1>
+                    </h2>
                     </>
                     }
                 </div>

@@ -27,6 +27,7 @@ const Comments = ({ animalId }) => {
 
     return(
         <>
+            <h2>{comments.length} Comments</h2>
             <div className="all-comments">
                 {comments.map(comment =>
                     <div className="comment-div" key={comment?.id}>
@@ -48,8 +49,6 @@ const Comments = ({ animalId }) => {
 
             <EditCommentFormModal commentId={commentIdEdit} setShowModal={setShowEditModal} showModal={showEditModal}/>
             <DeleteCommentModal commentId={commentIdDelete} setShowModal={setShowDeleteModal} showModal={showDeleteModal}/>
-
-            
         </>
     )
 };
