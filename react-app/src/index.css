@@ -76,3 +76,7 @@ button {
     cursor: pointer;
     font-size: 25px;
 }
+
+.selected {
+    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
+}

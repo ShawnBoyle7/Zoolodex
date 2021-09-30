@@ -38,19 +38,13 @@ const Profile = () => {
                 {userExists ?
                 <div className="profile-page">
                     <div className="profile-tile">
-                        <div className="profile-image">
-                            <img src={profileUser?.imgUrl} alt="profile"/>
-                        </div>
-
-                        {profileUser?.id === sessionUser?.id && 
-                            <div className="edit-user">
+                        <img src={profileUser?.imgUrl} alt="profile"/>
+                        <h1>{profileUser?.username}</h1>
+                        {profileUser?.id === sessionUser?.id &&
+                            <div className="profile-edit-div">
                                 <EditUserFormModal/>
                             </div>
                         }
-
-                        <h2 className="profile-username">
-                            {profileUser?.username}
-                        </h2>
 
                         <div className="profile-buttons-div">
                             <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
