@@ -71,3 +71,12 @@ button {
     /* background-color: rgb(28, 145, 101) */
     background-color: rgb(136, 69, 31);
 }
+
+.fa-edit {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.selected {
+    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
+}
