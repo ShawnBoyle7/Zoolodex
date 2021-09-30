@@ -5,14 +5,14 @@ class Animal(db.Model):
     __tablename__ = "animals"
 
     id = db.Column(db.Integer, primary_key=True)
-    group = db.Column(db.String, nullable=False)
-    family = db.Column(db.String, nullable=False)
-    species = db.Column(db.String, nullable=False)
-    sub_species = db.Column(db.String, nullable=False)
-    img_url = db.Column(db.String, nullable=False)
-    origins = db.Column(db.String, nullable=False)
-    traits = db.Column(db.String, nullable=False)
-    ecosystem_influence = db.Column(db.String, nullable=False)
+    group = db.Column(db.String(50), nullable=False)
+    family = db.Column(db.String(50), nullable=False)
+    species = db.Column(db.String(50), nullable=False)
+    sub_species = db.Column(db.String(50), nullable=False)
+    img_url = db.Column(db.String(255), nullable=False)
+    origins = db.Column(db.String(10000), nullable=False)
+    traits = db.Column(db.String(10000), nullable=False)
+    ecosystem_influence = db.Column(db.String(10000), nullable=False)
 
     sightings = db.relationship("Sighting", back_populates = "animal", cascade="all, delete-orphan")
     comments = db.relationship("Comment", back_populates = "animal", cascade="all, delete-orphan")

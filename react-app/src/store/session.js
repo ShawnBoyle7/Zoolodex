@@ -1,3 +1,5 @@
+import { getUsers } from './users'
+
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
 
@@ -92,13 +94,14 @@ export const signUp = (email, username, firstName, lastName, password) => async 
         username,
         first_name: firstName,
         last_name: lastName,
-        password,
-      }),
+        password
+      })
     });
     
     if (response.ok) {
       const data = await response.json();
-      dispatch(setUser(data))
+      dispatch(setUser(data));
+      dispatch(getUsers());
       return null;
     } else if (response.status < 500) {
       const data = await response.json();
@@ -128,6 +131,7 @@ export const editUser = (email, username, firstName, lastName, password, imgFile
     if (response.ok) {
       const data = await response.json(); 
       dispatch(setUser(data))
+      dispatch(getUsers());
       return null;
     } else if (response.status < 500) {
       const data = await response.json();
@@ -146,6 +150,7 @@ export const deleteUser = (userId) => async (dispatch) => {
 
     if (response.ok) {
       dispatch(removeUser(userId))
+      dispatch(getUsers());
       return null;
     } else {
       return "Error deleting user"

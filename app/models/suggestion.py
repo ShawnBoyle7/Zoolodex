@@ -4,10 +4,10 @@ class Suggestion(db.Model):
     __tablename__ = "suggestions"
 
     id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.String, nullable=False)
-    title = db.Column(db.String, nullable=False)
-    description = db.Column(db.String, nullable=False)
-    img_url = db.Column(db.String, nullable=False)
+    type = db.Column(db.String(50), nullable=False)
+    title = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.String(500), nullable=False)
+    img_url = db.Column(db.String(255), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     user = db.relationship("User", back_populates = "suggestions")

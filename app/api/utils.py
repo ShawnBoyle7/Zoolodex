@@ -6,5 +6,10 @@ def validation_errors_to_error_messages(validation_errors):
             for i in range(len(label)):
                 label[i] = label[i].capitalize()
             label = " ".join(label)
-            errorMessages.append(f'{label} Error: {error}')
+
+            if isinstance(error, list):
+                for err in error:
+                    errorMessages.append(f'{label} : {err}')
+            else:
+                errorMessages.append(f'{label} : {error}')
     return errorMessages
