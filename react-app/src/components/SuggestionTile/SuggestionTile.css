@@ -1,4 +1,4 @@
-.suggestion-tile {
+.suggestion-tile {  
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 10%;
@@ -23,9 +23,6 @@
 
 .suggestion-tile-body {
     grid-area: body;
-}
-.suggestion-tile-body p {
-    width: 60%;
 }
 
 .suggestion-tile-description {

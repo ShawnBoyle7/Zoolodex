@@ -172,13 +172,8 @@ form input {
     margin-bottom: 1.5em;
     border-bottom: 1px solid black;
     width: 100%;
-    height: 3em;
+    height: 10em;
     resize: none;
-}
-
-.form-suggestion-description textarea::placeholder {
-    position: relative;
-    top: 55%;
 }
 
 .form-image-upload input {
