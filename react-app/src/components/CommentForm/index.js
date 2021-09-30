@@ -27,7 +27,7 @@ const CommentForm = ({ animal, sighting }) => {
 
     return (
         <form className="comment-form" onSubmit={handleSubmit}>
-            <div className="form-errors">
+            <div className="form-errors-div">
                 {errors?.map((error, idx) => 
                     <div className="form-error" key={idx}>
                         {error}

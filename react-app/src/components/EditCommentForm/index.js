@@ -28,15 +28,15 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
     }
 
     return (
-        <form className="comment-form" onSubmit={handleSubmit}>
-            <div className="form-errors">
+        <form className="edit-comment-form" onSubmit={handleSubmit}>
+            <div className="form-errors-div">
                 {errors?.map((error, idx) => 
                     <div className="form-error" key={idx}>
                         {error}
                     </div>)}
             </div>
 
-            <div className="comment-content-input">
+            <div className="edit-comment-div">
                 <textarea
                     name="content"
                     placeholder="Write your comment here"
@@ -44,7 +44,7 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
                     value={content}/>
             </div>
 
-            <div>
+            <div className="form-buttons-div">
                 <button type="submit">Edit</button>
                 <button onClick={() => setShowModal(false)} type="button">Cancel</button>
             </div>

@@ -69,7 +69,7 @@
     height: 2.65rem;
 }
 
-textarea::placeholder {
+.comment-input-div textarea::placeholder {
     color: gray;
     position: relative;
     top: 20%;

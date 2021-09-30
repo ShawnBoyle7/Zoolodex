@@ -1,3 +1,8 @@
+:root {
+    --primary-color: rgb(28, 145, 101);
+    --secondary-color: rgb(136, 69, 31);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,7 +13,7 @@ html {
 
 a {
     text-decoration: none;
-    color: rgb(28, 145, 101)
+    color: var(--primary-color)
 }
 
 
@@ -64,12 +69,11 @@ img {
 button {
     cursor: pointer;
     border: none;
-    width: 16%;
-    height: 30px;
+    width: 6em;
+    height: 32px;
     font-size: 0.96em;
     color: lightgray;
-    /* background-color: rgb(28, 145, 101) */
-    background-color: rgb(136, 69, 31);
+    background-color: var(--secondary-color)
 }
 
 .fa-edit {
@@ -78,5 +82,159 @@ button {
 }
 
 .selected {
-    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
+    box-shadow: 3px 3px 3px 3px var(--primary-color)
 }
+
+/* Forms */
+
+form {
+    width: 85%;
+    margin: auto;
+}
+
+form input {
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
+.form-errors div {
+    margin-bottom: 5%;
+}
+
+.form-buttons-div {
+    margin: auto;
+    width: fit-content;
+}
+
+.login-form {
+    padding-bottom: 3%;
+}
+
+.signup-form {
+    padding-bottom: 3%;
+}
+
+.edit-user-form {
+    padding: 2em 2em;
+    width: 100%
+}
+
+.edit-user-form .form-buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.delete-account-button-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3em
+}
+
+.delete-account-button {
+    height: 3em;
+    width: 8em;
+}
+
+.suggestion-form {
+    padding: 2em 1.5em;
+    width: 100%
+}
+
+.suggestion-form .form-buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.radio {
+    width: 7%;
+    height: 1.2em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+
+.radio-label {
+    font-size: 1.05em;
+}
+
+.form-suggestion-title input {
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
+.form-suggestion-description textarea {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 3em;
+    resize: none;
+}
+
+.form-suggestion-description textarea::placeholder {
+    position: relative;
+    top: 55%;
+}
+
+.form-image-upload input {
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
+.edit-comment-form {
+    padding: 2em 1.5em;
+    width: 100%
+}
+
+.edit-comment-form textarea {
+    resize: none;
+    height: 8em;
+    width: 25em;
+}
+
+.edit-comment-form .form-buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.delete-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 25%;
+    height: 25%;
+}
+
+.delete-modal .delete-modal-buttons-div {
+    margin-top: 0.3em;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.about-div {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
+}
+
+.about-links {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about-paragraph {
+    margin-bottom: 1em;
+}
+

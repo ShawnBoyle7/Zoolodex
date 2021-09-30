@@ -37,12 +37,15 @@ const LoginForm = ({ setShowModal }) => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
+    <form className="login-form" onSubmit={onLogin}>
+      <h2>Log In</h2>
+      <div className="form-errors-div">
         {errors.map((error, idx) => (
-          <div key={idx}>{error}</div>
-        ))}
+            <div className="form-error" key={idx}>
+              {error}
+            </div>))}
       </div>
+
       <div>
         <input
           name='email'
@@ -52,6 +55,7 @@ const LoginForm = ({ setShowModal }) => {
           onChange={updateEmail}
         />
       </div>
+
       <div>
         <input
           name='password'
@@ -61,6 +65,8 @@ const LoginForm = ({ setShowModal }) => {
           value={password}
           onChange={updatePassword}
         />
+      </div>
+      <div className="form-buttons-div">
         <button type='submit'>Login</button>
       </div>
     </form>

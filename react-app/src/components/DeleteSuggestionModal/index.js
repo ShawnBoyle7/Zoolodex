@@ -14,9 +14,9 @@ function DeleteSuggestionModal({ suggestionId, setShowModal, showModal }) {
     return (
         <>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <p>Are you sure?</p>
-                    <div>
+                <Modal className="delete-modal" onClose={() => setShowModal(false)}>
+                    <h3>Confirm Your Deletion</h3>
+                    <div className="delete-modal-buttons-div">
                         {/* Confirm Delete button which dispatches the suggestion ID to our redux store */}
                         <button onClick={handleDelete}>Delete</button>
                         {/* Cancel by setting show modal to false */}

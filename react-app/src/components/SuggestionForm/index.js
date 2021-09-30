@@ -42,17 +42,19 @@ const SuggestionForm = ({ setShowModal }) => {
     }
 
     return(
-        <form onSubmit={onSubmit} className="suggestion-form">
+        <form className="suggestion-form" onSubmit={onSubmit} className="suggestion-form">
             <h2>Suggestion Form</h2>
             <div className="form-errors">
                 {errors.map((error, idx) => 
-                <div className="form-error" key={idx}>
-                    {error}
-                </div>)}
+                    <div className="form-error" key={idx}>
+                        {error}
+                    </div>)}
             </div>
+
             <div className="form-radio">
-                <label>
+                <label className="radio-label">
                     <input 
+                        className="radio"
                         type="radio"
                         // I forget what name is for, I think to connect the label/input?
                         name="type"
@@ -65,8 +67,9 @@ const SuggestionForm = ({ setShowModal }) => {
             </div>
 
             <div className="form-radio">
-                <label>
+                <label className="radio-label">
                     <input 
+                        className="radio"
                         type="radio"
                         // I forget what name is for, I think to connect the label/input?
                         name="type"
@@ -90,24 +93,23 @@ const SuggestionForm = ({ setShowModal }) => {
             </div>
 
             <div className="form-suggestion-description">
-                <input
-                    type="text"
+                <textarea
                     name="description"
                     onChange={updateDescription}
                     value={description}
-                    placeholder="Tell us more"
+                    placeholder="Description"
                     required={true}/>
             </div>
 
-            <div className="form-img-upload">
-                <label>Show us!</label>
+            <div className="form-image-upload">
                 <input
                     type="file"
                     name="imgFile"
                     onChange={updateImgFile}
                     required={false}/>
             </div>
-            <div>
+
+            <div className="form-buttons-div">
                 <button type="submit">Submit</button>
                 <button onClick={() => setShowModal(false)}>Cancel</button>
             </div>
