@@ -16,15 +16,16 @@
     margin: 3% 15% 0 15%;
 }
 
-.suggestion-tile-image {
-    grid-area: image
+.suggestion-tile-image-div {
+    grid-area: image;
+    width: fit-content
 }
 
 .suggestion-tile-body {
-    grid-area: body
+    grid-area: body;
 }
 .suggestion-tile-body p {
-    width: 100%;
+    width: 60%;
 }
 
 .suggestion-tile-description {
