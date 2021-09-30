@@ -20,7 +20,7 @@ function DeleteUserModal() {
 
     return (
         <>
-            <button onClick={() => setShowModal(true)}>Delete Account</button>
+            <button className="delete-modal" onClick={() => setShowModal(true)}>Delete Account</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     { sessionUser.id !== 1 ?

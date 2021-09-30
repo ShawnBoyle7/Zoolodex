@@ -59,20 +59,24 @@ const EditUserForm = ( { setShowModal } ) => {
 
     return (
         <form onSubmit={onEdit}>
-        <div>
+        <div className="form-errors-div">
             {errors.map((error, idx) => (
-            <div key={idx}>{error}</div>
+                <div key={idx}>
+                    {error}
+                </div>
             ))}
         </div>
+
         <div>
-                <input
-                type='integer'
-                name='userId'
-                value={user?.id}
-                hidden
-                readOnly
-                ></input>
-            </div>
+            <input
+            type='integer'
+            name='userId'
+            value={user?.id}
+            hidden
+            readOnly
+            ></input>
+        </div>
+
         <div>
             <input
             type='text'
@@ -82,6 +86,7 @@ const EditUserForm = ( { setShowModal } ) => {
             value={email}
             ></input>
         </div>
+
         <div>
             <input
             type='text'
@@ -91,6 +96,7 @@ const EditUserForm = ( { setShowModal } ) => {
             value={username}
             ></input>
         </div>
+
         <div>
             <input
             type='text'
@@ -100,6 +106,7 @@ const EditUserForm = ( { setShowModal } ) => {
             value={firstName}
             ></input>
         </div>
+
         <div>
             <input
             type='text'
@@ -109,6 +116,7 @@ const EditUserForm = ( { setShowModal } ) => {
             value={lastName}
             ></input>
         </div>
+
         <div>
             <input
             type='password'
@@ -118,6 +126,7 @@ const EditUserForm = ( { setShowModal } ) => {
             value={password}
             ></input>
         </div>
+
         <div>
             <input
             type='password'
@@ -128,8 +137,8 @@ const EditUserForm = ( { setShowModal } ) => {
             required={true}
             ></input>
         </div>
+
         <div>
-            <label>Upload Profile Picture</label>
             <input
                 type="file"
                 name="imgFile"
@@ -137,8 +146,11 @@ const EditUserForm = ( { setShowModal } ) => {
                 required={false}
             />
         </div>
-        <button type='submit'>Edit</button>
-        <button onClick={() => setShowModal(false)}>Cancel</button>
+
+        <div className="form-buttons-div">
+            <button type='submit'>Edit</button>
+            <button onClick={() => setShowModal(false)}>Cancel</button>
+        </div>
         </form>
     );
 };

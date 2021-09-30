@@ -57,12 +57,15 @@ const SignUpForm = ( {setShowModal} ) => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
+    <form className="signup-form" onSubmit={onSignUp}>
+      <h2>Sign Up</h2>
+      <div className="form-errors-div">
         {errors.map((error, idx) => (
-          <div key={idx}>{error}</div>
-        ))}
+            <div key={idx}>
+              {error}
+            </div>))}
       </div>
+
       <div>
         <input
           type='text'
@@ -72,6 +75,7 @@ const SignUpForm = ( {setShowModal} ) => {
           value={email}
         ></input>
       </div>
+
       <div>
         <input
           type='text'
@@ -81,6 +85,7 @@ const SignUpForm = ( {setShowModal} ) => {
           value={username}
         ></input>
       </div>
+
       <div>
         <input
           type='text'
@@ -90,6 +95,7 @@ const SignUpForm = ( {setShowModal} ) => {
           value={firstName}
         ></input>
       </div>
+
       <div>
         <input
           type='text'
@@ -99,6 +105,7 @@ const SignUpForm = ( {setShowModal} ) => {
           value={lastName}
         ></input>
       </div>
+
       <div>
         <input
           type='password'
@@ -108,6 +115,7 @@ const SignUpForm = ( {setShowModal} ) => {
           value={password}
         ></input>
       </div>
+
       <div>
         <input
           type='password'
@@ -118,7 +126,9 @@ const SignUpForm = ( {setShowModal} ) => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <div className="form-buttons-div">
+        <button type='submit'>Sign Up</button>
+      </div>
     </form>
   );
 };

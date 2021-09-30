@@ -7,7 +7,7 @@ function AboutModal() {
 
     return (
     <>
-        <button onClick={() => setShowModal(true)}>About</button>
+        <button className="about-modal" onClick={() => setShowModal(true)}>About</button>
         {showModal && (
         <Modal onClose={() => setShowModal(false)}>
             <About setShowModal={setShowModal}/>

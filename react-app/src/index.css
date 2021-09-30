@@ -64,11 +64,10 @@ img {
 button {
     cursor: pointer;
     border: none;
-    width: 16%;
-    height: 30px;
+    width: 6em;
+    height: 32px;
     font-size: 0.96em;
     color: lightgray;
-    /* background-color: rgb(28, 145, 101) */
     background-color: rgb(136, 69, 31);
 }
 
@@ -80,3 +79,56 @@ button {
 .selected {
     box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
 }
+
+/* Forms */
+
+form {
+    width: 85%;
+    margin: auto;
+}
+
+form input {
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
+.form-errors div {
+    margin-bottom: 5%;
+}
+
+.form-buttons-div {
+    margin: auto;
+    width: fit-content;
+}
+
+.login-form {
+    padding-bottom: 3%;
+}
+
+.signup-form {
+    padding-bottom: 3%;
+}
+
+.edit-suggestion-form {
+
+}
+
+.edit-comment-form {
+
+}
+
+.delete-modal {
+
+}
+
+.about-modal {
+
+}
+
+.about {
+
+}
+

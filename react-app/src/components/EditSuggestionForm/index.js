@@ -9,7 +9,7 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
 
     const suggestion = useSelector(state => state.suggestions[suggestionId])
 
-    const [type, setType] = useState(suggestion?.type) 
+    const [type, setType] = useState(suggestion?.type)
     const [title, setTitle] = useState(suggestion?.title)
     const [description, setDescription] = useState(suggestion?.description)
     const [imgFile, setImgFile] = useState("")
@@ -20,7 +20,7 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
         const data = await dispatch(editSuggestion(type, title, description, imgFile, suggestionId))
         if (data) {
             setErrors(data)
-        // Why else here
+            // Why else here
         } else {
             setShowModal(false)
         }
@@ -43,52 +43,51 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
         setImgFile(file)
     }
 
-    return(
-        <form onSubmit={onSubmit} className="suggestion-form">
+    return (
+        <form className="edit-suggestion-form" onSubmit={onSubmit} className="suggestion-form">
             <h2>Suggestion Form</h2>
-            <div className="form-errors">
-                {errors.map((error, idx) => 
-                <div className="form-error" key={idx}>
-                    {error}
-                </div>)}
+            <div className="form-errors-div">
+                {errors.map((error, idx) =>
+                    <div className="form-error" key={idx}>
+                        {error}
+                    </div>)}
             </div>
+
             <div className="form-radio">
                 <label>
-                    <input 
+                    <input
                         type="radio"
-                        // I forget what name is for, I think to connect the label/input?
                         name="type"
                         value="animal"
                         onChange={updateType}
                         checked={type === "animal"}
-                        required={true}/>
+                        required={true} />
                     Animal
                 </label>
             </div>
 
             <div className="form-radio">
                 <label>
-                    <input 
+                    <input
                         type="radio"
-                        // I forget what name is for, I think to connect the label/input?
                         name="type"
                         value="region"
                         onChange={updateType}
                         checked={type === "region"}
-                        required={true}/>
+                        required={true} />
                     Region
                 </label>
             </div>
 
             <div className="form-suggestion-title">
-                <input 
+                <input
                     type="text"
                     name="title"
                     onChange={updateTitle}
                     // I forgot how value is used here
                     value={title}
                     placeholder="Name"
-                    required={true}/>
+                    required={true} />
             </div>
 
             <div className="form-suggestion-description">
@@ -98,7 +97,7 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
                     onChange={updateDescription}
                     value={description}
                     placeholder="Tell us more"
-                    required={true}/>
+                    required={true} />
             </div>
 
             <div className="form-img-upload">
@@ -107,9 +106,9 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
                     type="file"
                     name="imgFile"
                     onChange={updateImgFile}
-                    required={false}/>
+                    required={false} />
             </div>
-            <div>
+            <div className="form-buttons-div">
                 <button type="submit">Submit</button>
                 <button onClick={() => setShowModal(false)}>Cancel</button>
             </div>

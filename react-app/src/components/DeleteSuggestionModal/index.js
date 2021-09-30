@@ -14,7 +14,7 @@ function DeleteSuggestionModal({ suggestionId, setShowModal, showModal }) {
     return (
         <>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
+                <Modal className="delete-modal" onClose={() => setShowModal(false)}>
                     <p>Are you sure?</p>
                     <div>
                         {/* Confirm Delete button which dispatches the suggestion ID to our redux store */}

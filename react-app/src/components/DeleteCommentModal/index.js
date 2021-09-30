@@ -14,7 +14,7 @@ function DeleteCommentModal({ commentId, setShowModal, showModal }) {
     return (
         <>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
+                <Modal className="delete-modal" onClose={() => setShowModal(false)}>
                     <p>Are you sure?</p>
                     <div>
                         <button onClick={handleDelete}>Delete</button>
