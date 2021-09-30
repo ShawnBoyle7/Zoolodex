@@ -1,5 +1,5 @@
 # Zoolodex
-![Logo](https://i.imgur.com/dRspeqw.png) (better logo goes here)
+![Logo](https://i.imgur.com/luPwxIE.png)
 
 Zoolodex is an informational codex for those interested in wildlife and nature. (more description goes here)
 
