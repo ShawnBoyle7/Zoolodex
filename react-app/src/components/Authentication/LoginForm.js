@@ -41,7 +41,7 @@ const LoginForm = ({ setShowModal }) => {
       <h2>Log In</h2>
       <div className="form-errors-div">
         {errors.map((error, idx) => (
-            <div key={idx}>
+            <div className="form-error" key={idx}>
               {error}
             </div>))}
       </div>

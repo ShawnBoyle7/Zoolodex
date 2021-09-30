@@ -85,10 +85,6 @@ button {
     box-shadow: 3px 3px 3px 3px var(--primary-color)
 }
 
-input #file-upload-button {
-    background-color: var(--secondary-color)
-} 
-
 /* Forms */
 
 form {
@@ -96,7 +92,7 @@ form {
     margin: auto;
 }
 
-form input {
+form input :not(.radio) {
     margin-bottom: 1em;
     border: none;
     border-bottom: 1px solid black;
@@ -143,9 +139,57 @@ form input {
     width: 8em;
 }
 
-.edit-user-form .form-buttons-div {
-
+.suggestion-form {
+    padding: 2em 1.5em;
+    width: 100%
 }
+
+.suggestion-form .form-buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.radio {
+    width: 7%;
+    height: 1.2em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+
+.radio-label {
+    font-size: 1.05em;
+}
+
+.form-suggestion-title input {
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
+.form-suggestion-description textarea {
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 3em;
+    resize: none;
+}
+
+.form-suggestion-description textarea::placeholder {
+    position: relative;
+    top: 55%;
+}
+
+.form-image-upload input {
+    margin-bottom: 1.5em;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2.5em;
+}
+
 
 .edit-suggestion-form {
 

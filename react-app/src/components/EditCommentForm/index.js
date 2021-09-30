@@ -29,9 +29,9 @@ const EditCommentForm = ({ commentId, setShowModal }) => {
 
     return (
         <form className="edit-comment-form" onSubmit={handleSubmit}>
-            <div className="form-errors">
+            <div className="form-errors-div">
                 {errors?.map((error, idx) => 
-                    <div className="form-errors-div" key={idx}>
+                    <div className="form-error" key={idx}>
                         {error}
                     </div>)}
             </div>
