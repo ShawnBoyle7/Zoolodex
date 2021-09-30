@@ -118,6 +118,7 @@ const SignUpForm = ( {setShowModal} ) => {
           onChange={updatePassword}
           value={password}
           required={true}
+          autoComplete="on"
         ></input>
       </div>
 
@@ -129,6 +130,7 @@ const SignUpForm = ( {setShowModal} ) => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+          autoComplete="on"
         ></input>
       </div>
       <div className="form-buttons-div">
