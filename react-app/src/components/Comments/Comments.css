@@ -20,17 +20,21 @@
     flex-direction: column;
 }
 
+.comment-buttons {
+    width: 50em;
+    display: flex;
+}
+
 .comment-buttons button {
-    width: 10%;
+    width: 7em;
     margin-right: 2%
 }
 
+.comment-username {
+    margin-bottom: 0;
+}
 
 /*
-
-.comment-username {
-
-}
 
 .comment-content {
 

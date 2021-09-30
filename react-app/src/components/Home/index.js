@@ -8,7 +8,7 @@ const Home = ({ authenticated }) => {
         authenticated ?
         <>
         <div className="home-image">
-            <img src="https://i.imgur.com/lJtekW9.jpg"/>
+            <img src="https://i.imgur.com/lJtekW9.jpg" alt="home-background"/>
         </div>
 
         <div className="home-header">

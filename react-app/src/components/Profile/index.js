@@ -33,7 +33,7 @@ const Profile = () => {
 
     return(
         <>
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
+            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
             {/* <h3 className="future-feature">Recent Sighting Goes Here</h3> */}
                 {userExists ?
                 <div className="profile-page">

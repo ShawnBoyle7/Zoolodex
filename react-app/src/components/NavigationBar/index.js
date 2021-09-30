@@ -39,7 +39,7 @@ return (
             <div className="nav-links-div">
                 <NavLink to='/' exact={true} activeClassName='active'>
                     <div className="logo-image-div">
-                        <img src="https://i.imgur.com/PoiGGsV.png" className="logo-image"/>
+                        <img src="https://i.imgur.com/PoiGGsV.png" className="logo-image" alt="logo"/>
                     </div>
                 </NavLink>
 

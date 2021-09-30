@@ -42,7 +42,7 @@ const SuggestionForm = ({ setShowModal }) => {
     }
 
     return(
-        <form className="suggestion-form" onSubmit={onSubmit} className="suggestion-form">
+        <form className="suggestion-form" onSubmit={onSubmit}>
             <h2>Suggestion Form</h2>
             <div className="form-errors">
                 {errors.map((error, idx) => 

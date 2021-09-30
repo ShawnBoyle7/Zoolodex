@@ -38,7 +38,7 @@ const Animal = () => {
 
     return (
         <>
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
+            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
                 <div className="animal-page">
                     <div className="animal-name">
                         <h1>{animal.subSpecies}</h1>
@@ -74,7 +74,7 @@ const Animal = () => {
                             <div className="comment-form-div">
                                 {sessionUser &&
                                     <>
-                                        <img className="comment-form-image" src={sessionUser.imgUrl}/>
+                                        <img className="comment-form-image" src={sessionUser.imgUrl} alt="user"/>
                                         <div className="comment-form-text-div">
                                             <span className="comment-form-text">Comment as {sessionUser?.username}</span>
                                             <CommentForm animal={animal} sighting={null}/>

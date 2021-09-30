@@ -32,7 +32,7 @@ const SuggestionTile = ({ suggestion, flipped }) => {
 
     return (
         <div className={`${flipped ? "suggestion-tile-flipped" : "suggestion-tile"}`}>
-            <div className="suggestion-tile-image">
+            <div className="suggestion-tile-image-div">
                 <img src={suggestion.imgUrl} alt="suggestion"/>
             </div>
 
