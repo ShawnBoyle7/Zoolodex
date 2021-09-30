@@ -27,8 +27,8 @@ function DeleteUserModal() {
                 <Modal className="delete-modal" onClose={() => setShowModal(false)}>
                     { sessionUser.id !== 1 ?
                     <>
-                        <p>Are you sure?</p>
-                        <div>
+                        <h3>Confirm Your Deletion</h3>
+                        <div className="delete-modal-buttons-div">
                             <button onClick={handleDelete}>Delete</button>
                             <button onClick={() => setShowModal(false)}>Cancel</button>
                         </div>
