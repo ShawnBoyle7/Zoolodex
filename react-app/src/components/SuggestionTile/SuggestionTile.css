@@ -17,10 +17,7 @@
 }
 
 .suggestion-tile-image {
-    grid-area: image;
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
+    grid-area: image
 }
 
 .suggestion-tile-body {
