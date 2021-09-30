@@ -1,3 +1,8 @@
+:root {
+    --primary-color: rgb(28, 145, 101);
+    --secondary-color: rgb(136, 69, 31);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,7 +13,7 @@ html {
 
 a {
     text-decoration: none;
-    color: rgb(28, 145, 101)
+    color: var(--primary-color)
 }
 
 
@@ -68,7 +73,7 @@ button {
     height: 32px;
     font-size: 0.96em;
     color: lightgray;
-    background-color: rgb(136, 69, 31);
+    background-color: var(--secondary-color)
 }
 
 .fa-edit {
@@ -77,8 +82,12 @@ button {
 }
 
 .selected {
-    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
+    box-shadow: 3px 3px 3px 3px var(--primary-color)
 }
+
+input #file-upload-button {
+    background-color: var(--secondary-color)
+} 
 
 /* Forms */
 
@@ -110,6 +119,32 @@ form input {
 
 .signup-form {
     padding-bottom: 3%;
+}
+
+.edit-user-form {
+    padding: 2em 2em;
+    width: 100%
+}
+
+.edit-user-form .form-buttons-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.delete-account-button-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.3em
+}
+
+.delete-account-button {
+    height: 3em;
+    width: 8em;
+}
+
+.edit-user-form .form-buttons-div {
+
 }
 
 .edit-suggestion-form {

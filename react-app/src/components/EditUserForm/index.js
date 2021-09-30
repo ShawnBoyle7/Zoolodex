@@ -58,7 +58,7 @@ const EditUserForm = ( { setShowModal } ) => {
     };
 
     return (
-        <form onSubmit={onEdit}>
+        <form className="edit-user-form" onSubmit={onEdit}>
         <div className="form-errors-div">
             {errors.map((error, idx) => (
                 <div key={idx}>
