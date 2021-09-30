@@ -49,12 +49,11 @@
     border: 1px solid black;
 }
 
-.comment-form-no-image {
+.comment-form-text-div {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
-
 
 .comment-form-text {
     margin-top: 3.5%

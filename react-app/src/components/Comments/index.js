@@ -34,14 +34,14 @@ const Comments = ({ animalId }) => {
                         <div className="comment-text-div">
                             <p className="comment-username">{users[comment.userId].username}</p>
                             <p className="comment-content">{comment.content}</p>
+                            {comment.userId === userId && 
+                                <div className="comment-buttons">
+                                    <button className="comment-edit-button" onClick={renderEditModal} id={comment.id}>Edit</button>
+                                    <button className="comment-delete-button" onClick={renderDeleteModal} id={comment.id}>Delete</button>
+                                </div>
+                            }
                         </div>
 
-                        {comment.userId === userId && 
-                            <div className="comment-auth-buttons-div">
-                                <button className="comment-edit-button" onClick={renderEditModal} id={comment.id}>Edit</button>
-                                <button className="comment-delete-button" onClick={renderDeleteModal} id={comment.id}>Delete</button>
-                            </div>
-                        }
                     </div>
                 )}
             </div>

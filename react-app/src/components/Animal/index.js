@@ -75,7 +75,7 @@ const Animal = () => {
                                 {sessionUser &&
                                     <>
                                         <img className="comment-form-image" src={sessionUser.imgUrl}/>
-                                        <div className="comment-form-no-image">
+                                        <div className="comment-form-text-div">
                                             <span className="comment-form-text">Comment as {sessionUser?.username}</span>
                                             <CommentForm animal={animal} sighting={null}/>
                                         </div>
