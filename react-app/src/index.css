@@ -92,7 +92,7 @@ form {
     margin: auto;
 }
 
-form input :not(.radio) {
+form input {
     margin-bottom: 1em;
     border: none;
     border-bottom: 1px solid black;
