@@ -222,12 +222,19 @@ form input {
     justify-content: space-evenly;
     width: 100%;
 }
-
-.about-modal {
-
+.about-div {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
 }
 
-.about {
+.about-links {
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.about-paragraph {
+    margin-bottom: 1em;
 }
 
