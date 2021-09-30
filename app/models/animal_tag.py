@@ -12,7 +12,7 @@ class AnimalTag(db.Model):
     __tablename__ = "animal_tags"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    name = db.Column(db.String(30), nullable=False)
 
     # Joins to animals, joins table defined below.
     animals = db.relationship("Animal", secondary="animals_tags_joins", back_populates = "animal_tags")
