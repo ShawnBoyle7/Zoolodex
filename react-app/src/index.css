@@ -2,10 +2,15 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 a {
     text-decoration: none;
     color: rgb(28, 145, 101)
 }
+
 
 #root {
     position: absolute;
@@ -15,13 +20,13 @@ a {
     width: 100%;
 }
 
-.page-content {
+/* .page-content {
     position: absolute;
     top: 400px;
     left: 0px;
-    width: 100vw;
+    width: 100%;
     overflow-y: auto;
-}
+} */
 
 .gallery-page {
     display: grid;
@@ -40,9 +45,14 @@ a {
     justify-content: center;
 }
 
+.background-image {
+    height: 400px;
+}
+
 .background-image > img {
     height: 400px;
-    width: 100vw;
+    width: 100%;
+    margin: 0;
 }
 
 img {

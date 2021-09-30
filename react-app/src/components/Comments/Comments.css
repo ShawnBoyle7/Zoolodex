@@ -1,0 +1,51 @@
+.all-comments {
+    margin-top: 3em;
+}
+
+.comment-div {
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.comment-image {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    margin: 1em 1em 0 0;
+    border: 1px solid black;
+}
+
+.comment-text-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-buttons button {
+    width: 10%;
+    margin-right: 2%
+}
+
+
+/*
+
+.comment-username {
+
+}
+
+.comment-content {
+
+}
+
+.comment-auth-buttons-div {
+
+}
+
+.comment-edit-button {
+
+}
+
+.comment-delete-button {
+
+} 
+
+*/

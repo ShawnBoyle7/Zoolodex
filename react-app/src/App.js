@@ -9,7 +9,7 @@ import { getRegions } from './store/regions';
 import { getComments } from './store/comments';
 import { getSuggestions } from './store/suggestions';
 import { getSightings } from './store/sightings';
-import NavigationBar from './components/NavigationBar/index.';
+import NavigationBar from './components/NavigationBar';
 import Animals from './components/Animals';
 import Animal from './components/Animal';
 import Regions from './components/Regions';

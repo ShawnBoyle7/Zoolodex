@@ -1,0 +1,82 @@
+.animal-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.animal-conditional-buttons-div {
+    /* position: fixed; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.animal-conditional-buttons-div button {
+    margin: 1% 2% 2% 2%;
+    width: 7.5%;
+    height: 35px;
+}
+
+.animal-content {
+    /* How do I automatically insert paragraph breaks? */
+    text-align: left;
+    width: 65%;
+    line-height: 2.1em;
+    font-size: 110%;
+}
+
+.animal-content::first-letter {
+    font-size: 220%
+}
+
+.animal-comments-div {
+    width: 65%;
+    text-align: left;
+}
+
+/* Comment Form Styling */
+
+.comment-form-div {
+    display: flex;
+} 
+
+.comment-form-image {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    margin: 1em 1em 0 0;
+    border: 1px solid black;
+}
+
+.comment-form-text-div {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.comment-form-text {
+    margin-top: 3.5%
+}
+
+.comment-form {
+    margin-top: 1.8%;
+}
+
+.comment-input-div textarea {
+    resize: none;
+    width: 50em;
+    height: 2.65rem;
+}
+
+textarea::placeholder {
+    color: gray;
+    position: relative;
+    top: 20%;
+    font-size: 1.3em
+}
+
+.comment-form-no-image > form > button {
+    margin-top: 0.8%;
+    width: 20%;
+}

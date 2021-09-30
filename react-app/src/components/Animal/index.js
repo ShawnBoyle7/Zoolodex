@@ -9,6 +9,8 @@ const Animal = () => {
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
     const animal = animals.find(animal => animal.id === +animalId)
+    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
+    const sessionUser = useSelector(state => state.session.user)
     
     const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
@@ -37,7 +39,6 @@ const Animal = () => {
     return (
         <>
             <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
-            <div className="page-content">
                 <div className="animal-page">
                     <div className="animal-name">
                         <h1>{animal.subSpecies}</h1>
@@ -47,35 +48,44 @@ const Animal = () => {
                         <img src={animal.imgUrl} alt="animal"/>
                     </div>
 
-                    <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
-                    <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
-                    <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem Influence</button>
+                    <div className="animal-conditional-buttons-div">
+                        <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
+                        <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
+                        <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem</button>
+                    </div>
 
-                    {showOrigins && 
-                        <div>
-                            {animal.origins}
-                        </div>
-                    }
+                    <p className="animal-content">
+                        {showOrigins && 
+                            animal.origins
+                        }
 
-                    {showTraits && 
-                        <div>
-                            {animal.traits}
-                        </div>
-                    }
+                        {showTraits && 
+                            animal.traits
+                        }
 
-                    {showEcosystemInfluence && 
-                        <div>
-                            {animal.ecosystemInfluence}
-                        </div>
-                    }
-                    <div>
-                        {/* Sighting placeholder */}
-                        <h2>Comments</h2>
-                        <CommentForm animal={animal} sighting={null}/>
+                        {showEcosystemInfluence && 
+                            animal.ecosystemInfluence
+                        }
+                    </p>
+
+                    <div className="animal-comments-div">
+                        <h2 className="animal-comments-header">{comments.length} Comments</h2>
+                        {sessionUser &&
+                            <div className="comment-form-div">
+                                {sessionUser &&
+                                    <>
+                                        <img className="comment-form-image" src={sessionUser.imgUrl}/>
+                                        <div className="comment-form-text-div">
+                                            <span className="comment-form-text">Comment as {sessionUser?.username}</span>
+                                            <CommentForm animal={animal} sighting={null}/>
+                                        </div>
+                                    </>
+                                }
+                            </div>
+                        }
                         <Comments animalId={animal.id}/>
                     </div>
                 </div>
-            </div>
         </>
     )
 }
