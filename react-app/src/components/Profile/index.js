@@ -46,10 +46,15 @@ const Profile = () => {
                             </div>
                         }
 
-                        <div className="profile-buttons-div">
-                            <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
-                            <button className={`${showRegions ? "selected" : ""}`} onClick={regionClick}>Region Suggestions</button>
-                        </div>
+                        {suggestions.length ?
+                            <div className="profile-buttons-div">
+                                <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
+                                <button className={`${showRegions ? "selected" : ""}`} onClick={regionClick}>Region Suggestions</button>
+                            </div>
+                        :
+                        <>
+                        </>
+                        }
                     </div>
 
                     <div className="profile-suggestions">
