@@ -34,6 +34,7 @@ const Profile = () => {
     return(
         <>
             <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
+            {/* <h3 className="future-feature">Recent Sighting Goes Here</h3> */}
                 {userExists ?
                 <div className="profile-page">
                     <div className="profile-tile">
@@ -41,19 +42,22 @@ const Profile = () => {
                             <img src={profileUser?.imgUrl} alt="profile"/>
                         </div>
 
-                        <h2 className="profile-username">
-                            {profileUser?.username}
-                        </h2>
-
                         {profileUser?.id === sessionUser?.id && 
                             <div className="edit-user">
                                 <EditUserFormModal/>
                             </div>
                         }
+
+                        <h2 className="profile-username">
+                            {profileUser?.username}
+                        </h2>
+
+                        <div className="profile-buttons-div">
+                            <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
+                            <button className={`${showRegions ? "selected" : ""}`} onClick={regionClick}>Region Suggestions</button>
+                        </div>
                     </div>
 
-                    <button onClick={animalClick}>Animal Suggestions</button>
-                    <button onClick={regionClick}>Region Suggestions</button>
                     <div className="profile-suggestions">
                         {showAnimals &&
                             animalSuggestions.map(suggestion =>

@@ -72,7 +72,7 @@ button {
     background-color: rgb(136, 69, 31);
 }
 
-i {
+.fa-edit {
     cursor: pointer;
     font-size: 25px;
 }

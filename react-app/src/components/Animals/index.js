@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import AnimalTile from "../AnimalTile";
 import { Link } from "react-router-dom";
-import './Animal.css'
 
 const Animals = () => {
     const animals = Object.values(useSelector(state => state.animals))

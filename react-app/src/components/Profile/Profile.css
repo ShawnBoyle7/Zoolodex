@@ -1,3 +1,27 @@
-.profile-page {
-    margin-left: 2%;
+.profile-tile {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 15% 
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    border: 1px solid black;
+}
+
+.profile-buttons-div {
+    display: flex;
+    width: 100%;
+}
+
+.profile-buttons-div button {
+    width: 15%;
+    height: 35px;
+    margin-right: 1em;
+}
+
+.selected {
+    box-shadow: 3px 3px 3px 3px rgb(28, 145, 101)
 }
