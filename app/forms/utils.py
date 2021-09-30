@@ -4,14 +4,42 @@ import re
 
 # Sign Up Validation
 
-def password_validation():
-    def check_password(form, field):
-        regexValidator = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+def password_validation(form, field):
         password = field.data
-        matches = re.fullmatch(regexValidator, password)
-        if not matches and len(password):
-            raise ValidationError("Password must contain at least 8 or more characters, at least one number, one uppercase letter, one lowercase letter, and one special character: @$!%*?&")
-    return check_password
+        errors = []
+
+        length_regex = "^.{8,}$"
+        length_matches = re.fullmatch(length_regex, password)
+
+        uppercase_regex = "^.*[A-Z]+.*$"
+        uppercase_matches = re.fullmatch(uppercase_regex, password)
+
+        lowercase_regex = "^.*[a-z]+.*$"
+        lowercase_matches = re.fullmatch(lowercase_regex, password)
+
+        number_regex = "^.*\d+.*$"
+        number_matches = re.fullmatch(number_regex, password)
+
+        special_char_regex = "^.*[@$!%*?&]+.*$"
+        special_char_matches = re.fullmatch(special_char_regex, password)
+
+        if not length_matches and len(password):
+            errors.append("Password must contain at least 8 or more characters.")
+
+        if not uppercase_matches and len(password): 
+            errors.append("Password must contain at least one uppercase letter.")
+
+        if not lowercase_matches and len(password):
+            errors.append("Password must contain at least one lowercase letter.")
+
+        if not number_matches and len(password):
+            errors.append("Password must contain at least one number")
+
+        if not special_char_matches and len(password):
+            errors.append("Password must contain at least one special character (@$!%*?&)")
+
+        if len(errors):
+            raise ValidationError(errors)
 
 def username_exists_validation():
     def username_exists(form, field):
@@ -21,7 +49,7 @@ def username_exists_validation():
         username = field.data
         user = User.query.filter(User.username == username).first()
         if user and user_id != user.id:
-            raise ValidationError("Username is in use.")
+            raise ValidationError("Username is already in use.")
     return username_exists
 
 def user_exists_validation():
@@ -42,7 +70,7 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if not user:
-        raise ValidationError('Email address provided was not found.')
+        raise ValidationError('Email address not found.')
 
 def password_matches(form, field):
     # Checking if password matches

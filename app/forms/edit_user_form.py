@@ -8,5 +8,5 @@ class EditUserForm(FlaskForm):
     username = StringField('username', validators=[DataRequired(), username_exists_validation()])
     first_name = StringField('first_name', validators=[DataRequired()])
     last_name = StringField('last_name', validators=[DataRequired()])
-    password = StringField('password', validators=[password_validation()])
+    password = StringField('password', validators=[password_validation])
     user_id = IntegerField('user_id')

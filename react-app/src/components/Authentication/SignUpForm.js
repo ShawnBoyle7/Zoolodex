@@ -19,11 +19,11 @@ const SignUpForm = ( {setShowModal} ) => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(firstName, lastName, username, email, password));
+      const data = await dispatch(signUp(email, username, firstName, lastName, password));
       if (data) {
         setErrors(data)
       } else {
-        setShowModal(false)
+          setShowModal(false)
         }
     }
   };
@@ -73,6 +73,7 @@ const SignUpForm = ( {setShowModal} ) => {
           placeholder="Email"
           onChange={updateEmail}
           value={email}
+          required={true}
         ></input>
       </div>
 
@@ -83,6 +84,7 @@ const SignUpForm = ( {setShowModal} ) => {
           placeholder="Username"
           onChange={updateUsername}
           value={username}
+          required={true}
         ></input>
       </div>
 
@@ -93,6 +95,7 @@ const SignUpForm = ( {setShowModal} ) => {
           placeholder="First Name"
           onChange={updateFirstName}
           value={firstName}
+          required={true}
         ></input>
       </div>
 
@@ -103,6 +106,7 @@ const SignUpForm = ( {setShowModal} ) => {
           placeholder="Last Name"
           onChange={updateLastName}
           value={lastName}
+          required={true}
         ></input>
       </div>
 
@@ -113,6 +117,7 @@ const SignUpForm = ( {setShowModal} ) => {
           placeholder="Password"
           onChange={updatePassword}
           value={password}
+          required={true}
         ></input>
       </div>
 
