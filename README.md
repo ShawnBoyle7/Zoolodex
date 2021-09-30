@@ -11,4 +11,4 @@ Zoolodex is an informational codex for those interested in wildlife and nature. 
 
 Check out my [Feature List](https://github.com/ShawnBoyle7/Zoolodex/wiki/Feature-List) for a full overview!
 
-# [Explore Your Curiosity!](https://zoolodex.herokuapp.com))
+# [Explore Your Curiosity!](https://zoolodex.herokuapp.com)
