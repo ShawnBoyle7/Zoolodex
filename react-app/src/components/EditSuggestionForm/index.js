@@ -44,70 +44,73 @@ const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
     }
 
     return (
-        <form className="edit-suggestion-form" onSubmit={onSubmit} className="suggestion-form">
+        <form className="suggestion-form" onSubmit={onSubmit}>
             <h2>Suggestion Form</h2>
-            <div className="form-errors-div">
-                {errors.map((error, idx) =>
+            <div className="form-errors">
+                {errors.map((error, idx) => 
                     <div className="form-error" key={idx}>
                         {error}
                     </div>)}
             </div>
 
             <div className="form-radio">
-                <label>
-                    <input
+                <label className="radio-label">
+                    <input 
+                        className="radio"
                         type="radio"
+                        // I forget what name is for, I think to connect the label/input?
                         name="type"
                         value="animal"
                         onChange={updateType}
                         checked={type === "animal"}
-                        required={true} />
+                        required={true}/>
                     Animal
                 </label>
             </div>
 
             <div className="form-radio">
-                <label>
-                    <input
+                <label className="radio-label">
+                    <input 
+                        className="radio"
                         type="radio"
+                        // I forget what name is for, I think to connect the label/input?
                         name="type"
                         value="region"
                         onChange={updateType}
                         checked={type === "region"}
-                        required={true} />
+                        required={true}/>
                     Region
                 </label>
             </div>
 
             <div className="form-suggestion-title">
-                <input
+                <input 
                     type="text"
                     name="title"
                     onChange={updateTitle}
                     // I forgot how value is used here
                     value={title}
                     placeholder="Name"
-                    required={true} />
+                    required={true}/>
             </div>
 
             <div className="form-suggestion-description">
-                <input
-                    type="text"
+                <textarea
                     name="description"
                     onChange={updateDescription}
                     value={description}
-                    placeholder="Tell us more"
-                    required={true} />
+                    placeholder="Description"
+                    required={true}/>
             </div>
 
-            <div className="form-img-upload">
-                <label>Show us!</label>
+            <div className="form-image-upload">
                 <input
                     type="file"
                     name="imgFile"
                     onChange={updateImgFile}
-                    required={false} />
+                    required={false}/>
             </div>
+
             <div className="form-buttons-div">
                 <button type="submit">Submit</button>
                 <button onClick={() => setShowModal(false)}>Cancel</button>
