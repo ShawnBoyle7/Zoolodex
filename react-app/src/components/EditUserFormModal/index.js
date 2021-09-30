@@ -9,7 +9,7 @@ function EditUserFormModal() {
 
     return (
     <>
-        <button onClick={() => setShowModal(true)}>Edit Account Details</button>
+        <i class="fas fa-edit" onClick={() => setShowModal(true)}></i>
         {showModal && (
         <Modal onClose={() => setShowModal(false)}>
             <EditUserForm setShowModal={setShowModal}/>

@@ -10,12 +10,9 @@ const Profile = () => {
     const { userId } = useParams();
 
     const sessionUser = useSelector(state => state.session?.user);
-    
-    // Finds the user of the profile from useParams for rendering their data
     const profileUser = Object.values(useSelector(state => state.users)).find(user => user.id === +userId);
-
+    const users = useSelector(state => state.users);
     const suggestions = Object.values(useSelector(state => state.suggestions)).filter(suggestion => suggestion?.userId === profileUser?.id);
-
     const animalSuggestions = suggestions.filter(suggestion => suggestion.type === "animal").reverse()
     const regionSuggestions = suggestions.filter(suggestion => suggestion.type === "region").reverse()
 
@@ -32,8 +29,6 @@ const Profile = () => {
         setShowRegions(true)
     };
 
-    // Prevents non-existent profiles from rendering
-    const users = useSelector(state => state.users);
     const userExists = users[+userId] !== undefined;
 
     return(
@@ -42,6 +37,10 @@ const Profile = () => {
                 {userExists ?
                 <div className="profile-page">
                     <div className="profile-tile">
+                        <div className="profile-image">
+                            <img src={profileUser?.imgUrl} alt="profile"/>
+                        </div>
+
                         <h2 className="profile-username">
                             {profileUser?.username}
                         </h2>
@@ -51,10 +50,6 @@ const Profile = () => {
                                 <EditUserFormModal/>
                             </div>
                         }
-                        
-                        <div className="profile-image">
-                            <img src={profileUser?.imgUrl} alt="profile"/>
-                        </div>
                     </div>
 
                     <button onClick={animalClick}>Animal Suggestions</button>
