@@ -45,7 +45,7 @@ function App() {
     history.listen(()=>{
       document.querySelector("html").scrollTop = 0
   })
-  }, [dispatch]);
+  }, [dispatch, history]);
 
   // What
   if (!loaded) {

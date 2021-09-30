@@ -8,17 +8,16 @@ const Animals = () => {
 
     return (
         <>  
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg"/></div>
+            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
                     <div className="gallery-page">
                         {animals.map(animal =>
-                            <div className="gallery-tile">
-                                <Link to={`/animals/${animal.id}`} key={animal.id}>
+                            <div className="gallery-tile" key={animal.id}>
+                                <Link to={`/animals/${animal.id}`} >
                                     <AnimalTile animal={animal}/>
                                 </Link>
                             </div>
                         )}
                     </div>
-
         </>
     )
 }

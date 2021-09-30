@@ -18,8 +18,8 @@ const About = () => {
             </div>
 
             <div className="about-links">
-                <a href="https://github.com/ShawnBoyle7"><i class="fab fa-github-square fa-5x"></i></a>
-                <a href="https://www.linkedin.com/in/shawn-boyle-59570b19b/"><i class="fab fa-linkedin fa-5x"></i></a>
+                <a href="https://github.com/ShawnBoyle7"><i className="fab fa-github-square fa-5x"></i></a>
+                <a href="https://www.linkedin.com/in/shawn-boyle-59570b19b/"><i className="fab fa-linkedin fa-5x"></i></a>
             </div>
             
         </div>
