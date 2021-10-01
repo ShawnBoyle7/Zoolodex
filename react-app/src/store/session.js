@@ -113,13 +113,14 @@ export const signUp = (email, username, firstName, lastName, password, repeatPas
     }
 }
 
-export const editUser = (email, username, firstName, lastName, password, imgFile, userId) => async (dispatch) => {
+export const editUser = (email, username, firstName, lastName, password, repeatPassword, imgFile, userId) => async (dispatch) => {
     const form = new FormData()
     form.append("email", email)
     form.append("username", username)
     form.append("first_name", firstName)
     form.append("last_name", lastName)
     form.append("password", password)
+    form.append("repeat_password", repeatPassword)
     form.append("img_file", imgFile)
     form.append("user_id", userId)
   

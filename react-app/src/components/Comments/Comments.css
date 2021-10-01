@@ -18,6 +18,8 @@
 .comment-text-div {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 .comment-buttons {

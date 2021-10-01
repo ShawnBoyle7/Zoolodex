@@ -15,4 +15,5 @@ class SignUpForm(FlaskForm):
     Length(max=25, message="Last Name must 25 character or less"), Length(min=2, message="Last Name must be at least two characters")])
     
     password = StringField('password', validators=[DataRequired(), password_validation, equal_to('repeat_password', message="Passwords must match")])
+    
     repeat_password = StringField('repeat_password', validators=[DataRequired()])

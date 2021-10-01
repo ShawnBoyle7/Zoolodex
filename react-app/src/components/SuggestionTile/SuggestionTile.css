@@ -1,6 +1,6 @@
 .suggestion-tile {  
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 33.3% 66.7%;
     column-gap: 10%;
     grid-template-areas:
     "image body";
@@ -9,7 +9,7 @@
 
 .suggestion-tile-flipped {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 66.7% 33.3%;
     grid-column-gap: 10%;
     grid-template-areas:
     "body image";
@@ -22,7 +22,7 @@
 }
 
 .suggestion-tile-body {
-    grid-area: body;
+    overflow-wrap: break-word;
 }
 
 .suggestion-tile-description {

@@ -19,7 +19,7 @@ const EditUserForm = ( { setShowModal } ) => {
     const onEdit = async (e) => {
         e.preventDefault();
         if (password === repeatPassword) {
-        const data = await dispatch(editUser(email, username, firstName, lastName, password, imgFile, user?.id));
+        const data = await dispatch(editUser(email, username, firstName, lastName, password, repeatPassword, imgFile, user?.id));
         if (data) {
             setErrors(data)
         } else {

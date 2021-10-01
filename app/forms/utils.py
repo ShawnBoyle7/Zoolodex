@@ -81,19 +81,3 @@ def password_matches(form, field):
         raise ValidationError('User does not exist')
     if not user.check_password(password):
         raise ValidationError('Incorrect password.')
-
-
-# File Validator
-
-def file_validation(form, field):
-    errors = []
-    img_file = field.data
-
-    file_regex = "(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|png))(?:\?([^#]*))?(?:#(.*))?" 
-    file_matches = re.fullmatch(file_regex, img_file)
-
-    if not file_matches and len(img_file):
-        errors.append("File type must be in JPG or PNG format.")
-
-    if len(errors):
-        raise ValidationError(errors)

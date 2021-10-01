@@ -39,7 +39,9 @@ const CommentForm = ({ animal, sighting }) => {
                     name="content"
                     placeholder="Leave a comment"
                     onChange={updateContent}
-                    value={content}/>
+                    value={content}
+                    maxLength={1000}
+                    />
             </div>
                 <button type="submit">Comment</button>
         </form>

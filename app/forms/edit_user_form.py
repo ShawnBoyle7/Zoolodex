@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired, Email, equal_to, Length
-from .utils import user_exists_validation, username_exists_validation, password_validation, file_validation
+from .utils import user_exists_validation, username_exists_validation, password_validation
 
 class EditUserForm(FlaskForm):
     email = StringField('email', validators=[DataRequired(), Email(), user_exists_validation()])
@@ -15,8 +15,7 @@ class EditUserForm(FlaskForm):
     Length(max=25, message="Last Name must 25 character or less"), Length(min=2, message="Last Name must be at least two characters")])
 
     password = StringField('password', validators=[DataRequired(), password_validation, equal_to('repeat_password', message="Passwords must match")])
-    repeat_password = StringField('repeat_password', validators=[DataRequired()])
 
-    img_file = StringField("img_file", validators=[DataRequired(), file_validation])
+    repeat_password = StringField('repeat_password', validators=[DataRequired()])
 
     user_id = IntegerField('user_id')
