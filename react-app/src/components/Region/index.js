@@ -10,7 +10,7 @@ const Region = () => {
 
     return (
         <>
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
+            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
                 <div className="region-page">
                     <h1>{region.name}</h1>
                 </div>

@@ -24,8 +24,7 @@ const Suggestions = () => {
 
     return(
         <>
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
-            <div className="page-content">
+            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
                 <div className="suggestion-conditional-buttons-div">
                     <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
                     <button className={`${showRegions ? "selected" : ""}`} onClick={regionClick}>Region Suggestions</button>
@@ -41,7 +40,6 @@ const Suggestions = () => {
                         <SuggestionTile suggestion={suggestion} key={idx} flipped={idx % 2 !== 0}/>
                     )}
                 </div>
-            </div>
         </>
     )
 };
