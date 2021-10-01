@@ -37,7 +37,7 @@ const CommentForm = ({ animal, sighting }) => {
             <div className="comment-input-div">
                 <textarea
                     name="content"
-                    placeholder="Leave a comment"
+                    placeholder="Leave a comment (limit 1000)"
                     onChange={updateContent}
                     value={content}
                     maxLength={1000}
