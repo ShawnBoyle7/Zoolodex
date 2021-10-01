@@ -29,14 +29,14 @@ def seed_animals():
 
     animals.append(Animal(group="Aves", family="Accipitridae", species="Red-tailed Hawk", sub_species="Western Red-tailed Hawk", img_url="https://i.imgur.com/Q4Q4GYK.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
 
+    animals.append(Animal(group="Ursidae", family="Ursidae", species="Brown Bear", sub_species="Kodiak Bear", img_url="https://i.imgur.com/0tslWhE.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
+    
     animals.append(Animal(group="Aves", family="Strigidae", species="Spotted Owl", sub_species="Northern Spotted Owl", img_url="https://i.imgur.com/qzdWzN9.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
-
 
     animals.append(Animal(group="Amphibian", family="Ambystomatidae", species="Long-toed Salamander", sub_species="Santa Cruz Long-toed Salamander", img_url="https://i.imgur.com/6fY4nuc.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
 
     animals.append(Animal(group="Insect", family="Lycaenidae", species="Boisduval's blue", sub_species="Mission Blue Butterfly", img_url="https://i.imgur.com/WneZCJ2.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
 
-    animals.append(Animal(group="Ursidae", family="Ursidae", species="Brown Bear", sub_species="Kodiak Bear", img_url="https://i.imgur.com/0tslWhE.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
     
     animals.append(Animal(group="Mammal", family="Cervidae", species="White Tailed Deer", sub_species="Hilton Head White Tailed Deer", img_url="https://i.imgur.com/kkgxalv.jpg", origins=faker.paragraph(nb_sentences=180), traits=faker.paragraph(nb_sentences=180), ecosystem_influence=faker.paragraph(nb_sentences=180)))
 
