@@ -17,6 +17,9 @@ const Animal = () => {
     const [showEcosystemInfluence, setShowEcosystemInfluence] = useState(false)
     
     const tabSwitch = (e) => {
+        const articleButtons= Array.from(document.querySelectorAll(".article-button"))
+        articleButtons.forEach(button => button.classList.remove("selected"))
+        e.target.classList.add("selected")
         setShowOrigins(false)
         setShowTraits(false)
         setShowEcosystemInfluence(false)
@@ -49,9 +52,9 @@ const Animal = () => {
                     </div>
 
                     <div className="animal-conditional-buttons-div">
-                        <button onClick={tabSwitch} value="origins" className="origins-tab">Origins</button>
-                        <button onClick={tabSwitch} value="traits" className="traits-tab">Traits</button>
-                        <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab">Ecosystem</button>
+                        <button onClick={tabSwitch} value="origins" className="origins-tab article-button" >Origins</button>
+                        <button onClick={tabSwitch} value="traits" className="traits-tab article-button" >Traits</button>
+                        <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab article-button" >Ecosystem</button>
                     </div>
 
                     <p className="animal-content">

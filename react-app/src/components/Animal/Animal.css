@@ -27,7 +27,9 @@
 }
 
 .animal-content::first-letter {
-    font-size: 220%
+    font-size: 220%;
+    font-weight: bold;
+    color: var(--primary-color)
 }
 
 .animal-comments-div {
