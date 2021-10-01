@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 6981427ae7bb
+Revision ID: 94375d8cd1f4
 Revises: 
-Create Date: 2021-09-30 21:03:50.119913
+Create Date: 2021-10-01 14:07:23.574858
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '6981427ae7bb'
+revision = '94375d8cd1f4'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -40,11 +40,7 @@ def upgrade():
     sa.Column('name', sa.String(length=50), nullable=False),
     sa.Column('climate', sa.String(length=25), nullable=False),
     sa.Column('continent', sa.String(length=25), nullable=False),
-    sa.Column('img_url_1', sa.String(length=255), nullable=True),
-    sa.Column('img_url_2', sa.String(length=255), nullable=True),
-    sa.Column('img_url_3', sa.String(length=255), nullable=True),
-    sa.Column('img_url_4', sa.String(length=255), nullable=True),
-    sa.Column('img_url_5', sa.String(length=255), nullable=True),
+    sa.Column('img_url', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('users',
@@ -84,8 +80,6 @@ def upgrade():
     sa.Column('img_url_1', sa.String(), nullable=True),
     sa.Column('img_url_2', sa.String(), nullable=True),
     sa.Column('img_url_3', sa.String(), nullable=True),
-    sa.Column('img_url_4', sa.String(), nullable=True),
-    sa.Column('img_url_5', sa.String(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('animal_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
