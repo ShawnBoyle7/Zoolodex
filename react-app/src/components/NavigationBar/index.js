@@ -25,11 +25,11 @@ document.addEventListener("scroll", () => {
     const nav = document.querySelector("nav")
 
     if (window.scrollY === 0) {
-        nav.classList.add("navigation-default")
-        nav.classList.remove("navigation-scrolled")
+        nav?.classList.add("navigation-default")
+        nav?.classList.remove("navigation-scrolled")
     } else if (window.scrollY > 0) {
-        nav.classList.remove("navigation-default")
-        nav.classList.add("navigation-scrolled")
+        nav?.classList.remove("navigation-default")
+        nav?.classList.add("navigation-scrolled")
     }
 })
 
