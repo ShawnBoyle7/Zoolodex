@@ -124,6 +124,7 @@ const EditUserForm = ( { setShowModal } ) => {
             placeholder="Password"
             onChange={updatePassword}
             value={password}
+            autoComplete="on"
             ></input>
         </div>
 
@@ -135,6 +136,7 @@ const EditUserForm = ( { setShowModal } ) => {
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
+            autoComplete="on"
             ></input>
         </div>
 
