@@ -14,12 +14,6 @@ const About = () => {
                 as familiar by providing content that is easy to navigate and consume.
                 <br/>
                 <p>Something else here</p>
-                Do you find yourself entranced by the beauty nature and wildlife has to offer us, but haven't the time to learn more about it?
-                <br/>
-                Are you curious but uncertain about where to begin with the vast amount of life on our planet?
-                <br/>
-                With Zoolodex, we want you to help you not only enjoy, but love the life around us.
-                
             </div>
 
             <div className="about-links">
