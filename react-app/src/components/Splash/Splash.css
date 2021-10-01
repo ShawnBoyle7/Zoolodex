@@ -1,4 +1,4 @@
-.splash-image > img {
+.splash-image-div > img {
     position: absolute;
     top: 0;
     left: 0;
@@ -7,10 +7,15 @@
     z-index: -1;
 }
 
-.splash-header {
+.splash-header-div {
     position: absolute;
     top: 20%;
     left: 30%;
     z-index: 1;
     color: white;
+}
+
+.splash-text {
+    line-height: 1.7em;
+    font-size: 1.5em;
 }

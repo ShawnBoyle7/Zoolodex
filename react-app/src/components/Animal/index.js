@@ -41,7 +41,7 @@ const Animal = () => {
 
     return (
         <>
-            <div className="background-image"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
+            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
                 <div className="animal-page">
                     <div className="animal-name">
                         <h1>{animal.subSpecies}</h1>
@@ -52,7 +52,7 @@ const Animal = () => {
                     </div>
 
                     <div className="animal-conditional-buttons-div">
-                        <button onClick={tabSwitch} value="origins" className="origins-tab article-button" >Origins</button>
+                        <button onClick={tabSwitch} value="origins" className="origins-tab article-button selected" >Origins</button>
                         <button onClick={tabSwitch} value="traits" className="traits-tab article-button" >Traits</button>
                         <button onClick={tabSwitch} value="ecosystemInfluence" className="ecosystem-influence-tab article-button" >Ecosystem</button>
                     </div>
