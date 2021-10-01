@@ -10,6 +10,7 @@ import { getComments } from './store/comments';
 import { getSuggestions } from './store/suggestions';
 import { getSightings } from './store/sightings';
 import NavigationBar from './components/NavigationBar';
+import ProtectedRoute from './components/Authentication/ProtectedRoute'
 import Animals from './components/Animals';
 import Animal from './components/Animal';
 import Regions from './components/Regions';
@@ -18,6 +19,7 @@ import Suggestions from './components/Suggestions';
 import Profile from './components/Profile';
 import PageNotFound from './components/PageNotFound';
 import Region from './components/Region';
+import Splash from './components/Splash';
 import "./index.css"
 
 function App() {
@@ -54,39 +56,39 @@ function App() {
 
   return (
     <>
-      <NavigationBar sessionUser={sessionUser} authenticated={authenticated}/>
+        <NavigationBar sessionUser={sessionUser} authenticated={authenticated}/>
         <Switch>
-                <Route exact path="/">
-                  <Home authenticated={authenticated}/>
-                </Route>
+              <Route exact path="/">
+                <Home authenticated={authenticated}/>
+              </Route>
 
-                <Route path="/users/:userId">
-                  <Profile/>
-                </Route>
-                
-                <Route exact path="/animals">
-                  <Animals/>
-                </Route>
+              <Route path="/users/:userId">
+                <Profile/>
+              </Route>
+              
+              <Route exact path="/animals">
+                <Animals/>
+              </Route>
 
-                <Route path="/animals/:animalId">
-                  <Animal/>
-                </Route>
+              <Route path="/animals/:animalId">
+                <Animal/>
+              </Route>
 
-                <Route exact path="/regions">
-                  <Regions/>
-                </Route>
+              <Route exact path="/regions">
+                <Regions/>
+              </Route>
 
-                <Route path="/regions/:regionId">
-                  <Region/>
-                </Route>
+              <Route path="/regions/:regionId">
+                <Region/>
+              </Route>
 
-                <Route path="/suggestions">
-                  <Suggestions/>
-                </Route>
+              <Route path="/suggestions">
+                <Suggestions/>
+              </Route>
 
-                <Route>
-                  <PageNotFound/>
-                </Route>
+              <Route>
+                <PageNotFound/>
+              </Route>
         </Switch>
     </>
   );

@@ -1,18 +1,16 @@
 .suggestion-tile {  
     display: grid;
-    grid-template-columns: 33.3% 66.7%;
-    column-gap: 10%;
+    grid-template-columns: 400px 5% 1fr;
     grid-template-areas:
-    "image body";
+    "image . body";
     margin: 3% 15% 0 15%;
 }
 
 .suggestion-tile-flipped {
     display: grid;
-    grid-template-columns: 66.7% 33.3%;
-    grid-column-gap: 10%;
+    grid-template-columns: 1fr 5% 400px;
     grid-template-areas:
-    "body image";
+    "body . image";
     margin: 3% 15% 0 15%;
 }
 
@@ -22,6 +20,7 @@
 }
 
 .suggestion-tile-body {
+    grid-area: body;
     overflow-wrap: break-word;
 }
 
