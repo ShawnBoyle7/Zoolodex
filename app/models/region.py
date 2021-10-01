@@ -15,11 +15,7 @@ class Region(db.Model):
     name = db.Column(db.String(50), nullable=False)
     climate = db.Column(db.String(25), nullable=False)
     continent = db.Column(db.String(25), nullable=False)
-    img_url_1 = db.Column(db.String(255))
-    img_url_2 = db.Column(db.String(255))
-    img_url_3 = db.Column(db.String(255))
-    img_url_4 = db.Column(db.String(255))
-    img_url_5 = db.Column(db.String(255))
+    img_url = db.Column(db.String(255))
 
     # Joins to animals, joins table defined below.
     animals = db.relationship("Animal", secondary="animals_regions_joins", back_populates = "regions")
@@ -32,10 +28,6 @@ class Region(db.Model):
         "name": self.name,
         "climate": self.climate,
         "continent": self.continent,
-        "imgUrl1": self.img_url_1,
-        "imgUrl2": self.img_url_2,
-        "imgUrl3": self.img_url_3,
-        "imgUrl4": self.img_url_4,
-        "imgUrl5": self.img_url_5,
+        "imgUrl1": self.img_url,
         "animals": animals
         }

@@ -11,8 +11,6 @@ class Sighting(db.Model):
     img_url_1 = db.Column(db.String)
     img_url_2 = db.Column(db.String)
     img_url_3 = db.Column(db.String)
-    img_url_4 = db.Column(db.String)
-    img_url_5 = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     animal_id = db.Column(db.Integer, db.ForeignKey("animals.id"))
 
@@ -32,8 +30,6 @@ class Sighting(db.Model):
         "imgUrl1": self.img_url_1,
         "imgUrl2": self.img_url_2,
         "imgUrl3": self.img_url_3,
-        "imgUrl4": self.img_url_4,
-        "imgUrl5": self.img_url_5,
         "userId": self.user_id,
         "animalId": self.animal_id,
         "comments": comments

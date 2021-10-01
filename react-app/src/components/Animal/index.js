@@ -11,6 +11,8 @@ const Animal = () => {
     const animal = animals.find(animal => animal.id === +animalId)
     const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
     const sessionUser = useSelector(state => state.session.user)
+    const animalRegionId = animal.regions[0]
+    const animalHeaderImage = Object.values(useSelector(state => state.regions)).find(region => region.id === animalRegionId).imgUrl1
     
     const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
@@ -18,8 +20,8 @@ const Animal = () => {
     
     const tabSwitch = (e) => {
         const articleButtons= Array.from(document.querySelectorAll(".article-button"))
-        articleButtons.forEach(button => button.classList.remove("selected"))
-        e.target.classList.add("selected")
+        articleButtons?.forEach(button => button.classList.remove("selected"))
+        e.target?.classList.add("selected")
         setShowOrigins(false)
         setShowTraits(false)
         setShowEcosystemInfluence(false)
@@ -41,7 +43,7 @@ const Animal = () => {
 
     return (
         <>
-            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
+            <div className="background-image-div"><img src={animalHeaderImage} alt="background"/></div>
                 <div className="animal-page">
                     <div className="animal-name">
                         <h1>{animal.subSpecies}</h1>
