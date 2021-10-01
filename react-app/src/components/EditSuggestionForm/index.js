@@ -5,8 +5,6 @@ import { editSuggestion } from "../../store/suggestions";
 const EditSuggestionForm = ({ suggestionId, setShowModal }) => {
     const dispatch = useDispatch();
 
-    // console.log(suggestionId)
-
     const suggestion = useSelector(state => state.suggestions[suggestionId])
 
     const [type, setType] = useState(suggestion?.type)

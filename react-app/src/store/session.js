@@ -82,8 +82,7 @@ export const logout = () => async (dispatch) => {
     }
 };
 
-
-export const signUp = (email, username, firstName, lastName, password) => async (dispatch) => {
+export const signUp = (email, username, firstName, lastName, password, repeatPassword) => async (dispatch) => {
     const response = await fetch('/api/auth/signup', {
       method: 'POST',
       headers: {
@@ -94,7 +93,8 @@ export const signUp = (email, username, firstName, lastName, password) => async 
         username,
         first_name: firstName,
         last_name: lastName,
-        password
+        password,
+        repeat_password: repeatPassword
       })
     });
     
@@ -113,13 +113,14 @@ export const signUp = (email, username, firstName, lastName, password) => async 
     }
 }
 
-export const editUser = (email, username, firstName, lastName, password, imgFile, userId) => async (dispatch) => {
+export const editUser = (email, username, firstName, lastName, password, repeatPassword, imgFile, userId) => async (dispatch) => {
     const form = new FormData()
     form.append("email", email)
     form.append("username", username)
     form.append("first_name", firstName)
     form.append("last_name", lastName)
     form.append("password", password)
+    form.append("repeat_password", repeatPassword)
     form.append("img_file", imgFile)
     form.append("user_id", userId)
   

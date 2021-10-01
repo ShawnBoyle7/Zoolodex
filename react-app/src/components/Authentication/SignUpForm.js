@@ -18,14 +18,14 @@ const SignUpForm = ( {setShowModal} ) => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(email, username, firstName, lastName, password));
+    // if (password === repeatPassword) {
+      const data = await dispatch(signUp(email, username, firstName, lastName, password, repeatPassword));
       if (data) {
         setErrors(data)
       } else {
           setShowModal(false)
         }
-    }
+    // }
   };
 
   const updateUsername = (e) => {
@@ -118,6 +118,7 @@ const SignUpForm = ( {setShowModal} ) => {
           onChange={updatePassword}
           value={password}
           required={true}
+          autoComplete="on"
         ></input>
       </div>
 
@@ -129,6 +130,7 @@ const SignUpForm = ( {setShowModal} ) => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+          autoComplete="on"
         ></input>
       </div>
       <div className="form-buttons-div">

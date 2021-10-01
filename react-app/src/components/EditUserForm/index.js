@@ -19,7 +19,7 @@ const EditUserForm = ( { setShowModal } ) => {
     const onEdit = async (e) => {
         e.preventDefault();
         if (password === repeatPassword) {
-        const data = await dispatch(editUser(email, username, firstName, lastName, password, imgFile, user?.id));
+        const data = await dispatch(editUser(email, username, firstName, lastName, password, repeatPassword, imgFile, user?.id));
         if (data) {
             setErrors(data)
         } else {
@@ -124,6 +124,7 @@ const EditUserForm = ( { setShowModal } ) => {
             placeholder="Password"
             onChange={updatePassword}
             value={password}
+            autoComplete="on"
             ></input>
         </div>
 
@@ -135,6 +136,7 @@ const EditUserForm = ( { setShowModal } ) => {
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}
+            autoComplete="on"
             ></input>
         </div>
 
