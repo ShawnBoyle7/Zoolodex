@@ -7,7 +7,7 @@ def seed_regions():
 
     regions = []
 
-    regions.append(Region(name="Galapagos Islands", climate="Tropical", continent="South America", img_url="https://i.imgur.com/913xVPP.jpg")) # tortoise
+    regions.append(Region(name="Galapagos Islands", climate="Tropical", continent="South America", img_url="https://i.imgur.com/4F0niH7.jpeg")) # tortoise
 
     regions.append(Region(name="Linyanti", climate="Steppe", continent="Africa", img_url="https://i.imgur.com/XBlLtVA.jpg")) # lion
 

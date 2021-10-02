@@ -18,7 +18,7 @@ const Home = ({ authenticated }) => {
                         <div className="shadow">
 
                         </div>
-                        <img className="carousel-image" src={region.imgUrl}/>
+                        <img className="carousel-image" src={region.imgUrl} alt="carousel"/>
                         <Link to={`/regions/${region.id}`}><span className="carousel-visit">Discover</span><span className="carousel-region-name">{region.name}</span></Link>
                     </div>
                 )}
