@@ -10,12 +10,40 @@
 .splash-header-div {
     position: absolute;
     top: 20%;
-    left: 30%;
-    z-index: 1;
+    left: 1%;
     color: white;
+    /* backdrop-filter: blur(2px); */
+    backdrop-filter: brightness(75%);
+    border-radius: 6px;
+    width: 46%;
+    padding: 2%;
 }
 
-.splash-text {
+.splash-header-div h1 {
+    text-shadow: rgb(28, 145, 101) 1px 0px 0px, rgb(28, 145, 101) 0.540302px 0.841471px 0px, rgb(28, 145, 101) -0.416147px 0.909297px 0px, rgb(28, 145, 101) -0.989992px 0.14112px 0px, rgb(28, 145, 101) -0.653644px -0.756802px 0px, rgb(28, 145, 101) 0.283662px -0.958924px 0px, rgb(28, 145, 101) 0.96017px -0.279415px 0px;
+}
+
+.splash-header-div p {
     line-height: 1.7em;
     font-size: 1.5em;
+    font-weight: bolder;
+    text-align: left;
+    text-shadow: rgb(28, 145, 101) 1px 0px 0px, rgb(28, 145, 101) 0.540302px 0.841471px 0px, rgb(28, 145, 101) -0.416147px 0.909297px 0px, rgb(28, 145, 101) -0.989992px 0.14112px 0px, rgb(28, 145, 101) -0.653644px -0.756802px 0px, rgb(28, 145, 101) 0.283662px -0.958924px 0px, rgb(28, 145, 101) 0.96017px -0.279415px 0px;
+}
+
+.splash-random-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.splash-random-div p {
+    line-height: 1.7em;
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-shadow: rgb(28, 145, 101) 1px 0px 0px, rgb(28, 145, 101) 0.540302px 0.841471px 0px, rgb(28, 145, 101) -0.416147px 0.909297px 0px, rgb(28, 145, 101) -0.989992px 0.14112px 0px, rgb(28, 145, 101) -0.653644px -0.756802px 0px, rgb(28, 145, 101) 0.283662px -0.958924px 0px, rgb(28, 145, 101) 0.96017px -0.279415px 0px;
+}
+
+.splash-random-div button {
+    width: 15%;
 }

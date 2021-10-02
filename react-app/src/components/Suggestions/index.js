@@ -24,7 +24,7 @@ const Suggestions = () => {
 
     return(
         <>
-            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
+            <div className="background-image-div"><img src="https://thimages.co.uk/wildfoot-page/wildfootpage-29/page-image-44340.jpg" alt="background"/></div>
                 <div className="suggestion-conditional-buttons-div">
                     <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
                     <button className={`${showRegions ? "selected" : ""}`} onClick={regionClick}>Region Suggestions</button>

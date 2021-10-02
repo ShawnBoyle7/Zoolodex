@@ -8,7 +8,7 @@ const Regions = () => {
 
     return (
         <>  
-            <div className="background-image-div"><img src="https://images.wallpaperscraft.com/image/single/lake_mountains_trees_129959_3840x2400.jpg" alt="background"/></div>
+            <div className="background-image-div"><img src="https://friendsoftheinyo.org/wp-content/uploads/2016/03/Little-Lakes-Valley-by-Jan-Arendtsz_header.jpg" alt="background"/></div>
                 <div className="gallery-page">
                     {regions.map(region =>
                         <div className="gallery-tile" key={region.id}>

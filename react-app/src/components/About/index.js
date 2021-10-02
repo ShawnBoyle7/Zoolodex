@@ -14,7 +14,6 @@ const About = () => {
                 as familiar by providing content that is easy to navigate and consume.
                 <br/>
                 <p>Something else here</p>
-                
             </div>
 
             <div className="about-links">

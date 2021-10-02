@@ -24,13 +24,13 @@ a {
     width: 100%;
 }
 
-/* .page-content {
+.page-content {
     position: absolute;
     top: 400px;
     left: 0px;
     width: 100%;
     overflow-y: auto;
-} */
+}
 
 .gallery-page {
     display: grid;
