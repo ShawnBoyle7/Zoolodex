@@ -7,10 +7,12 @@ const Splash = () => {
     const history = useHistory();
 
     const animals = Object.values(useSelector(state => state.animals));
+    const randomAnimalId = Math.floor(Math.random() * animals.length)
 
-    const randomAnimal = (e) => {
+    const randomAnimalHandler = (e) => {
         e.preventDefault()
-        // history.push(`/animals/${randomAnimalId}`);
+        console.log("animal", randomAnimalId)
+        history.push(`/animals/${+randomAnimalId}`);
     }
 
     return (
@@ -35,7 +37,7 @@ const Splash = () => {
                     <p>
                         Not sure where to start? Click below!
                     </p>
-                        <button onClick={randomAnimal}>
+                        <button onClick={randomAnimalHandler}>
                             Explore
                         </button>
                 </div>

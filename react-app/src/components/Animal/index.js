@@ -8,11 +8,11 @@ import './Animal.css'
 const Animal = () => {
     const animals = Object.values(useSelector(state => state.animals))
     const { animalId } = useParams();
-    const animal = animals.find(animal => animal.id === +animalId)
-    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment.animalId === +animalId).reverse()
-    const sessionUser = useSelector(state => state.session.user)
-    const animalRegionId = animal.regions[0]
-    const animalHeaderImage = Object.values(useSelector(state => state.regions)).find(region => region.id === animalRegionId).imgUrl
+    const animal = animals.find(animal => animal?.id === +animalId)
+    const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment?.animalId === +animalId).reverse()
+    const sessionUser = useSelector(state => state.session?.user)
+    // const animalRegionId = animal?.regions[0]
+    const animalHeaderImage = Object.values(useSelector(state => state.regions)).find(region => region?.id === animal?.regions[0]).imgUrl
     
     const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)

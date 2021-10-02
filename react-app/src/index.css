@@ -219,11 +219,11 @@ form input {
 .about-div {
     display: flex;
     flex-direction: column;
-    padding: 2em 1em;
+    padding: 1em 0.5em;
 }
 
 .about-links {
-    margin-top: 10%;
+    margin-top: 3%;
     display: flex;
     justify-content: space-evenly;
 }
