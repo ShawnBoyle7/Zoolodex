@@ -80,6 +80,6 @@ If you'd like to see just your own suggestions and update them there, or change 
 
 ## Future Plans
 
-In the future, I'll be integrating a Google Maps API represented at the center coordinates of said region. You will be able to explore this map to see the locality of a region, as well as post or view live sightings of wildlife in that region represented as a clickable node with coordinates on the map. These nodes contain photos and a description of the sighting which you'll be able to comment on as well.
+* In the future, I'll be integrating a Google Maps API represented at the center coordinates of said region. You will be able to explore this map to see the locality of a region, as well as post or view live sightings of wildlife in that region represented as a clickable node with coordinates on the map. These nodes contain photos and a description of the sighting which you'll be able to comment on as well.
 
-Additionally, I'll be implementing a search feature which you can filter by many criteria such as a region's name, climate or continent, or traits of an animal such as their name, regions or physical attributes.
+* Additionally, I'll be implementing a search feature which you can filter by many criteria such as a region's name, climate or continent, or traits of an animal such as their name, regions or physical attributes.
