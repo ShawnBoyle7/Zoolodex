@@ -28,6 +28,6 @@ class Region(db.Model):
         "name": self.name,
         "climate": self.climate,
         "continent": self.continent,
-        "imgUrl1": self.img_url,
+        "imgUrl": self.img_url,
         "animals": animals
         }

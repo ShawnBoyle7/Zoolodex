@@ -1,16 +1,47 @@
-.home-image > img {
+/* .home-image > img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     z-index: -1;
+} */
+
+#carousel-div {
+    position: absolute;
+    width: 100%;
 }
 
-.home-header {
+.carousel-visit {
+    font-size: 0.75em;
+}
+
+.carousel-image-div a {
     position: absolute;
-    top: 20%;
-    left: 30%;
-    z-index: 1;
+    font-size: 3em;
+    top: 50vh;
+    left: 20vw;
     color: white;
+    display: flex;
+    flex-direction: column;
+    text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
+}
+
+.carousel-image-div .shadow {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-image {
+    width: 100vw;
+    height: 100vh;
+}
+
+#carousel-div button {
+    position: absolute;
+    top: 50vh;
+    z-index: 6;
 }
