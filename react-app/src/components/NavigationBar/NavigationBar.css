@@ -13,6 +13,7 @@ nav * {
     height: 60px;
     border-bottom: 1px solid white;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .navigation-scrolled {
