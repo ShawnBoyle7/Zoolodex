@@ -24,10 +24,10 @@ const NavigationBar = ({ authenticated }) => {
 document.addEventListener("scroll", () => {
     const nav = document.querySelector("nav")
 
-    if (window.scrollY === 0) {
+    if (window.scrollY < 340) {
         nav?.classList.add("navigation-default")
         nav?.classList.remove("navigation-scrolled")
-    } else if (window.scrollY > 0) {
+    } else if (window.scrollY > 340) {
         nav?.classList.remove("navigation-default")
         nav?.classList.add("navigation-scrolled")
     }
