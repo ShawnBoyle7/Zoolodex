@@ -11,7 +11,7 @@ Zoolodex is a full stack application that serves as an educational platform to s
 
 ### Explore your curiosity with Zoolodex [here!](https://zoolodex.herokuapp.com)
 
-# Technologies
+## Technologies
 
 * Docker
 * PostgresQL
