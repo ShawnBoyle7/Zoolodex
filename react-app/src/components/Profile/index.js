@@ -46,6 +46,7 @@ const Profile = () => {
                             </div>
                         }
 
+                    </div>
                         {suggestions.length ?
                             <div className="profile-buttons-div">
                                 <button className={`${showAnimals ? "selected" : ""}`} onClick={animalClick}>Animal Suggestions</button>
@@ -55,7 +56,6 @@ const Profile = () => {
                         <>
                         </>
                         }
-                    </div>
 
                     <div className="profile-suggestions">
                         {showAnimals &&

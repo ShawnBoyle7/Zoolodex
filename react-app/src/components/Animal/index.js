@@ -49,8 +49,8 @@ const Animal = () => {
                         <h1>{animal.subSpecies}</h1>
                     </div>
 
-                    <div className="animal-image">
-                        <img src={animal.imgUrl} alt="animal"/>
+                    <div className="animal-image-div">
+                        <img className="animal-image" src={animal.imgUrl} alt="animal"/>
                     </div>
 
                     <div className="animal-conditional-buttons-div">

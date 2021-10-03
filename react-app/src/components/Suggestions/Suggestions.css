@@ -3,13 +3,13 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 2%;
-    position: sticky;
+    /* position: sticky; */
     top: 75px;
     padding: 0 1%;
 }
 
 .suggestion-conditional-buttons-div button {
-    width: 11%;
+    width: 10%;
     height: 35px;
     margin-right: 1em;
 }
