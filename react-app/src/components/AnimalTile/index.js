@@ -4,8 +4,8 @@ const AnimalTile = ({ animal }) => {
 
     return (
         <div className="animal-div">
-            <div className="animal-tile-image">
-                <img src={animal.imgUrl} alt="animal"/>
+            <div className="animal-tile-image-div">
+                <img className="animal-tile-image" src={animal.imgUrl} alt="animal"/>
             </div>
             <div className="tile-name">
                 <h2>{animal.subSpecies}</h2>

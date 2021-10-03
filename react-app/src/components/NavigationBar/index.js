@@ -38,8 +38,9 @@ return (
         <nav className="navigation-default">
             <div className="nav-links-div">
                 <NavLink to='/' exact={true} activeClassName='active'>
+                    <span className="home-span">Home</span>
                     <div className="logo-image-div">
-                        <img src="https://i.imgur.com/PoiGGsV.png" className="logo-image" alt="logo"/>
+                        <img src="https://i.imgur.com/PoiGGsV.png" className="logo-image large" alt="logo"/>
                     </div>
                 </NavLink>
 
@@ -60,7 +61,7 @@ return (
                     <form className="search-form">
                         <i className="fas fa-search"></i>
                         <input 
-                        placeholder='Explore Your Curiosity'
+                        placeholder='Explore'
                         />
                     </form>
                 </div>

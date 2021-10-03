@@ -69,6 +69,7 @@
     resize: none;
     width: 50em;
     height: 2.65rem;
+    max-width: 60vw;
 }
 
 .comment-input-div textarea::placeholder {

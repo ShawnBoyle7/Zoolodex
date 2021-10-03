@@ -53,19 +53,36 @@ a {
     height: 400px;
 }
 
-.background-image-div > img, .suggestion-tile-image-div img {
+.suggestion-tile-image-div > img {
+    width: 30vw; 
+    height: 30vw; 
+    object-fit:cover;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.background-image-div > img {
+    height: 400px;
+    width: 100%;
+    margin: 0;
+}
+
+.animal-image {
     height: 400px;
     width: 100%;
     margin: 0;
 }
 
 .gallery-page img {
-    width: 400px; 
-    height: 400px; 
+    width: 30vw; 
+    height: 30vw; 
     object-fit:cover;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 button {
+    min-width: fit-content;
     cursor: pointer;
     border: none;
     width: 6em;
