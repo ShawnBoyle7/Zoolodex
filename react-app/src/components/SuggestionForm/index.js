@@ -106,7 +106,7 @@ const SuggestionForm = ({ setShowModal }) => {
                     type="file"
                     name="imgFile"
                     onChange={updateImgFile}
-                    required={false}/>
+                    required={true}/>
             </div>
 
             <div className="form-buttons-div">
