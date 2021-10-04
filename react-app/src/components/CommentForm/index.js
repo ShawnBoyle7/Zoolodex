@@ -41,6 +41,7 @@ const CommentForm = ({ animal, sighting }) => {
                     onChange={updateContent}
                     value={content}
                     maxLength={1000}
+                    required
                     />
             </div>
                 <button type="submit">Comment</button>
