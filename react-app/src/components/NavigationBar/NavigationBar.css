@@ -44,7 +44,8 @@ nav * {
     }
 
     .home-span {
-        display: inline
+        display: inline;
+        margin-left: 10%
     }
 
     .nav-links-div a {
