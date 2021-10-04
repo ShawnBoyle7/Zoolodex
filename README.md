@@ -28,7 +28,7 @@ Zoolodex is a full stack application that serves as an educational platform to s
 ## Documentation
 
 * [Database Schema](https://github.com/ShawnBoyle7/Zoolodex/wiki/Database-Schema)
-* [Redux State](https://github.com/ShawnBoyle7/Zoolodex/wiki/State)
+* [Redux State](https://github.com/ShawnBoyle7/Zoolodex/wiki/Redux-State)
 * [User Stories](https://github.com/ShawnBoyle7/Zoolodex/wiki/User-Stories)
 * [Feature List](https://github.com/ShawnBoyle7/Zoolodex/wiki/Feature-List)
 * [API Routes](https://github.com/ShawnBoyle7/Zoolodex/wiki/API-Routes)
