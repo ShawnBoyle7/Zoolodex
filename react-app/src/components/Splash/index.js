@@ -11,7 +11,6 @@ const Splash = () => {
 
     const randomAnimalHandler = (e) => {
         e.preventDefault()
-        console.log("animal", randomAnimalId)
         history.push(`/animals/${+randomAnimalId}`);
     }
 
