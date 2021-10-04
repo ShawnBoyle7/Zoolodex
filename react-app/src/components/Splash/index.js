@@ -1,18 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
+// import { useSelector } from "react-redux"
+// import { useHistory } from "react-router-dom"
 import "./Splash.css"
 
 const Splash = () => {
-    const history = useHistory();
+    // const history = useHistory();
 
-    const animals = Object.values(useSelector(state => state.animals));
-    const randomAnimalId = Math.floor(Math.random() * animals.length)
+    // const animals = Object.values(useSelector(state => state.animals));
+    // const randomAnimalId = Math.floor(Math.random() * animals.length)
 
-    const randomAnimalHandler = (e) => {
-        e.preventDefault()
-        history.push(`/animals/${+randomAnimalId}`);
-    }
+    // const randomAnimalHandler = (e) => {
+    //     e.preventDefault()
+    //     history.push(`/animals/${+randomAnimalId}`);
+    // }
 
     return (
         <>
@@ -29,17 +29,17 @@ const Splash = () => {
 
                 <p>
                     With Zoolodex, we want you to help you not only enjoy, but love the life around us.
-                    Explore our informative pages for animals and regions to find your passion.
+                    Explore our  informative pages for animals and regions to find your passion.
                 </p>
 
-                <div className="splash-random-div">
+                {/* <div className="splash-random-div">
                     <p>
                         Not sure where to start? Click below!
                     </p>
                         <button onClick={randomAnimalHandler}>
                             Explore
                         </button>
-                </div>
+                </div> */}
             </div>
         </>
     )
