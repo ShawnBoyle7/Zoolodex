@@ -6,9 +6,10 @@
 1. [Introduction](#introduction)
 2. [Technologies](#technologies)
 3. [Documentation](#documentation)
-4. [How To use](#how-to-use)
-5. [What I learned](#what-i-learned)
-6. [Future Plans](#future-plans)
+4. [Development](#development)
+5. [How To use](#how-to-use)
+6. [What I learned](#what-i-learned)
+7. [Future Plans](#future-plans)
 
 ## Introduction
 
@@ -33,6 +34,36 @@ Zoolodex is a full stack application that serves as an educational platform to s
 * [Feature List](https://github.com/ShawnBoyle7/Zoolodex/wiki/Feature-List)
 * [API Routes](https://github.com/ShawnBoyle7/Zoolodex/wiki/API-Routes)
 * [Frontend Routes](https://github.com/ShawnBoyle7/Zoolodex/wiki/Frontend-Routes)
+
+## Development
+
+1. Clone the repository at https://github.com/ShawnBoyle7/Zoolodex
+2. Install depdencies  
+```py
+pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt 
+```
+4. Set up your postgreSQL user and database. <br></br>
+5. Create the .env file. You can use my env example as a reference, ensure your settings match your local database from last step. <br></br>
+6. Enter your virtual environment, migrate and seed your database, then run the backend application.  
+```py
+pipenv shell
+```
+```py
+flask db upgrade
+```
+```py
+flask seed all
+```
+```py
+flask run
+```  
+7. Enter react-app and install your dependencies, then run the frontend application.  
+```py 
+npm install
+```
+```py 
+npm start
+```
 
 ## How To Use
 
