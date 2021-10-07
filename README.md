@@ -6,10 +6,11 @@
 1. [Introduction](#introduction)
 2. [Technologies](#technologies)
 3. [Documentation](#documentation)
-4. [Development](#development)
-5. [How To use](#how-to-use)
-6. [What I learned](#what-i-learned)
-7. [Future Plans](#future-plans)
+4. [Component List](#component-list)
+5. [Development](#development)
+6. [How To use](#how-to-use)
+7. [What I learned](#what-i-learned)
+8. [Future Plans](#future-plans)
 
 ## Introduction
 
@@ -34,6 +35,8 @@ Zoolodex is a full stack application that serves as an educational platform to s
 * [Feature List](https://github.com/ShawnBoyle7/Zoolodex/wiki/Feature-List)
 * [API Routes](https://github.com/ShawnBoyle7/Zoolodex/wiki/API-Routes)
 * [Frontend Routes](https://github.com/ShawnBoyle7/Zoolodex/wiki/Frontend-Routes)
+
+## Component List
 
 ## Development
 
