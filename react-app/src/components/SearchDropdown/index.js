@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import "./SearchDropdown.css"
 
 const SearchDropdown = ({ searchQuery, setSearchQuery, setRenderSearchDropdown  }) => {
     const animals = Object.values(useSelector(state => state.animals))

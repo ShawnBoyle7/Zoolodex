@@ -1,0 +1,27 @@
+.search-dropdown {
+    position: absolute;
+    top: 27px;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+    background-color: var(--secondary-color);
+}
+
+.search-dropdown h3 {
+    margin: 0.75em 0.5em 0.3em;
+    color: var(--primary-color);
+}
+
+.result-div {
+    margin: 0.75em 0.5em 0.3em;
+    height: fit-content;
+}
+
+.match {
+    color: paleturquoise;
+    font-weight: bold;
+}
+
+.search-dropdown a > .result-div:hover {
+    background-color: tomato;
+}
