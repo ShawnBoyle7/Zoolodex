@@ -1,15 +1,8 @@
 import React from "react"
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./SearchDropdown.css"
 
-const SearchDropdown = ({ searchQuery, setSearchQuery, setRenderSearchDropdown  }) => {
-    const animals = Object.values(useSelector(state => state.animals))
-    const regions = Object.values(useSelector(state => state.regions))
-
-    const animalResults = animals?.filter(animal => animal.subSpecies.toLowerCase().includes(searchQuery?.toLowerCase())).slice(0,5)
-    const regionResults = regions?.filter(region => region.name.toLowerCase().includes(searchQuery?.toLowerCase())).slice(0,5)
-
+const SearchDropdown = ({ searchQuery, setSearchQuery, setRenderSearchDropdown, animalResults, regionResults  }) => {
     document.querySelector("html").addEventListener("click", () => {
         setRenderSearchDropdown(false)
     });

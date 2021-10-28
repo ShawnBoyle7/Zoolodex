@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { demo } from '../../store/session';
-import SearchDropdown from '../SearchDropdown';
 import SignUpFormModal from '../SignUpFormModal';
 import LoginFormModal from '../LoginFormModal'
 import LogoutButton from '../Authentication/LogoutButton';
 import AboutModal from '../AboutModal';
 import SuggestionFormModal from '../SuggestionFormModal';
 import './NavigationBar.css'
+import Search from '../Search';
 
 const NavigationBar = ({ authenticated }) => {
     const dispatch = useDispatch();
@@ -32,43 +32,6 @@ const NavigationBar = ({ authenticated }) => {
             nav?.classList.add("navigation-scrolled")
         }
     });
-
-    // Search
-
-    const [searchQuery, setSearchQuery] = useState("");
-    const [renderSearchDropdown, setRenderSearchDropdown] = useState(false);
-
-    // Cannot click search without query
-    useEffect(() => {
-        if (!searchQuery.length) {
-            document.querySelector(".fa-search").classList.remove("clickable")
-            return setRenderSearchDropdown(false)
-        }
-
-        setRenderSearchDropdown(true)
-        document.querySelector(".fa-search").classList.add("clickable")
-    }, [searchQuery]);
-
-    // Re-render dropdown on click with query
-    const clickRenderDropdown = () => {
-        if (searchQuery.length) {
-            setRenderSearchDropdown(true)
-        }
-    };
-
-    // Redirect to search page routed by query
-    const handleSearch = (e) => {
-        e.preventDefault()
-
-        if (!searchQuery.length) return
-
-        setRenderSearchDropdown(false)
-
-        const query = searchQuery
-        setSearchQuery("")
-
-        history.push(`/search?q=${query}`)
-    }
 
     return (
         <>
@@ -94,21 +57,7 @@ const NavigationBar = ({ authenticated }) => {
                     </NavLink>
                 </div>
 
-                <div className="search-div">
-                    <form className="search-form" onSubmit={handleSearch}>
-                        <i className="fas fa-search" onClick={handleSearch}></i>
-                        <input 
-                        placeholder='Explore'
-                        onClick={clickRenderDropdown}
-                        value={searchQuery}
-                        onChange={e => setSearchQuery(e.target.value)}
-                        />
-
-                        {renderSearchDropdown &&
-                            <SearchDropdown searchQuery={searchQuery} setSearchQuery={setSearchQuery} setRenderSearchDropdown={setRenderSearchDropdown}/>
-                        }
-                    </form>
-                </div>
+                <Search/>
 
                 <div className="navigation-auth">
                     {!authenticated ?
