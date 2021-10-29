@@ -25,7 +25,7 @@ function FilterModal({
                     setShowFilterModal={setShowFilterModal} 
                     animals={animals} 
                     regions={regions} 
-                    animalGroup
+                    animalGroup={animalGroup}
                     setAnimalGroup={setAnimalGroup}
                     setAnimalFamily={setAnimalFamily}
                     setAnimalSpecies={setAnimalSpecies}

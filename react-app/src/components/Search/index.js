@@ -16,14 +16,14 @@ const Search = ({}) => {
 
     const [animalResults, setAnimalResults] = useState([]) 
     const [regionResults, setRegionResults] = useState([]) 
-    const [animalGroup, setAnimalGroup] = useState(false);
-    const [animalFamily, setAnimalFamily] = useState(false);
-    const [animalSpecies, setAnimalSpecies] = useState(false);
-    const [animalSubSpecies, setAnimalSubSpecies] = useState(false);
-    const [animalTag, setAnimalTag] = useState(false);
-    const [animalRegion, setAnimalRegion] = useState(false);
-    const [continent, setContinent] = useState(false);
-    const [climate, setClimate] = useState(false);
+    const [animalGroup, setAnimalGroup] = useState("");
+    const [animalFamily, setAnimalFamily] = useState("");
+    const [animalSpecies, setAnimalSpecies] = useState("");
+    const [animalSubSpecies, setAnimalSubSpecies] = useState("");
+    const [animalTag, setAnimalTag] = useState("");
+    const [animalRegion, setAnimalRegion] = useState("");
+    const [continent, setContinent] = useState("");
+    const [climate, setClimate] = useState("");
 
     // Filters!!
     
@@ -39,42 +39,42 @@ const Search = ({}) => {
             return setRenderSearchDropdown(false)
         } else {
             if (animalGroup) {
-                animalsCopy.filter(animal => animal.group === animalGroup);
+                animalsCopy = animalsCopy.filter(animal => animal.group === animalGroup);
                 animalFilter = true
             }
             
             if (animalFamily) {
-                animalsCopy.filter(animal => animal.family === animalFamily);
+                animalsCopy = animalsCopy.filter(animal => animal.family === animalFamily);
                 animalFilter = true
             }
             
             if (animalSpecies) {
-                animalsCopy.filter(animal => animal.species === animalSpecies);
+                animalsCopy = animalsCopy.filter(animal => animal.species === animalSpecies);
                 animalFilter = true
             }
             
             if (animalSubSpecies) {
-                animalsCopy.filter(animal => animal.group === animalSubSpecies);
+                animalsCopy = animalsCopy.filter(animal => animal.group === animalSubSpecies);
                 animalFilter = true
             }
             
             if (animalTag) {
-                animalsCopy.filter(animal => animal.tag === animalTag);
+                animalsCopy = animalsCopy.filter(animal => animal.tag === animalTag);
                 animalFilter = true
             }
             
             if (animalRegion) {
-                animalsCopy.filter(animal => animal.regions.includes(animalRegion));
+                animalsCopy = animalsCopy.filter(animal => animal.regions.includes(animalRegion));
                 animalFilter = true
             }
             
             if (continent) {
-                regionsCopy.filter(region => region.continent === continent);
+                regionsCopy = regionsCopy.filter(region => region.continent === continent);
                 regionFilter = true
             }
             
             if (climate) {
-                regionsCopy.filter(region => region.climate === climate);
+                regionsCopy = regionsCopy.filter(region => region.climate === climate);
                 regionFilter = true
             }
 

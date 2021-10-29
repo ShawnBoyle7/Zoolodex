@@ -1,4 +1,5 @@
 import React from "react"
+import Select from "react-select"
 
 const Filter = ({
     showFilterModal,
@@ -17,23 +18,27 @@ const Filter = ({
 
     const groups = new Set()
 
-    animals.map(animal => {
+    animals.forEach(animal => {
         groups.add(animal.group)
     });
 
-    const groupArr = Array.from(groups)
+    let groupArr = Array.from(groups)
+
+    // const groupObj = groupArr.map(group => ({value: group, label: group}))
 
     return (
         <>
             <h1>Filter!</h1>
             <h2>Animals</h2>
             <div className="animal-filter">
-                <select value={animalGroup} onChange={e => setAnimalGroup(e.target.value)}>
-                    {groupArr.map(group => {
-                        <option> TEST </option>
-                        console.log(group)
-                    })}
+                <select value={animalGroup} onChange={(e => setAnimalGroup(e.target.value))} >
+                    {groupArr.map(group => <option value={group}> {group} </option>)}
                 </select>
+                {/* <Select 
+                    options={groupObj} 
+                    // value={animalGroup}
+                    onChange={(e) => (console.log(e?.target.value))}
+                /> */}
             </div>
         </>
     )
