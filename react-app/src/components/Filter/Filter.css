@@ -1,0 +1,29 @@
+#modal > .filter-modal {
+    width: 40vw;
+    height: 60vh;
+    /* background-color: var(--secondary-color); */
+}
+
+#modal > .filter-modal h2 {
+    color: var(--primary-color)
+}
+
+.filter-conditional-buttons-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2%;
+    top: 75px;
+    padding: 0 1%;
+}
+
+.filter-top-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-bottom-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+}

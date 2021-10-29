@@ -160,6 +160,8 @@ const Search = ({}) => {
                         setAnimalRegion={setAnimalRegion}
                         setContinent={setContinent}
                         setClimate={setClimate} 
+
+                        // searchQuery={searchQuery} setSearchQuery={setSearchQuery} setRenderSearchDropdown={setRenderSearchDropdown} animalResults={animalResults} regionResults={regionResults}
                     />}
             </div>
         </>
