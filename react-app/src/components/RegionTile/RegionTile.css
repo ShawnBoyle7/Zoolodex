@@ -1,0 +1,7 @@
+.region-tile-image img {
+    width: 30vw; 
+    height: 30vw; 
+    object-fit:cover;
+    max-width: 400px;
+    max-height: 400px;
+}

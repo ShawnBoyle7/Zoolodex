@@ -18,7 +18,6 @@ const Regions = () => {
                         </div>
                     )}
                 </div>
-
         </>
     )
 }

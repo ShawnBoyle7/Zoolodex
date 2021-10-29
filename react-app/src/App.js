@@ -18,6 +18,7 @@ import Suggestions from './components/Suggestions';
 import Profile from './components/Profile';
 import PageNotFound from './components/PageNotFound';
 import Region from './components/Region';
+import SearchResults from './components/SearchResults';
 import "./index.css"
 
 function App() {
@@ -83,6 +84,10 @@ function App() {
               <Route path="/suggestions">
                 <Suggestions/>
               </Route>
+
+              <Route path="/search">
+                    <SearchResults/>
+                </Route>
 
               <Route>
                 <PageNotFound/>
