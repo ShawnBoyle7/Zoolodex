@@ -1,3 +1,11 @@
+/* .page-content {
+    position: absolute;
+    top: 400px;
+    left: 0px;
+    width: 100%;
+    overflow-y: auto;
+} */
+
 :root {
     --primary-color: rgb(28, 145, 101);
     --secondary-color: rgb(136, 69, 31);
@@ -7,13 +15,8 @@
     box-sizing: border-box;
 }
 
-html {
+body {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color)
 }
 
 #root {
@@ -24,13 +27,29 @@ a {
     width: 100%;
 }
 
-/* .page-content {
-    position: absolute;
-    top: 400px;
-    left: 0px;
+a {
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
+/* Image Styling */
+
+.background-image-div > img {
     width: 100%;
-    overflow-y: auto;
-} */
+    height: 400px;
+}
+
+.gallery-image-div {
+
+}
+
+.gallery-image {
+    width: 30vw; 
+    height: 30vw; 
+    object-fit:cover;
+    max-width: 400px;
+    max-height: 400px; 
+}
 
 .gallery-page {
     display: grid;
@@ -47,38 +66,6 @@ a {
 .tile-name {
     display: flex;
     justify-content: center;
-}
-
-.background-image-div {
-    height: 400px;
-}
-
-.suggestion-tile-image-div > img {
-    width: 30vw; 
-    height: 30vw; 
-    object-fit:cover;
-    max-width: 400px;
-    max-height: 400px;
-}
-
-.background-image-div > img {
-    height: 400px;
-    width: 100%;
-    margin: 0;
-}
-
-.animal-image {
-    height: 400px;
-    width: 100%;
-    margin: 0;
-}
-
-.gallery-page img {
-    width: 30vw; 
-    height: 30vw; 
-    object-fit:cover;
-    max-width: 400px;
-    max-height: 400px;
 }
 
 button {
@@ -248,4 +235,3 @@ form input {
 .about-paragraph {
     margin-bottom: 1em;
 }
-
