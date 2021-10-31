@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 94375d8cd1f4
+Revision ID: a7d9e786106c
 Revises: 
-Create Date: 2021-10-01 14:07:23.574858
+Create Date: 2021-10-30 19:13:39.673572
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '94375d8cd1f4'
+revision = 'a7d9e786106c'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -38,6 +38,8 @@ def upgrade():
     op.create_table('regions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=False),
+    sa.Column('region_latitude', sa.Float(), nullable=False),
+    sa.Column('region_longitude', sa.Float(), nullable=False),
     sa.Column('climate', sa.String(length=25), nullable=False),
     sa.Column('continent', sa.String(length=25), nullable=False),
     sa.Column('img_url', sa.String(length=255), nullable=True),
@@ -82,7 +84,9 @@ def upgrade():
     sa.Column('img_url_3', sa.String(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('animal_id', sa.Integer(), nullable=True),
+    sa.Column('region_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
+    sa.ForeignKeyConstraint(['region_id'], ['regions.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

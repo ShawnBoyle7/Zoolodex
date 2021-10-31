@@ -1,4 +1,5 @@
 from .db import db
+import datetime
 
 class Sighting(db.Model):
     __tablename__ = "sightings"
@@ -7,12 +8,13 @@ class Sighting(db.Model):
     description = db.Column(db.String, nullable=False)
     sighting_latitude = db.Column(db.Float, nullable=False)
     sighting_longitude = db.Column(db.Float, nullable=False)
-    sighting_date = db.Column(db.DateTime)
+    sighting_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     img_url_1 = db.Column(db.String)
     img_url_2 = db.Column(db.String)
     img_url_3 = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     animal_id = db.Column(db.Integer, db.ForeignKey("animals.id"))
+    region_id = db.Column(db.Integer, db.ForeignKey("regions.id"))
 
     user = db.relationship("User", back_populates = "sightings")
     animal = db.relationship("Animal", back_populates = "sightings")

@@ -7,29 +7,29 @@ def seed_regions():
 
     regions = []
 
-    regions.append(Region(name="Galapagos Islands", climate="Tropical", continent="South America", img_url="https://i.imgur.com/4F0niH7.jpeg")) # tortoise
+    regions.append(Region(name="Galapagos Islands", region_latitude="-0.3336497769044674", region_longitude="-90.42073495594352", climate="Tropical", continent="South America", img_url="https://i.imgur.com/4F0niH7.jpeg")) # tortoise
 
-    regions.append(Region(name="Linyanti", climate="Steppe", continent="Africa", img_url="https://i.imgur.com/XBlLtVA.jpg")) # lion
+    regions.append(Region(name="Linyanti", region_latitude="-18.293452213506402", region_longitude="23.9099836526035", climate="Steppe", continent="Africa", img_url="https://i.imgur.com/XBlLtVA.jpg")) # lion
 
-    regions.append(Region(name="Amazon Rainforest", climate="Tropical Rainforest", continent="South America", img_url="https://i.imgur.com/jCo9qWa.jpg")) # snake
+    regions.append(Region(name="Amazon Rainforest", region_latitude="-3.465305", region_longitude="-62.215881", climate="Tropical Rainforest", continent="South America", img_url="https://i.imgur.com/jCo9qWa.jpg")) # snake
 
-    regions.append(Region(name="Amur Heilong Forests", climate="Monsoon", continent="Asia", img_url="https://i.imgur.com/Xc5NF8b.jpg")) # leopard
+    regions.append(Region(name="Primorsky Krai", region_latitude="44.10033117877291", region_longitude="132.1303709100248", climate="Monsoon", continent="Asia", img_url="https://i.imgur.com/i11rRdc.jpg")) # leopard
 
-    regions.append(Region(name="Dana Biosphere Reserve", climate="Desert", continent="Asia", img_url="https://i.imgur.com/S9tHAtL.jpg")) # wolf
+    regions.append(Region(name="Dana Biosphere Reserve", region_latitude="30.675624415807654", region_longitude="35.610516055274545", climate="Desert", continent="Asia", img_url="https://i.imgur.com/S9tHAtL.jpg")) # wolf
 
-    regions.append(Region(name="Paro", climate="Subtropical", continent="Asia", img_url="https://i.imgur.com/OTO1w6Q.jpg")) # tiger
+    regions.append(Region(name="Paro", climate="Subtropical", region_latitude="27.474679095042582", region_longitude="89.43158561524324", continent="Asia", img_url="https://i.imgur.com/OTO1w6Q.jpg")) # tiger
 
-    regions.append(Region(name="Andes", climate="Diverse", continent="South America", img_url="https://i.imgur.com/Jfx0kfu.jpg")) # hawk
+    regions.append(Region(name="Andes", climate="Diverse", region_latitude="-20.521893459861886", region_longitude="-66.43175276914344", continent="South America", img_url="https://i.imgur.com/Jfx0kfu.jpg")) # hawk
 
-    regions.append(Region(name="Kodiak Archipelago", climate="Marine", continent="North America", img_url="https://i.imgur.com/OS7rbck.jpg")) # bear
+    regions.append(Region(name="Kodiak Archipelago", region_latitude="57.53564949425021", region_longitude="-153.48241108543098", climate="Marine", continent="North America", img_url="https://i.imgur.com/OS7rbck.jpg")) # bear
 
-    regions.append(Region(name="Cascade Range", climate="Continental", continent="North America", img_url="https://i.imgur.com/hqPcHcN.jpg")) # owl
+    regions.append(Region(name="Cascade Range", region_latitude="46.17621114081942", region_longitude="-121.90860735222145", climate="Continental", continent="North America", img_url="https://i.imgur.com/hqPcHcN.jpg")) # owl
 
-    regions.append(Region(name="Nisene Marks Forest", climate="Mediterranean", continent="North America", img_url="https://i.imgur.com/P947oaV.jpg")) # salamander
+    regions.append(Region(name="Nisene Marks Forest", region_latitude="37.01874085629854", region_longitude="-121.90516898018964", climate="Mediterranean", continent="North America", img_url="https://i.imgur.com/P947oaV.jpg")) # salamander
     
-    regions.append(Region(name="Marin Headlands", climate="Mediterranean", continent="North America", img_url="https://i.imgur.com/EeNQMqe.png")) # butterfly
+    regions.append(Region(name="Marin Headlands", region_latitude="37.82709340194895", region_longitude="-122.49982958165494", climate="Mediterranean", continent="North America", img_url="https://i.imgur.com/EeNQMqe.png")) # butterfly
 
-    regions.append(Region(name="Hilton Head Island", climate="Temperate", continent="North America", img_url="https://i.imgur.com/OQ6eX0I.jpg")) # deer
+    regions.append(Region(name="Hilton Head Island", region_latitude="32.31592682328047", region_longitude="-80.77579488688757", climate="Temperate", continent="North America", img_url="https://i.imgur.com/OQ6eX0I.jpg")) # deer
 
 
 
