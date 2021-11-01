@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -13,11 +13,10 @@ const Region = () => {
     const sightings = Object.values(useSelector(state => state.sightings))
     const markers = []
     sightings.forEach(sighting => {
-        console.log(sighting)
-        markers.push({lat: sighting.sightingLatitude, lng: sighting.sightingLongitude})
+        markers.push({lat: sighting.sightingLatitude, lng: sighting.sightingLongitude, sighting })
     });
 
-    // const icon = <img src="https://i.imgur.com/N9XomcI.png"/>
+    const icon = "https://i.imgur.com/N9XomcI.png"
 
     const [map, setMap] = useState(null)
     
@@ -38,36 +37,47 @@ const Region = () => {
     // Sighting Modal Data
     
     const [showSightingModal, setShowSightingModal] = useState(false)
+    const [markerSightingId, setMarkerSightingId] = useState({})
+
+    const renderSighting = (sightingId) => {
+        setShowSightingModal(true)
+        setMarkerSightingId(sightingId)
+    }
 
     return (
         <>
             <div className="background-image-div"><img src={region?.imgUrl} alt="background"/></div>
             <div className="region-page">
                 <h1>{region?.name}</h1>
+
+                {showSightingModal && 
+                    <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal}/>
+                }
                     
-                    <div className="map-container">
-                        {showSightingModal && 
-                            <SightingModal showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal}/>
-                        }
-                        {isLoaded && 
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                zoom={8}
-                                center={{lat: region.regionLatitude, lng: region.regionLongitude}}
-                                onUnmount={onUnmount}
-                            >
-                                {markers.map((marker, idx) => (
+                <div className="map-container">
+                    {isLoaded && 
+                        <GoogleMap
+                            mapContainerStyle={containerStyle}
+                            zoom={8}
+                            center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
+                            onUnmount={onUnmount}
+                        >
+                            {markers.map((marker, idx) => (
+                                <>
                                     <Marker
-                                        key={idx} 
-                                        onClick={() => setShowSightingModal(true)}
-                                        position={{lat: +marker.lat, lng: +marker.lng}}
+                                        key={idx}
+                                        className="test-class"
+                                        id={"testId"}
+                                        onClick={() => renderSighting(marker.sighting)}
+                                        position={{lat: +marker?.lat, lng: +marker?.lng}}
                                         title="Animal Sighting"
-                                        // icon={icon}
-                                    />
-                                ))}
-                            </GoogleMap>
-                        }
-                    </div>
+                                        icon={icon}
+                                        />
+                                </>
+                            ))}
+                        </GoogleMap>
+                    }
+                </div>
             </div>
         </>
     )

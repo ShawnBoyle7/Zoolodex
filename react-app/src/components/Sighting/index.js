@@ -1,9 +1,11 @@
 import React from "react"
 import { useSelector } from "react-redux"
 
-const Sighting = ({ }) => {
+const Sighting = ({ sighting }) => {
     // const animals = Object.values(useSelector(state => state.animals))
     // const animal = animals.find(animal => animal.id === animalId)
+
+    console.log("SIGHTING =", sighting)
     
     return (
         <>

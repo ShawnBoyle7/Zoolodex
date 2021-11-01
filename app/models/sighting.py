@@ -34,5 +34,6 @@ class Sighting(db.Model):
         "imgUrl3": self.img_url_3,
         "userId": self.user_id,
         "animalId": self.animal_id,
+        "regionId": self.region_id,
         "comments": comments
         }
