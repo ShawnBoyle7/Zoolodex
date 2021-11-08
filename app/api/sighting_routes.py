@@ -5,6 +5,6 @@ sighting_routes = Blueprint('sightings', __name__)
 
 @sighting_routes.route('/')
 def sightings():
-    sightings =Sighting.query.all()
+    sightings = Sighting.query.all()
     # Why
     return {'sightings': [sighting.to_dict() for sighting in sightings]}

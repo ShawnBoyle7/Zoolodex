@@ -144,7 +144,7 @@ const Search = ({}) => {
                     }
                 </form>
 
-                <i className="fas fa-filter" onClick={renderModal}></i>
+                {/* <i className="fas fa-filter" onClick={renderModal}></i> */}
                 {showFilterModal &&
                     <FilterModal 
                         showFilterModal={showFilterModal} 
@@ -161,9 +161,9 @@ const Search = ({}) => {
                         setContinent={setContinent}
                         setClimate={setClimate} 
 
-                        // searchQuery={searchQuery} setSearchQuery={setSearchQuery} setRenderSearchDropdown={setRenderSearchDropdown} animalResults={animalResults} regionResults={regionResults}
-                    />}
+                        />}
             </div>
+                        {/* // searchQuery={searchQuery} setSearchQuery={setSearchQuery} setRenderSearchDropdown={setRenderSearchDropdown} animalResults={animalResults} regionResults={regionResults} */}
         </>
 
     )

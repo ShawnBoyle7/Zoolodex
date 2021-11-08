@@ -13,6 +13,8 @@ class Region(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    region_latitude = db.Column(db.Float, nullable=False)
+    region_longitude = db.Column(db.Float, nullable=False)
     climate = db.Column(db.String(25), nullable=False)
     continent = db.Column(db.String(25), nullable=False)
     img_url = db.Column(db.String(255))
@@ -26,6 +28,8 @@ class Region(db.Model):
         return {
         "id": self.id,
         "name": self.name,
+        "regionLatitude": self.region_latitude,
+        "regionLongitude": self.region_longitude,
         "climate": self.climate,
         "continent": self.continent,
         "imgUrl": self.img_url,
