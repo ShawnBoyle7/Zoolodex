@@ -5,7 +5,7 @@ const Sighting = ({ sighting }) => {
     // const animals = Object.values(useSelector(state => state.animals))
     // const animal = animals.find(animal => animal.id === animalId)
 
-    console.log("SIGHTING =", sighting)
+    // console.log("SIGHTING =", sighting)
     
     return (
         <>

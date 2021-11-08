@@ -48,7 +48,7 @@ const Region = () => {
         <>
             <div className="background-image-div"><img src={region?.imgUrl} alt="background"/></div>
             <div className="region-page">
-                <h1>{region?.name}</h1>
+                <h1>Explore {region?.name}!</h1>
 
                 {showSightingModal && 
                     <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal}/>
@@ -62,7 +62,7 @@ const Region = () => {
                             center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
                             onUnmount={onUnmount}
                         >
-                            {markers.map((marker, idx) => (
+                            {/* {markers.map((marker, idx) => (
                                 <>
                                     <Marker
                                         key={idx}
@@ -74,7 +74,7 @@ const Region = () => {
                                         icon={icon}
                                         />
                                 </>
-                            ))}
+                            ))} */}
                         </GoogleMap>
                     }
                 </div>
