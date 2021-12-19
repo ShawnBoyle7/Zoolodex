@@ -12,7 +12,7 @@ const Home = ({ authenticated }) => {
     return(
         authenticated ? 
         <div id="carousel-div">
-            <Carousel autoPlay={true} infiniteLoop={true} transitionTime={2000} interval={7000} showThumbs={false} showStatus={false} stopOnHover={false}>
+            <Carousel autoPlay={true} infiniteLoop={true} transitionTime={2000} interval={4000} showThumbs={false} showStatus={false} stopOnHover={false}>
                 {regions.map(region =>
                     <div className="carousel-image-div" key={region.id}>
                         <div className="shadow">

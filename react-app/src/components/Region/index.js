@@ -46,7 +46,7 @@ const Region = () => {
 
     return (
         <>
-            <div className="background-image-div"><img src={region?.imgUrl} alt="background"/></div>
+            <div className="background-image-div"><img src={region?.croppedUrl} alt="background"/></div>
             <div className="region-page">
                 <h1>Explore {region?.name}!</h1>
 

@@ -18,6 +18,7 @@ class Region(db.Model):
     climate = db.Column(db.String(25), nullable=False)
     continent = db.Column(db.String(25), nullable=False)
     img_url = db.Column(db.String(255))
+    cropped_url = db.Column(db.String(255))
 
     # Joins to animals, joins table defined below.
     animals = db.relationship("Animal", secondary="animals_regions_joins", back_populates = "regions")
@@ -33,5 +34,6 @@ class Region(db.Model):
         "climate": self.climate,
         "continent": self.continent,
         "imgUrl": self.img_url,
+        "croppedUrl": self.cropped_url,
         "animals": animals
         }

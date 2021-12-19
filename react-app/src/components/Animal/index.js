@@ -12,7 +12,7 @@ const Animal = () => {
     const comments = Object.values(useSelector(state => state.comments)).filter(comment => comment?.animalId === +animalId).reverse()
     const sessionUser = useSelector(state => state.session?.user)
     // const animalRegionId = animal?.regions[0]
-    const animalHeaderImage = Object.values(useSelector(state => state.regions)).find(region => region?.id === animal?.regions[0]).imgUrl
+    const animalHeaderImage = Object.values(useSelector(state => state.regions)).find(region => region?.id === animal?.regions[0]).croppedUrl
     
     const [showOrigins, setShowOrigins] = useState(true)
     const [showTraits, setShowTraits] = useState(false)
