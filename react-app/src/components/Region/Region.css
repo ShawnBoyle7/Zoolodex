@@ -4,10 +4,19 @@
     align-items: center;
 }
 
-.map-container {
-    margin-bottom: 3%;
+.region-page h1 {
+    margin-bottom: 0.5%
 }
 
-/* .marker-div {
-    z-index: 4;
-} */
+.map-container {
+    margin-bottom: 2%;
+}
+
+.sighting-button {
+    margin-bottom: 1%;
+    padding: 0px 12px 0px 12px;
+}
+
+.gm-style-cc > button {
+    bottom: 10px
+}

@@ -24,12 +24,12 @@ const Region = () => {
     })
     
     const containerStyle = {
-        width: '1500px',
-        height: '775px'
+        width: '1400px',
+        height: '700px'
     };
 
     const [map, setMap] = useState(null)
-    
+
     const onUnmount = useCallback(function callback(map) {
         setMap(null)
     }, [])
@@ -49,6 +49,7 @@ const Region = () => {
             <div className="background-image-div"><img src={region?.croppedUrl} alt="background"/></div>
             <div className="region-page">
                 <h1>Explore {region?.name}!</h1>
+                <button className="sighting-button">Live Sighting</button>
 
                 {showSightingModal && 
                     <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal} showSightingImagesModal={showSightingImagesModal} setShowSightingImagesModal={setShowSightingImagesModal}/>
@@ -62,6 +63,12 @@ const Region = () => {
                             center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
                             onUnmount={onUnmount}
                         >
+                            {/* <Data
+                                options={{
+                                    controlPosition: window.google ? window.google.maps.ControlPosition.TOP_LEFT : undefined,
+                                    controls: ["Point"],
+                                }}
+                            /> */}
                             {markers.map((marker, idx) => (
                                 <>
                                     <Marker
