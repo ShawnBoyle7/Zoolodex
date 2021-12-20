@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker, Data } from "@react-google-maps/api";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SightingModal from "../SightingModal";
@@ -17,8 +17,6 @@ const Region = () => {
     });
 
     const icon = "https://i.imgur.com/N9XomcI.png"
-
-    const [map, setMap] = useState(null)
     
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
@@ -27,16 +25,18 @@ const Region = () => {
     
     const containerStyle = {
         width: '1500px',
-        height: '750px'
+        height: '775px'
     };
+
+    const [map, setMap] = useState(null)
     
     const onUnmount = useCallback(function callback(map) {
         setMap(null)
     }, [])
 
     // Sighting Modal Data
-    
     const [showSightingModal, setShowSightingModal] = useState(false)
+    const [showSightingImagesModal, setShowSightingImagesModal] = useState(false)
     const [markerSightingId, setMarkerSightingId] = useState({})
 
     const renderSighting = (sightingId) => {
@@ -51,7 +51,7 @@ const Region = () => {
                 <h1>Explore {region?.name}!</h1>
 
                 {showSightingModal && 
-                    <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal}/>
+                    <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal} showSightingImagesModal={showSightingImagesModal} setShowSightingImagesModal={setShowSightingImagesModal}/>
                 }
                     
                 <div className="map-container">
@@ -62,7 +62,7 @@ const Region = () => {
                             center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
                             onUnmount={onUnmount}
                         >
-                            {/* {markers.map((marker, idx) => (
+                            {markers.map((marker, idx) => (
                                 <>
                                     <Marker
                                         key={idx}
@@ -74,7 +74,7 @@ const Region = () => {
                                         icon={icon}
                                         />
                                 </>
-                            ))} */}
+                            ))}
                         </GoogleMap>
                     }
                 </div>
