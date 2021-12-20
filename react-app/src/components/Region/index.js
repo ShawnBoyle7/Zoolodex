@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SightingModal from "../SightingModal";
 import './Region.css'
+import SightingFormModal from "../SightingFormModal";
 
 const Region = () => {
     const regions = Object.values(useSelector(state => state.regions))
@@ -37,6 +38,7 @@ const Region = () => {
     // Sighting Modal Data
     const [showSightingModal, setShowSightingModal] = useState(false)
     const [showSightingImagesModal, setShowSightingImagesModal] = useState(false)
+    const [showSightingFormModal, setShowSightingFormModal] = useState(false)
     const [markerSightingId, setMarkerSightingId] = useState({})
 
     const renderSighting = (sightingId) => {
@@ -49,7 +51,11 @@ const Region = () => {
             <div className="background-image-div"><img src={region?.croppedUrl} alt="background"/></div>
             <div className="region-page">
                 <h1>Explore {region?.name}!</h1>
-                <button className="sighting-button">Live Sighting</button>
+                <button className="sighting-button" onClick={() => setShowSightingFormModal(true)}>Live Sighting</button>
+
+                {showSightingFormModal &&
+                    <SightingFormModal showSightingFormModal={showSightingFormModal} setShowSightingFormModal={setShowSightingFormModal}/>
+                }
 
                 {showSightingModal && 
                     <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal} showSightingImagesModal={showSightingImagesModal} setShowSightingImagesModal={setShowSightingImagesModal}/>
@@ -63,12 +69,12 @@ const Region = () => {
                             center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
                             onUnmount={onUnmount}
                         >
-                            {/* <Data
+                            <Data
                                 options={{
                                     controlPosition: window.google ? window.google.maps.ControlPosition.TOP_LEFT : undefined,
                                     controls: ["Point"],
                                 }}
-                            /> */}
+                            />
                             {markers.map((marker, idx) => (
                                 <>
                                     <Marker
