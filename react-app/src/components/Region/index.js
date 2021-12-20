@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker, Data } from "@react-google-maps/api";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -28,23 +28,30 @@ const Region = () => {
         width: '1400px',
         height: '700px'
     };
-
+    
+    const [mapCenter, setMapCenter] = useState({ lat: region?.regionLatitude, lng: region?.regionLongitude })
     const [map, setMap] = useState(null)
-
+    
     const onUnmount = useCallback(function callback(map) {
         setMap(null)
     }, [])
-
+    
     // Sighting Modal Data
     const [showSightingModal, setShowSightingModal] = useState(false)
     const [showSightingImagesModal, setShowSightingImagesModal] = useState(false)
     const [showSightingFormModal, setShowSightingFormModal] = useState(false)
     const [markerSightingId, setMarkerSightingId] = useState({})
-
+    
     const renderSighting = (sightingId) => {
         setShowSightingModal(true)
         setMarkerSightingId(sightingId)
     }
+
+    const googleMap = useRef()
+    
+    // const centerMap = () => {
+    //     // googleMap.current.center = "x"
+    // }
 
     return (
         <>
@@ -54,7 +61,7 @@ const Region = () => {
                 <button className="sighting-button" onClick={() => setShowSightingFormModal(true)}>Live Sighting</button>
 
                 {showSightingFormModal &&
-                    <SightingFormModal showSightingFormModal={showSightingFormModal} setShowSightingFormModal={setShowSightingFormModal}/>
+                    <SightingFormModal map={googleMap.current} setMapCenter={setMapCenter} showSightingFormModal={showSightingFormModal} setShowSightingFormModal={setShowSightingFormModal}/>
                 }
 
                 {showSightingModal && 
@@ -64,9 +71,10 @@ const Region = () => {
                 <div className="map-container">
                     {isLoaded && 
                         <GoogleMap
+                            ref={googleMap}
                             mapContainerStyle={containerStyle}
                             zoom={8}
-                            center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
+                            center={mapCenter}
                             onUnmount={onUnmount}
                         >
                             <Data
