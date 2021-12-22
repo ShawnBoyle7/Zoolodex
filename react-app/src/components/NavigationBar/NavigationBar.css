@@ -122,7 +122,7 @@ nav a {
     color: var(--primary-color);
 }
 
-::placeholder {
+.search-form > ::placeholder {
     color: lightgray;
     padding-left: 0.3em;
 }

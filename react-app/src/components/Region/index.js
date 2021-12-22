@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from "react";
-import { GoogleMap, useJsApiLoader, Marker, Data } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SightingModal from "../SightingModal";
@@ -48,10 +48,6 @@ const Region = () => {
     }
 
     const googleMap = useRef()
-    
-    // const centerMap = () => {
-    //     // googleMap.current.center = "x"
-    // }
 
     return (
         <>
@@ -77,12 +73,6 @@ const Region = () => {
                             center={mapCenter}
                             onUnmount={onUnmount}
                         >
-                            <Data
-                                options={{
-                                    controlPosition: window.google ? window.google.maps.ControlPosition.TOP_LEFT : undefined,
-                                    controls: ["Point"],
-                                }}
-                            />
                             {markers.map((marker, idx) => (
                                 <>
                                     <Marker
