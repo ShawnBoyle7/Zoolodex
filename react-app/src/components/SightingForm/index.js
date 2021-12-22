@@ -28,15 +28,17 @@ const SightingForm = ({ setMapCenter }) => {
         <form>
             <input 
                 value={position?.lat}
-                onChange={(e) => setPosition(position ? position.lat : e.target.value)}
+                onChange={() => setPosition(position?.lat)}
                 placeholder="Latitude"
                 required={true}
+                disabled={true}
                 />
             <input 
                 value={position?.lng}
-                    onChange={(e) => setPosition(position ? position.lng : e.target.value)}
+                onChange={() => setPosition(position?.lng)}
                 placeholder="Longitude"
                 required={true}
+                disabled={true}
             />
         </form>
     </>
