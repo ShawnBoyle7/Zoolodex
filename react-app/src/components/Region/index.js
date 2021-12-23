@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { GoogleMap, useJsApiLoader, Marker, Data } from "@react-google-maps/api";
+import React, { useState, useRef, useCallback } from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SightingModal from "../SightingModal";
 import './Region.css'
+import SightingFormModal from "../SightingFormModal";
 
 const Region = () => {
     const regions = Object.values(useSelector(state => state.regions))
@@ -24,31 +25,40 @@ const Region = () => {
     })
     
     const containerStyle = {
-        width: '1500px',
-        height: '775px'
+        width: '1400px',
+        height: '700px'
     };
-
+    
+    const [mapCenter, setMapCenter] = useState({ lat: region?.regionLatitude, lng: region?.regionLongitude })
     const [map, setMap] = useState(null)
     
     const onUnmount = useCallback(function callback(map) {
         setMap(null)
     }, [])
-
+    
     // Sighting Modal Data
     const [showSightingModal, setShowSightingModal] = useState(false)
     const [showSightingImagesModal, setShowSightingImagesModal] = useState(false)
+    const [showSightingFormModal, setShowSightingFormModal] = useState(false)
     const [markerSightingId, setMarkerSightingId] = useState({})
-
+    
     const renderSighting = (sightingId) => {
         setShowSightingModal(true)
         setMarkerSightingId(sightingId)
     }
+
+    const googleMap = useRef()
 
     return (
         <>
             <div className="background-image-div"><img src={region?.croppedUrl} alt="background"/></div>
             <div className="region-page">
                 <h1>Explore {region?.name}!</h1>
+                <button className="sighting-button" onClick={() => setShowSightingFormModal(true)}>Live Sighting</button>
+
+                {showSightingFormModal &&
+                    <SightingFormModal map={googleMap.current} setMapCenter={setMapCenter} showSightingFormModal={showSightingFormModal} setShowSightingFormModal={setShowSightingFormModal}/>
+                }
 
                 {showSightingModal && 
                     <SightingModal sighting={markerSightingId} showSightingModal={showSightingModal} setShowSightingModal={setShowSightingModal} showSightingImagesModal={showSightingImagesModal} setShowSightingImagesModal={setShowSightingImagesModal}/>
@@ -57,9 +67,10 @@ const Region = () => {
                 <div className="map-container">
                     {isLoaded && 
                         <GoogleMap
+                            ref={googleMap}
                             mapContainerStyle={containerStyle}
                             zoom={8}
-                            center={{lat: region?.regionLatitude, lng: region?.regionLongitude}}
+                            center={mapCenter}
                             onUnmount={onUnmount}
                         >
                             {markers.map((marker, idx) => (

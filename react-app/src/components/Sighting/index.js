@@ -7,22 +7,19 @@ const Sighting = ({ sighting, showSightingImagesModal, setShowSightingImagesModa
     const animal = animals.find(animal => animal.id === sighting.animalId)
     const sightingImages = {"sightingOne": sighting.imgUrl1, "sightingTwo": sighting.imgUrl2, "sightingThree": sighting.imgUrl3}
 
-    console.log(sighting)
-
     return (
         <>
             <div className="sighting-container">
                 {showSightingImagesModal && 
                     <SightingImagesModal sightingImages={sightingImages} showSightingImagesModal={showSightingImagesModal} setShowSightingImagesModal={setShowSightingImagesModal} />
                 }
-                <span className="animal-seen">{animal?.subSpecies}</span>
+
+                <span className="animal-seen">I saw a {animal?.subSpecies}!</span>
                 <span className="date-seen">{sighting?.sightingDate}</span>
                 <div className="sighting-description">
-                    Test
+                    This tortoise was huge!
                 </div>
-                <div className="sighting-images">
-                    <button className="sighting-images-button" onClick={() => setShowSightingImagesModal(true)}>Images</button>
-                </div>
+                <button className="sighting-images-button" onClick={() => setShowSightingImagesModal(true)}>Images</button>
             </div>
         </>
     )

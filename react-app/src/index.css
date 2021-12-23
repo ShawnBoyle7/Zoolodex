@@ -71,7 +71,7 @@ a {
     justify-content: center;
 }
 
-button {
+button:not(.gmnoprint button) {
     min-width: fit-content;
     cursor: pointer;
     border: none;
