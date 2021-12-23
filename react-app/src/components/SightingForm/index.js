@@ -3,6 +3,7 @@ import React, { useState } from "react"
 const SightingForm = ({ setMapCenter }) => {
 
     const [position, setPosition] = useState(null)
+    const [description, setDescription] = useState(null)
 
     const userLocation = () => {
         if (navigator.geolocation) {
@@ -40,6 +41,13 @@ const SightingForm = ({ setMapCenter }) => {
                 required={true}
                 disabled={true}
             />
+            <input
+                value={description}
+                onChange={(e) => setDescription(e?.target.value)}
+                placeholder="Description"
+                required={true}
+                maxLength={1000}
+                />
         </form>
     </>
 )
