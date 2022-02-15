@@ -14,14 +14,14 @@ const About = () => {
                     <br/>
                     as familiar by providing content that is easy to navigate and consume for anyone.
                     <br/>
-                    I encourage you to visit my <a href="https://github.com/ShawnBoyle7/Zoolodex">repository</a> for this project to read all about the details.
+                    I encourage you to visit my <a href="https://github.com/ShawnBoyle7/Zoolodex" target="blank"> repository</a> for this project to read all about the details.
                 </p>
                 <p className="about-final">Enjoy your exploration!</p>
             </div>
 
             <div className="about-links">
-                <a href="https://github.com/ShawnBoyle7"><i className="fab fa-github-square fa-5x"></i></a>
-                <a href="https://www.linkedin.com/in/shawn-boyle-59570b19b/"><i className="fab fa-linkedin fa-5x"></i></a>
+                <a href="https://github.com/ShawnBoyle7" target="blank"><i className="fab fa-github-square fa-5x"></i></a>
+                <a href="https://www.linkedin.com/in/shawnboyle7/" target="blank"><i className="fab fa-linkedin fa-5x"></i></a>
             </div>
             
         </div>
